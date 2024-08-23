@@ -1,0 +1,428 @@
+.spaceholder, .whole{
+    position: relative;
+}
+.spaceholder, .main{
+    width: 100%;
+}
+.spaceholder, .main, .whole{
+    padding: 0; 
+    margin: 0;
+    left: 0;
+    top: 0;
+}
+.whole *{
+     font-weight: normal;
+     font-style: normal;
+}
+
+.spaceholder{
+    height: 1024px;
+}
+.main{
+    position: absolute;
+    height: 1200px;
+    overflow: hidden;
+    background-color: rgb(249,248,245);
+}
+.whole{
+    width: 1000px;
+    height: 1200px;
+    font-family:'hdjxyt151312654519c30';
+    background-color: rgb(249,248,245);
+    margin-top: -100px;
+
+}
+.whole *{
+    line-height: 25px;
+}
+.top{
+    width: 500px;
+    position: relative;
+    z-index: 50;
+    text-align: left;
+    margin-top:-30px;
+}
+.top span{
+    display: inline-block;
+    background-color:rgb(95,91,92);
+}
+.top_yuan{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 5px solid black;
+    border-radius: 80%;
+    margin-left: -150px;
+    top: 70px;
+}
+.top_el{
+    position: relative;
+    width: 150px;
+    height: 60px;
+    border: 5px solid black;
+    border-radius: 50px;
+    margin-left: 50px;
+    top: 40px;
+}
+
+.camera{
+    position: relative;
+    width: 900px;
+    height: 520px;
+    border: 5px solid black;
+    border-radius: 40px;
+    margin-top: 00px;
+    z-index: 100;
+    background-color: rgb(115,111,112);
+}
+.upper{
+    position: relative;
+    width: 900px;
+    height: 100px;
+    border-bottom: 5px solid black;
+    text-align: left;
+}
+.upper span{
+    position: relative;
+    display: inline-block;
+    margin-top: 17px;
+}
+.square1{
+    margin-left: 50px;
+    background-color:rgb(114,104,109);
+}
+.square1, .square3{
+    width: 60px;
+    height: 60px;
+    border: 5px solid black;
+}
+.square2{
+    width: 70px;
+    height: 30px;
+    border: 5px solid black;
+    top: -28px;
+    background-color: rgb(102,79,76);
+}
+.square2, .square3{
+    left: 580px;
+}
+.square3{
+    background-color: rgb(122,99,96);
+}
+.middle{
+    width: 900px;
+    height: 330px;
+    border-bottom: 5px solid black;
+    background:
+radial-gradient(rgba(0,0,0,0.3) 15%, transparent 16%) 0 0,
+radial-gradient(rgba(0,0,0,0.3) 15%, transparent 16%) 8px 8px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+background-color:rgb(95,91,92);
+background-size:16px 16px;
+}
+.circle{
+    position: relative;
+    width: 500px;
+    top: -320px;
+}
+.circle span{
+    display: inline-block;
+}
+.yuan1{
+    width: 410px;
+    height: 410px;
+    border: 5px solid black;
+    border-radius: 100%;
+    animation-name: rotation;
+    animation-timing-function: linear;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: rotation;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+
+    -moz-animation-name: rotation;
+    -moz-animation-timing-function: linear;
+    -moz-animation-duration: 5s;
+    -moz-animation-iteration-count: infinite;
+
+    -ms-animation-name: rotation;
+    -ms-animation-timing-function: linear;
+    -ms-animation-duration: 5s;
+    -ms-animation-iteration-count: infinite;
+
+    -o-animation-name: rotation;
+    -o-animation-timing-function: linear;
+    -o-animation-duration: 5s;
+    -o-animation-iteration-count: infinite;
+    background: linear-gradient(to bottom right, rgb(102,79,76) 0%, rgb(159,146,153) 100%);
+}
+@-webkit-keyframes rotation{
+    0%{
+        -webkit-transform: rotate(90deg);
+    }
+    50%{
+        -webkit-transform: rotate(-90deg);
+    }
+    100%{
+        -webkit-transform: rotate(90deg);
+    }
+}
+@-ms-keyframes rotation{
+    0%{
+        -ms-transform: rotate(90deg);
+    }
+    50%{
+        -ms-transform: rotate(-90deg);
+    }
+    100%{
+        -ms-transform: rotate(90deg);
+    }
+}
+@-moz-keyframes rotation{
+    0%{
+        -moz-transform: rotate(90deg);
+    }
+    50%{
+        -moz-transform: rotate(-90deg);
+    }
+    100%{
+        -moz-transform: rotate(90deg);
+    }
+}
+@-o-keyframes rotation{
+    0%{
+        -o-transform: rotate(90deg);
+    }
+    50%{
+        -o-transform: rotate(-90deg);
+    }
+    100%{
+        -o-transform: rotate(90deg);
+    }
+}
+@keyframes rotation{
+    0%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(-90deg);
+    }
+    100%{
+        transform: rotate(90deg);
+    }
+}
+.yuan2{
+    width: 350px;
+    height: 350px;
+    border: 5px solid black;
+    border-radius: 100%;
+    position: relative;
+    top: -395px;
+    background-image: url(../../img/jjimage/19.jpg);
+    background-size: 155%;
+    background-position: -10px -10px;
+    background-repeat: no-repeat;
+}
+.sc{
+    position: relative;
+    width: 250px;
+    text-align: left;
+    font-size: 16px;
+}
+.list{
+    display: inline-block;
+    width: 230px;
+    color: white;
+    -webkit-text-stroke: .5px rgba(0,0,0,0.8);
+}
+.name{
+    text-shadow: 0px 0px 1px rgba(0,0,0,0.4);
+}
+.group{
+    font-size: 12px;
+}
+.cast{
+    margin-left: -600px;
+    top: 25px;
+
+}
+.staff{
+    position: relative;
+    top: -1000px;
+    text-align: right;
+    margin-right:-500px;
+}
+.bottom{
+    position: relative;
+    width: 700px;
+    font-size: 12px;
+    color: rgba(255,255,255,.5);
+    
+}
+.bottom p{
+    margin-top: 42px;
+    line-height: 15px !important;
+}
+.film{
+    position: relative;
+    width: 900px;
+    height: 200px;
+    border-left: 20px;
+    border-top: 3px;
+    border-bottom: 3px;
+    border-right: 20px;
+    border-color: black;
+    border-style: solid;
+    margin-top: 50px;
+    box-sizing: content-box;
+    background-color: black;
+}
+.sh{
+    position: relative;
+    width: 900px;
+    height: 30px;
+    background-color: black;
+}
+.sh_xia{
+    margin-top: -25px;
+}
+.sh span{
+    display: inline-block;
+    width: 13px;
+    height: 12px;
+    background-color: rgb(249,248,245);
+}
+.zhongj{
+    width: 870px;
+    height: 165px;
+    display: flex;
+    position: relative;
+    top: 0px;
+    overflow: hidden;
+}
+.zhongj p{
+    flex-wrap: nowrap;
+    width: 120px;
+    height: 150px;
+    border-right: 5px solid black;
+}
+.film_list{
+    font-size: 14px;
+    position: relative;
+    top: 40px;
+    color: white;
+}
+.film_name{
+    position: relative;
+    display: inline-block;
+    width: 126px;
+    text-shadow: 0px 0px 1px rgba(0,0,0,0.4);
+    -webkit-text-stroke: .5px rgba(0,0,0,0.3);
+}
+.film1{
+    background: url(../../img/jjimage/18.jpg);
+    background-size: 100%;
+    box-sizing: border-box;
+    background-color: black
+}
+.film2{
+    background: url(../../img/jjimage/18.jpg);
+    background-size: 300%;
+    background-repeat: no-repeat;
+    background-position: -10px -130px;
+    
+}
+.film3{
+    background: url(../../img/jjimage/18.jpg);
+    background-size: 300%;
+    background-repeat: no-repeat;
+    background-position: -90px -100px;
+}
+.film4{
+    background: url(../../img/jjimage/18.jpg);
+    background-size: 300%;
+    background-repeat: no-repeat;
+    background-position: -120px -10px;
+}
+.film5{
+    background: url(../../img/jjimage/18.jpg);
+    background-size: 300%;
+    background-repeat: no-repeat;
+    background-position: -120px -300px;
+}
+.film6{
+    background: url(../../img/jjimage/18.jpg);
+    background-size: 300%;
+    background-repeat: no-repeat;
+    background-position: -90px -120px;
+}
+.film7{
+    background: url(../../img/jjimage/18.jpg);
+    background-size: 300%;
+    background-repeat: no-repeat;
+    background-position: -40px -230px;
+}
+.film8{
+    border: none !important;
+}
+.film8{
+    background: url(../../img/jjimage/18.jpg);
+    background-size: 300%;
+    background-repeat: no-repeat;
+    background-position: -90px -20px;
+}
+.houzhui{
+    margin-top: 20px;
+    font-size: 15px;
+    letter-spacing: 4px;
+}
+.houzhui a{
+    color: black;
+}
+.title{
+    position: relative;
+    width: 900px;
+    text-align: left;
+    margin-top: 20px;
+}
+.main_title{
+    font-size: 110px;
+    color: rgb(95,91,92);
+    -webkit-text-stroke:2px black;
+    letter-spacing: 8px;
+    line-height: 170px;
+}
+.episode{
+    position: relative;
+    display: inline-block;
+    top: -130px;
+    font-size: 40px;
+    color: rgba(95,91,92,.7);
+    line-height: 120px;
+}
+.shetuan{
+     position: relative;
+    display: inline-block;
+    top: -130px;
+    font-size: 34px;
+    letter-spacing: 4px;
+    color: rgba(95,91,92,.9);
+    line-height: 120px;
+}
+.links{
+    position: relative;
+    width: 380px;
+     font-size: 21px;
+     margin-top: -200px;
+     margin-left: 510px;
+}
+.links a{
+    color: rgb(75,71,72);
+    padding-bottom: 3px;
+    text-decoration: none;
+    border-bottom: 1px solid rgb(75,71,72);
+
+}

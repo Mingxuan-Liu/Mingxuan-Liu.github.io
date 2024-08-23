@@ -1,0 +1,377 @@
+.spaceholder{
+    position: relative;
+    height: 600px;
+    
+}
+.main, .whole, .spaceholder{
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.whole *{
+    font-style: normal;
+    font-weight: normal;
+    font-family: serif;
+}
+.whole, .main{
+    height: 750px;
+    overflow: hidden;
+}
+.whole{
+    position: relative;
+    border-top: 20px solid rgb(245,245,245);
+    border-bottom: 20px solid rgb(245,245,245);
+    z-index: 200;
+    box-sizing: border-box;
+    background: rgb(42,42,59);
+    background: linear-gradient(to bottom, rgba(88,91,98,1) 0%, rgba(88,91,98,1) 40%, rgba(46,49,56, 1) 100%);
+}
+.main{
+    position: absolute;
+}
+
+.left img{
+    width: 400px !important;
+    height: 566px !important;
+    box-shadow: 0px 0px 19px 2px rgba(255,255,255,.6);
+    position: relative;
+    top: 4em;
+    left: -22em;
+    z-index: 10;
+}
+
+.sc{
+    position: relative;
+    top: -28em;
+    left:12.5em;
+    color: white;
+    text-align: center;
+    width: 500px;
+    text-align: left;
+    font-size: 13px;
+    line-height: 20px;
+    z-index: 10000;
+}
+
+.piece{
+    position: relative;
+}
+.piece2, .piece4, .piece6{
+    left: 16em;
+}
+.piece2, .piece6{
+    top: -4.7em;
+}
+.piece4{
+    top: -8em;
+}
+.part{
+    margin-top: -6em;
+}
+.cast{
+    margin-top: -3em;
+}
+.ed{
+    margin-top: -4em;
+}
+.piece span b{
+    font-size: 11px;
+}
+.piece span i{
+    text-shadow: 1px 0 1px rgba(164,152,119,0.9);
+}
+.links{
+    position: relative;
+    top: -24.5em;
+    left: 4em;
+}
+.links a{
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    font-size: 11px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid transparent;
+    z-index: 23049;
+    border-left: 1px solid rgba(164,152,119,0.9);
+    line-height: 40px;
+
+}
+.links a:hover{
+    border: none;
+}
+.links a:hover::before{
+    content: '';
+    width: 40px;
+    height: 40px;
+    top: 0em;
+    position: absolute;
+    border-radius: 100%;
+    animation: circle .9s linear infinite;
+    box-shadow: 2px -1px 0 rgba(164,152,119,0.9),
+                2px 1px 0 rgba(255,255,255,0.8);
+    z-index: 3;
+    left: -.1em;
+}
+.links a~a{
+    margin-left: 1.5em;
+}
+@keyframes circle {
+    0%   
+        { 
+            transform: rotate(0deg); 
+        }
+    100% 
+        { 
+            transform: rotate(360deg); 
+        }
+}
+.claims{
+    color: rgba(254,230,129 ,0.3);
+    position: relative;
+    top: -37em;
+    font-size: 10px;
+    line-height: 12px;
+    width: 370px;
+    left: 10em;
+}
+.build{
+    position: relative;
+    top: -53.5em;
+    left: 26em;
+    z-index: 2333;
+}
+.build section{
+    position: relative;
+    background: rgb(50,50,52);
+    display: inline-block;
+
+}
+.build1{
+    width: 80px;
+    height: 150px;
+}
+.build2{
+    width: 80px;
+    height: 300px;
+}
+.build4{
+    width: 80px;
+    height: 270px;
+}
+.build3{
+    width: 30px;
+    height: 400px;
+}
+.build section span{
+    position: relative;
+    width: 15px;
+    height: 25px;
+    border-radius: 40%;
+    background: linear-gradient(to bottom, rgba(111,111,101,.8) 0%, rgba(141,135,109,1) 30%, rgba(141,135,109,1) 60%, rgba(111,111,101,.8) 100%);
+    display: block;
+    top: 1em;
+}
+.line{
+    position: relative;
+    width: 340px;
+    height: 2px;
+    background-color: rgb(50,50,52);;
+    top: -54.2em;
+    left: 27em;
+}
+.build1 span:nth-child(odd){
+    left: -1em;
+}
+.build1 span:nth-child(even){
+    left: 1em;
+    top: -10px;
+}
+.build2 span:nth-child(even){
+    left: 1em;
+    top: -10px;
+}
+.build2 span:nth-child(odd){
+    left: -1em;
+}
+.build4 span:nth-child(even){
+    left: 1em;
+    top: -10px;
+}
+.build4 span:nth-child(odd){
+    left: -1em;
+}
+.ani{
+    -webkit-animation: one 4s infinite;
+    -o-animation: one 4s infinite;
+    -moz-animation: one 4s infinite;
+    animation: one 4s infinite;
+}
+@-moz-keyframes one{
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+@-ms-keyframes one{
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+@-o-keyframes one{
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+@-webkit-keyframes one{
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes one{
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+.ani2{
+    -webkit-animation: two 6s infinite;
+    -o-animation: two 6s infinite;
+    -moz-animation: two 6s infinite;
+    animation: two 6s infinite;
+}
+@-webkit-keyframes two{
+    0%{
+        opacity: 0;
+    }
+    70%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+@-ms-keyframes two{
+    0%{
+        opacity: 0;
+    }
+    70%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+@-o-keyframes two{
+    0%{
+        opacity: 0;
+    }
+    70%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+@-moz-keyframes two{
+    0%{
+        opacity: 0;
+    }
+    70%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes two{
+    0%{
+        opacity: 0;
+    }
+    70%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+.svgs{
+    position: relative;
+    top: -90em;
+
+}
+.svgs section{
+    position: relative;
+    width: 350px;
+    height: 350px;
+    background-size: 100%;
+    background-position: center;
+}
+.yan1{
+    background: url(http://svgshare.com/i/2Yj.svg);
+    top: -5em;
+    left: -8em;
+    opacity: 0.4;
+    
+}
+.yan2{
+    background: url(http://svgshare.com/i/2Xm.svg);
+    left: -33em;
+    opacity: 0.5;
+    top: 6em;
+}
+.yan3{
+    background: url(http://svgshare.com/i/2Vy.svg);
+    left: 34em;
+    top: -15.5em;
+    opacity: 0.4;
+    z-index: 2;
+}
