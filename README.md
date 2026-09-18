@@ -58,6 +58,11 @@ python3 -m http.server 4173
 
 Then open <http://localhost:4173>.
 
+## Analytics
+
+Google Analytics (GA4, measurement ID `G-PH383HH12X`) loads on every page from the
+snippet just above `</head>`. To remove it, delete that block from all five files.
+
 ## Notes
 
 - Figures are reproduced from my own papers; captions credit the source figure.

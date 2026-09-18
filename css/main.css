@@ -644,10 +644,20 @@ main { padding-bottom: 4rem; }
 
 /* ------------------------------------------------------- husky motion -- */
 
-.vn-dog { transform-origin: 50% 70%; }
-.vn-ear { transform-origin: 50% 80%; transition: transform .35s cubic-bezier(.34,1.56,.64,1); }
-.vn-tongue { transform-origin: 50% 74%; transition: transform .35s cubic-bezier(.34,1.56,.64,1); }
-.vn-eyes { transform-origin: 50% 46%; }
+/* transform-box: fill-box makes transform-origin resolve against each shape's own
+   bounding box, so an ear pivots on its base instead of drifting off the head. */
+.vn-dog { transform-box: fill-box; transform-origin: 50% 70%; }
+.vn-eyes { transform-box: fill-box; transform-origin: 50% 50%; }
+.vn-ear {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;      /* the base, where the ear meets the skull */
+  transition: transform .35s cubic-bezier(.34,1.56,.64,1);
+}
+.vn-tongue {
+  transform-box: fill-box;
+  transform-origin: 50% 0%;        /* the root, so it lengthens downward */
+  transition: transform .35s cubic-bezier(.34,1.56,.64,1);
+}
 
 /* idle blink */
 @keyframes vn-blink {
@@ -656,9 +666,9 @@ main { padding-bottom: 4rem; }
 }
 .vn-eyes { animation: vn-blink 6.5s infinite; }
 
-.dog-link:hover .vn-ear-l, .vanilla-portrait:hover .vn-ear-l { transform: rotate(-11deg) translateY(-2px); }
-.dog-link:hover .vn-ear-r, .vanilla-portrait:hover .vn-ear-r { transform: rotate(11deg) translateY(-2px); }
-.dog-link:hover .vn-tongue, .vanilla-portrait:hover .vn-tongue { transform: translateY(3.5px) scaleY(1.22); }
+.dog-link:hover .vn-ear-l, .vanilla-portrait:hover .vn-ear-l { transform: rotate(-13deg); }
+.dog-link:hover .vn-ear-r, .vanilla-portrait:hover .vn-ear-r { transform: rotate(13deg); }
+.dog-link:hover .vn-tongue, .vanilla-portrait:hover .vn-tongue { transform: scaleY(1.45); }
 
 .dog-link .vn-dog { transition: transform .35s cubic-bezier(.34,1.56,.64,1); }
 .dog-link:hover .vn-dog { transform: rotate(-7deg) scale(1.06); }

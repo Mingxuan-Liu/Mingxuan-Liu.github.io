@@ -28,6 +28,14 @@
     } catch (e) { /* storage blocked — light theme is a fine default */ }
   })();
 </script>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PH383HH12X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-PH383HH12X');
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -116,12 +124,11 @@
         <div class="project-media">
           <div class="symbol-panel" role="img" aria-label="A particle spiralling along a magnetic field line">
             <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-              <path d="M4 32h56" opacity=".45"/>
-              <ellipse cx="15" cy="32" rx="5.6" ry="11"/>
-              <ellipse cx="27" cy="32" rx="5.6" ry="11"/>
-              <ellipse cx="39" cy="32" rx="5.6" ry="11"/>
-              <ellipse cx="51" cy="32" rx="5.6" ry="11"/>
-              <circle cx="56.6" cy="32" r="3" fill="currentColor" stroke="none"/>
+              <circle cx="16" cy="22" r="9" fill="currentColor" stroke="none" opacity=".22"/>
+              <circle cx="46" cy="18" r="7.2" fill="currentColor" stroke="none" opacity=".22"/>
+              <circle cx="29" cy="47" r="9.5" fill="currentColor" stroke="none" opacity=".22"/>
+              <path d="M4 43 16 22 46 18 29 47 60 33" stroke-width="2.4"/>
+              <circle cx="60" cy="33" r="3.2" fill="currentColor" stroke="none"/>
             </svg>
           </div>
         </div>
@@ -129,12 +136,11 @@
         <div class="project-text prose">
           <p class="project-number"><span class="project-mark">
             <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-              <path d="M4 32h56" opacity=".45"/>
-              <ellipse cx="15" cy="32" rx="5.6" ry="11"/>
-              <ellipse cx="27" cy="32" rx="5.6" ry="11"/>
-              <ellipse cx="39" cy="32" rx="5.6" ry="11"/>
-              <ellipse cx="51" cy="32" rx="5.6" ry="11"/>
-              <circle cx="56.6" cy="32" r="3" fill="currentColor" stroke="none"/>
+              <circle cx="16" cy="22" r="9" fill="currentColor" stroke="none" opacity=".22"/>
+              <circle cx="46" cy="18" r="7.2" fill="currentColor" stroke="none" opacity=".22"/>
+              <circle cx="29" cy="47" r="9.5" fill="currentColor" stroke="none" opacity=".22"/>
+              <path d="M4 43 16 22 46 18 29 47 60 33" stroke-width="2.4"/>
+              <circle cx="60" cy="33" r="3.2" fill="currentColor" stroke="none"/>
             </svg>
             </span>Starting now</p>
           <h2 class="project-title">Cosmic-ray transport and feedback</h2>
@@ -304,19 +310,33 @@
         </figure>
       </section>
 
-      <figure class="figure figure-wide">
-        <img src="./img/research/shear-random-walk.png" width="1150" height="819" loading="lazy"
-             alt="Top: the running sum of a particle's energy changes over 600 shear-layer crossings,
-                  climbing unevenly from 0 to about 7. Bottom: the individual per-crossing changes,
-                  with gains in red and losses in black, of comparable size.">
-        <figcaption>
-          One particle's energy, crossing by crossing. The bottom panel shows the gain or loss at each
-          crossing of a shear layer: the red gains and black losses look almost symmetric. The top panel
-          is their running total. The gains are very slightly larger on average, and 600 crossings later
-          that small bias has compounded into a factor of several in energy.
-          <span class="figure-credit">From Liu et&nbsp;al., ApJ (accepted).</span>
-        </figcaption>
-      </figure>
+      <section class="figure-pair" aria-label="How the small per-crossing bias compounds">
+        <figure class="figure">
+          <img src="./img/research/shear-random-walk.png" width="1150" height="819" loading="lazy"
+               alt="Top: the running sum of a particle's energy changes over 600 shear-layer crossings,
+                    climbing unevenly from 0 to about 7. Bottom: the individual per-crossing changes,
+                    with gains in red and losses in black, of comparable size.">
+          <figcaption>
+            One particle's energy, crossing by crossing. The bottom panel is the gain or loss at each
+            crossing of a shear layer, and the red gains and black losses look almost symmetric. The
+            top panel is their running total. The gains are very slightly larger on average, and 600
+            crossings later that small bias has compounded into a factor of several in energy.
+            <span class="figure-credit">From Liu et&nbsp;al., ApJ (accepted).</span>
+          </figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="./img/research/shear-second-order.png" width="1000" height="1000" loading="lazy"
+               alt="Mean fractional energy gain per particle plotted against shear velocity on log axes,
+                    with a fitted power law of slope 2.01 plus or minus 0.02.">
+          <figcaption>
+            Repeating that measurement across shear velocities. The mean energy gain scales as the
+            shear velocity to the power 2.01&nbsp;&plusmn;&nbsp;0.02. A power of two is what
+            second-order Fermi acceleration predicts, which is how we know that is the mechanism at
+            work.
+            <span class="figure-credit">From Liu et&nbsp;al., ApJ (accepted), Fig.&nbsp;12.</span>
+          </figcaption>
+        </figure>
+      </section>
 
       <figure class="figure figure-wide">
         <img src="./img/research/shear-gbm.png" width="1250" height="622" loading="lazy"
