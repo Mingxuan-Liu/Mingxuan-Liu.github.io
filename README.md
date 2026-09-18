@@ -58,6 +58,14 @@ python3 -m http.server 4173
 
 Then open <http://localhost:4173>.
 
+## SEO
+
+`robots.txt` and `sitemap.xml` sit at the repo root. Bump `<lastmod>` in the sitemap
+when a page changes materially. Every page carries a canonical URL, Open Graph and
+Twitter tags, and `rel="me"` links to ORCID / Scholar / GitHub; `index.html` carries a
+schema.org `@graph` (WebSite + ProfilePage + Person) and `publications.html` describes
+both papers as `ScholarlyArticle`.
+
 ## Pet counter
 
 The tally on `vanilla.html` is stored in `localStorage`, so it persists per browser.
