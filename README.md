@@ -62,7 +62,8 @@ Then open <http://localhost:4173>.
 
 The tally on `vanilla.html` is stored in `localStorage`, so it persists per browser.
 `counter/` holds an optional Cloudflare Worker that turns it into a single total
-shared by everyone; it is inert until you set `PET_API` in `js/site.js`. See
+shared by everyone. It is inert until you set `PET_API` in `js/site.js`, and it is
+deployed by clicking through the Cloudflare dashboard, no Node required. See
 `counter/README.md`.
 
 ## Analytics

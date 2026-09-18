@@ -687,6 +687,14 @@ main { padding-bottom: 4rem; }
 }
 .vn-dog.is-wiggling { animation: vn-wiggle .65s ease-in-out; }
 
+/* petted: the round eyes swap for happy arcs, the way a dog screws its eyes up
+   when you scratch its head. The idle blink pauses so the two do not fight. */
+.vn-eyes-happy { opacity: 0; }
+.vn-eyes-open, .vn-eyes-happy { transition: opacity .12s ease; }
+.vn-dog.is-petted .vn-eyes-open  { opacity: 0; }
+.vn-dog.is-petted .vn-eyes-happy { opacity: 1; }
+.vn-dog.is-petted .vn-eyes { animation: none; }
+
 .dog-wrap { position: relative; display: grid; place-items: center; }
 .dog-wrap:hover 
 /* -------------------------------------------------------------- print -- */

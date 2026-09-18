@@ -136,10 +136,14 @@
     portrait.setAttribute('role', 'button');
     portrait.setAttribute('aria-label', 'Pet Vanilla');
 
+    var squintTimer = null;
+
     var poke = function () {
       dog.classList.remove('is-wiggling');
       void dog.offsetWidth;            // restart the animation
-      dog.classList.add('is-wiggling');
+      dog.classList.add('is-wiggling', 'is-petted');
+      clearTimeout(squintTimer);
+      squintTimer = setTimeout(function () { dog.classList.remove('is-petted'); }, 750);
 
       petLocal += 1;
       writePets(petLocal);
@@ -160,7 +164,11 @@
     portrait.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); poke(); }
     });
-    dog.addEventListener('animationend', function () { dog.classList.remove('is-wiggling'); });
+    // guard on the target: the idle blink runs on .vn-eyes and its animationend
+    // bubbles up here, which would otherwise cut the wiggle short
+    dog.addEventListener('animationend', function (e) {
+      if (e.target === dog) dog.classList.remove('is-wiggling');
+    });
   });
 
   /* ------------------------------------------------ year in the footer -- */
