@@ -444,10 +444,12 @@ main { padding-bottom: 4rem; }
 .project-media { position: relative; }
 .figure {
   margin: 0;
+  display: flex;
+  flex-direction: column;
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--rule-soft);
-  background: var(--bg-alt);
+  background: var(--surface);
   box-shadow: var(--shadow-lift);
 }
 .figure img, .figure video { width: 100%; display: block; }
@@ -458,6 +460,9 @@ main { padding-bottom: 4rem; }
   background: var(--surface);
   border-top: 1px solid var(--rule-soft);
   line-height: 1.5;
+  /* grow to the height of the tallest figure in the row, so a shorter one
+     does not leave a band of page background showing under it */
+  flex: 1 1 auto;
 }
 
 .figure-placeholder {
@@ -696,12 +701,6 @@ main { padding-bottom: 4rem; }
 
 /* --------------------------------------------------- research extras -- */
 
-.figure-credit {
-  display: block;
-  margin-top: .4rem;
-  font-size: .76rem;
-  color: var(--faint);
-}
 
 .project-meta {
   font-size: .89rem;

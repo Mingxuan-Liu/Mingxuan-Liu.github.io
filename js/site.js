@@ -77,7 +77,26 @@
 
   /* ------------------------------------------------------- the husky -- */
 
-  // The big portrait on Vanilla's page wiggles when you poke it.
+  // The big portrait on Vanilla's page wiggles when you poke it. The tally is kept in
+  // localStorage, so it carries across visits in this browser instead of restarting at
+  // zero. Every poke is also reported to Analytics, where the total across everyone who
+  // has ever visited shows up as the "pet_vanilla" event count.
+  var PET_KEY = 'ml-vanilla-pets';
+
+  function readPets() {
+    try { return parseInt(localStorage.getItem(PET_KEY), 10) || 0; } catch (e) { return 0; }
+  }
+  function writePets(n) {
+    try { localStorage.setItem(PET_KEY, String(n)); } catch (e) { /* storage blocked */ }
+  }
+  function renderPets(n) {
+    document.querySelectorAll('[data-pet-count]').forEach(function (el) {
+      el.textContent = n === 1 ? '1 pet' : n.toLocaleString() + ' pets';
+    });
+  }
+
+  if (document.querySelector('[data-pet-count]')) renderPets(readPets());
+
   document.querySelectorAll('.vanilla-portrait').forEach(function (portrait) {
     var dog = portrait.querySelector('.vn-dog');
     if (!dog) return;
@@ -89,11 +108,12 @@
       dog.classList.remove('is-wiggling');
       void dog.offsetWidth;            // restart the animation
       dog.classList.add('is-wiggling');
-      var counter = document.querySelector('[data-pet-count]');
-      if (counter) {
-        var n = parseInt(counter.getAttribute('data-pet-count'), 10) + 1;
-        counter.setAttribute('data-pet-count', String(n));
-        counter.textContent = n === 1 ? '1 pet' : n + ' pets';
+
+      var n = readPets() + 1;
+      writePets(n);
+      renderPets(n);
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'pet_vanilla', { event_category: 'vanilla' });
       }
     };
 
