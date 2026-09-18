@@ -58,6 +58,13 @@ python3 -m http.server 4173
 
 Then open <http://localhost:4173>.
 
+## Pet counter
+
+The tally on `vanilla.html` is stored in `localStorage`, so it persists per browser.
+`counter/` holds an optional Cloudflare Worker that turns it into a single total
+shared by everyone; it is inert until you set `PET_API` in `js/site.js`. See
+`counter/README.md`.
+
 ## Analytics
 
 Google Analytics (GA4, measurement ID `G-PH383HH12X`) loads on every page from the

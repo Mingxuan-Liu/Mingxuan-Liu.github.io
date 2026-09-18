@@ -1,0 +1,8 @@
+name = "vanilla-counter"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+
+# Replace id with the one `wrangler kv namespace create COUNTER` prints.
+[[kv_namespaces]]
+binding = "COUNTER"
+id = "PUT_YOUR_KV_NAMESPACE_ID_HERE"

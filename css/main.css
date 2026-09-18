@@ -446,6 +446,9 @@ main { padding-bottom: 4rem; }
   margin: 0;
   display: flex;
   flex-direction: column;
+  /* when a figure is shorter than its neighbour, centre the image and caption in
+     the card rather than pinning them to the top */
+  justify-content: center;
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--rule-soft);
@@ -460,9 +463,6 @@ main { padding-bottom: 4rem; }
   background: var(--surface);
   border-top: 1px solid var(--rule-soft);
   line-height: 1.5;
-  /* grow to the height of the tallest figure in the row, so a shorter one
-     does not leave a band of page background showing under it */
-  flex: 1 1 auto;
 }
 
 .figure-placeholder {

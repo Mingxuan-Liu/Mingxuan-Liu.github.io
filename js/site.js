@@ -77,11 +77,15 @@
 
   /* ------------------------------------------------------- the husky -- */
 
-  // The big portrait on Vanilla's page wiggles when you poke it. The tally is kept in
-  // localStorage, so it carries across visits in this browser instead of restarting at
-  // zero. Every poke is also reported to Analytics, where the total across everyone who
-  // has ever visited shows up as the "pet_vanilla" event count.
+  // The big portrait on Vanilla's page wiggles when you poke it.
+  //
+  // The tally is kept in localStorage so it carries across visits in this browser
+  // instead of restarting at zero. Set PET_API to a deployed counter Worker (see
+  // counter/README.md) and the page shows a single total shared by everyone instead;
+  // if that Worker is ever unreachable it falls back to the local tally. Every poke
+  // is also reported to Analytics as a "pet_vanilla" event either way.
   var PET_KEY = 'ml-vanilla-pets';
+  var PET_API = '';                 // '' => per-browser tally only
 
   function readPets() {
     try { return parseInt(localStorage.getItem(PET_KEY), 10) || 0; } catch (e) { return 0; }
@@ -95,7 +99,35 @@
     });
   }
 
-  if (document.querySelector('[data-pet-count]')) renderPets(readPets());
+  var petLocal = readPets();        // this browser's own count, the fallback
+  var petShown = petLocal;          // what the page displays
+  var petPending = 0;               // clicks not yet sent to the Worker
+  var petTimer = null;
+
+  function flushPets() {
+    if (!PET_API || !petPending) return;
+    var by = petPending;
+    petPending = 0;
+    fetch(PET_API + '?by=' + by, { method: 'POST', keepalive: true })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d && typeof d.count === 'number') { petShown = d.count; renderPets(petShown); }
+      })
+      .catch(function () { /* offline or Worker down: the local tally still stands */ });
+  }
+
+  if (document.querySelector('[data-pet-count]')) {
+    renderPets(petShown);
+    if (PET_API) {
+      fetch(PET_API)
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (d && typeof d.count === 'number') { petShown = d.count; renderPets(petShown); }
+        })
+        .catch(function () { /* keep showing the local tally */ });
+    }
+    window.addEventListener('pagehide', flushPets);
+  }
 
   document.querySelectorAll('.vanilla-portrait').forEach(function (portrait) {
     var dog = portrait.querySelector('.vn-dog');
@@ -109,9 +141,16 @@
       void dog.offsetWidth;            // restart the animation
       dog.classList.add('is-wiggling');
 
-      var n = readPets() + 1;
-      writePets(n);
-      renderPets(n);
+      petLocal += 1;
+      writePets(petLocal);
+      petShown += 1;
+      renderPets(petShown);
+
+      if (PET_API) {
+        petPending += 1;
+        clearTimeout(petTimer);
+        petTimer = setTimeout(flushPets, 1200);   // batch, to stay inside the KV write limit
+      }
       if (typeof window.gtag === 'function') {
         window.gtag('event', 'pet_vanilla', { event_category: 'vanilla' });
       }
