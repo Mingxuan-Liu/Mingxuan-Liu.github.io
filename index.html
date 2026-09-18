@@ -1,83 +1,325 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="light">
 <head>
-	<title>Mingxuan Liu | about</title>
-	<meta charset="utf-8">
-    <link rel="stylesheet" href="./css/main.css">
-	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
-	</script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-	<link rel="icon" type="image/x-ico" href="./img/logo.ico" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mingxuan Liu | Computational Astrophysics</title>
+<meta name="description" content="Mingxuan Liu is a PhD candidate in the Department of Astronomy at the University of Michigan, working on plasma astrophysics, magnetohydrodynamics and cosmic-ray acceleration.">
+<meta name="author" content="Mingxuan Liu">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mingxuan Liu | Computational Astrophysics">
+<meta property="og:description" content="Mingxuan Liu is a PhD candidate in the Department of Astronomy at the University of Michigan, working on plasma astrophysics, magnetohydrodynamics and cosmic-ray acceleration.">
+<meta property="og:image" content="https://mingxuan-liu.github.io/img/profile_pic.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="./img/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="./img/logo.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/main.css">
+<script>
+  // Set the theme before first paint so there is no flash of the wrong colors.
+  (function () {
+    try {
+      var saved = localStorage.getItem('ml-theme');
+      var dark = saved ? saved === 'dark'
+                       : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+    } catch (e) { /* storage blocked — light theme is a fine default */ }
+  })();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mingxuan Liu",
+  "alternateName": "刘明轩",
+  "jobTitle": "PhD Candidate",
+  "url": "https://mingxuan-liu.github.io/",
+  "image": "https://mingxuan-liu.github.io/img/profile_pic.jpg",
+  "email": "mailto:mgxnliu@umich.edu",
+  "affiliation": {
+    "@type": "Organization",
+    "name": "Department of Astronomy, University of Michigan",
+    "url": "https://lsa.umich.edu/astro"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Emory University"
+  },
+  "knowsAbout": [
+    "Computational astrophysics",
+    "Plasma astrophysics",
+    "Magnetohydrodynamics",
+    "Cosmic-ray acceleration",
+    "Turbulence",
+    "Hydrodynamic instabilities"
+  ],
+  "identifier": "https://orcid.org/0009-0009-1522-9581",
+  "sameAs": [
+    "https://orcid.org/0009-0009-1522-9581",
+    "https://scholar.google.com/citations?user=96OAFQ8AAAAJ",
+    "https://github.com/Mingxuan-Liu",
+    "https://lsa.umich.edu/astro/people/graduate-students/mgxnliu.html"
+  ]
+}
+</script>
 </head>
 <body>
-    <nav>
-        <div>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="site-nav">
+  <a class="nav-brand" href="./index.html">Mingxuan Liu</a>
+
+  <div class="nav-links" id="nav-links">
+      <a href="./index.html" aria-current="page">about</a>
+      <a href="./research.html">research</a>
+      <a href="./publications.html">publications</a>
+      <a href="./teaching.html">teaching &amp; outreach</a>
+  </div>
+
+  <div class="nav-tools">
+    <span class="dog-wrap">
+      <a class="dog-link" href="./vanilla.html" aria-label="Vanilla, my husky">
+        <svg viewBox="0 0 120 112" aria-hidden="true" focusable="false">
+        <g class="vn-dog">
+            <g class="vn-ear vn-ear-l">
+              <path d="M26 42c0-14 3-30 6-35 2-4 5-1 7 4 4 9 10 17 15 21Z" fill="#4A403A"/>
+              <path d="M31 38c0-11 2-22 4-26 1.5-2.5 3 0 4.5 3.5C43 23 47 28 50 31Z" fill="#D9A9A0"/>
+            </g>
+            <g class="vn-ear vn-ear-r">
+              <path d="M94 42c0-14-3-30-6-35-2-4-5-1-7 4-4 9-10 17-15 21Z" fill="#4A403A"/>
+              <path d="M89 38c0-11-2-22-4-26-1.5-2.5-3 0-4.5 3.5C77 23 73 28 70 31Z" fill="#D9A9A0"/>
+            </g>
+        
+            <ellipse cx="60" cy="61" rx="41" ry="38" fill="#4A403A"/>
+        
+            <path d="M60 76C58 65 55 54 50 47c-5-5-12-5-17 0-6 6-8 15-7 24 1 15 14 28 34 28s33-13 34-28c1-9-1-18-7-24-5-5-12-5-17 0-5 7-8 18-10 29Z" fill="#FBF7F1"/>
+        
+            <ellipse cx="38" cy="78" rx="6.2" ry="4.4" fill="#E9A9A4" opacity=".5"/>
+            <ellipse cx="82" cy="78" rx="6.2" ry="4.4" fill="#E9A9A4" opacity=".5"/>
+        
+            <g class="vn-eyes">
+              <ellipse cx="43" cy="60" rx="9.5" ry="10" fill="#2A211C"/>
+              <ellipse cx="77" cy="60" rx="9.5" ry="10" fill="#2A211C"/>
+              <circle cx="46.3" cy="55.5" r="3.5" fill="#FFFFFF"/>
+              <circle cx="80.3" cy="55.5" r="3.5" fill="#FFFFFF"/>
+              <circle cx="39.6" cy="64.6" r="1.8" fill="#FFFFFF" opacity=".85"/>
+              <circle cx="73.6" cy="64.6" r="1.8" fill="#FFFFFF" opacity=".85"/>
+            </g>
+        
+            <path d="M60 74.5c4.6 0 7.7 2.1 7.7 4.8 0 2.9-3.4 5-7.7 5s-7.7-2.1-7.7-5c0-2.7 3.1-4.8 7.7-4.8Z" fill="#2A211C"/>
+            <path class="vn-mouth" d="M48.5 86c2.9 8.5 20.1 8.5 23 0 .5-1.2-.7-2.1-1.9-1.4-2.8 1.6-6.2 1.6-9.6-1-3.4 2.6-6.8 2.6-9.6 1-1.2-.7-2.4.2-1.9 1.4Z" fill="#2A211C"/>
+            <path class="vn-tongue" d="M53.5 89.5c0-2 13-2 13 0 0 7.5-2.9 11.5-6.5 11.5s-6.5-4-6.5-11.5Z" fill="#E4919B"/>
+          </g>
+      </svg>
+      </a>
+    </span>
+
+    <button class="icon-btn theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/>
+      </svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M20.5 14.3A8.6 8.6 0 0 1 9.7 3.5a8.6 8.6 0 1 0 10.8 10.8Z"/>
+      </svg>
+    </button>
+
+    <button class="icon-btn nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+<main id="main">
+
+  <section class="wrap section hero">
+    <div class="hero-grid">
+
+      <div class="portrait-card">
+        <img class="portrait" src="./img/profile_pic.jpg" width="232" height="232"
+             alt="Portrait of Mingxuan Liu">
+        <p class="portrait-focus">Computational&nbsp;Astrophysics<br>Plasma&nbsp;&amp;&nbsp;Fluid&nbsp;Dynamics</p>
+        <p class="portrait-meta">
+          Department of Astronomy<br>
+          University of Michigan<br>
+          <a href="mailto:mgxnliu@umich.edu">mgxnliu@umich.edu</a>
+        </p>
+        <div class="link-row">
+          <a class="link-chip" href="https://scholar.google.com/citations?user=96OAFQ8AAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+          <a class="link-chip" href="./publications.html">Publications</a>
+          <a class="link-chip" href="https://orcid.org/0009-0009-1522-9581" target="_blank" rel="noopener">ORCID</a>
+          <a class="link-chip" href="https://github.com/Mingxuan-Liu" target="_blank" rel="noopener">GitHub</a>
         </div>
-        <div>
-            <a href="#about">about</a>
-            <a href="#research">research</a>
-            <!-- <a href="./others.html">others</a> -->
+      </div>
+
+      <div class="hero-text">
+        <h1 class="hero-name">Mingxuan Liu <span class="hero-han">刘明轩</span></h1>
+        <p class="hero-role">PhD Candidate · Department of Astronomy · University of Michigan</p>
+
+        <div class="prose hero-intro">
+          <p>
+            I am a third-year PhD candidate in the
+            <a href="https://lsa.umich.edu/astro" target="_blank" rel="noopener">Department of Astronomy</a> at the
+            <a href="https://umich.edu/" target="_blank" rel="noopener">University of Michigan</a>, working with
+            <a href="https://lsa.umich.edu/astro/people/core-faculty/mateuszr.html" target="_blank" rel="noopener">Mateusz Ruszkowski</a>.
+            I work on plasma astrophysics: how turbulence, magnetic fields and cosmic rays move
+            energy around in galaxies and galaxy clusters, and what that does to the gas.
+          </p>
+          <p>
+            Almost all of it is simulation. One strand is particle acceleration in turbulence driven
+            by sheared flow, which came out in <em>ApJ</em> this year. A second, still in progress, is
+            turbulence in multiphase gas; I will say more about that once it is written up. The third
+            is cosmic-ray transport, which I am starting now: measuring the scattering rate that sets
+            how strongly cosmic rays couple to gas, rather than assuming it the way feedback models
+            currently have to.
+          </p>
+          <p>
+            Before Michigan I was an undergraduate at
+            <a href="https://physics.emory.edu/" target="_blank" rel="noopener">Emory University</a>, working with
+            <a href="https://epsilondeltalabs.org/hicks.html" target="_blank" rel="noopener">Elizabeth P. Hicks</a>
+            on Rayleigh&ndash;Taylor unstable flames. As a first-year there I also translated Janna
+            Levin&rsquo;s <em>Black Hole Survival Guide</em> into Chinese; it was published in 2022 and
+            is rated 8.6 on <a href="https://book.douban.com/subject/35932693/" target="_blank" rel="noopener">Douban</a>.
+            I teach introductory astronomy at Michigan, and I have a husky named
+            <a href="./vanilla.html">Vanilla</a>.
+          </p>
         </div>
 
-    </nav>
+        <p class="interests">
+          Plasma astrophysics, magnetohydrodynamics, cosmic-ray acceleration and transport,
+          turbulence, multiphase gas, hydrodynamic instabilities, numerical methods and HPC.
+        </p>
 
-    <section id="index_body">
-        <section id="about" class="content_section">
-            <section class="about_left">
-                <img src="./img/profile_pic.jpg" class="profile_pic">
-                <section class="contacts">
-                    <section class="focus">
-                        Computational Astrophysics / Astrophysical Fluid Dynamics 
-                    </section>
-                    
-                    <section class="contacts_text">
-                        mgxnliu at umich dot edu 
-                    </section>
-
-                    <section class="contacts_links">
-                        <span>[<a href="https://github.com/Mingxuan-Liu" target="_blank">github</a>]</span>
-                        <span>[<a href="" target="_blank">google scholar</a>]</span>
-                        <span>[<a href="https://twitter.com/mmxxliu" target="_blank">twitter</a>]</span>
-                    </section>
-                </section>
-            </section>
-            <section class="about_right">
-                <p id="name">Mingxuan Liu <span id="pronoun"></span></p>
-                <p id="intro">
-                    I am a first-year PhD student at <a href="https://umich.edu/" target="_blank">University of Michigan</a> in the <a href="https://lsa.umich.edu/astro" target="_blank">Department of Astronomy</a>, advised by <a href="https://lsa.umich.edu/astro/people/core-faculty/mateuszr.html" target="_blank">Mateusz Ruszkowski</a>. 
-                    Previously, I was an undergraduate student at <a href="https://physics.emory.edu/home/index.html  " target="_blank">Emory University</a>, advised by Dr. <a href="https://www.jcburtonlab.com/" target="_blank">Justin Burton</a>, Dr. <a href="http://epsilondeltalabs.org/hicks.html" target="_blank">Elizabeth Hicks</a>, and Dr. <a href="https://physics.emory.edu/home/people/bios/bans-alissa.html" target="_blank">Alissa Bans</a>.
-                    My research interest lies in computational astrophysics. Specifically, I am interested in astrophysical fluid dynamics and magnetohydrodynamics.
-                </p>
-                <section class="news">
-                    <p class="news_title">News</p>
-                    <section class="news_list">
-                        <p><span>November 2023</span> I gave an oral presentation at the 2023 APS Division of Fluid Dynamics Meeting.</p>
-                        <p><span>October 2023</span> Our <a href="https://arxiv.org/abs/2309.15046" target="_blank">Rayleigh-Taylor Unstable Flame paper</a> is online on ArXiv!</p>
-                    </section>
-                </section>
-            </section>
+        <section class="news" aria-labelledby="news-title">
+          <div class="news-head">
+            <h2 class="news-title" id="news-title">News</h2>
+            <button class="text-btn" type="button" data-news-toggle hidden aria-expanded="false">show all news</button>
+          </div>
+          <div class="news-list">
+          <div class="news-item">
+            <span class="news-date">Sep 2026</span>
+            <div class="news-body">Our paper <a href="https://arxiv.org/abs/2512.12720" target="_blank" rel="noopener"><em>Particle Acceleration in Magnetized Shear-Driven Turbulence</em></a> was accepted by <em>The Astrophysical Journal</em>.</div>
+          </div>
+          <div class="news-item">
+            <span class="news-date">May 2026</span>
+            <div class="news-body">Passed my candidacy exam and advanced to PhD candidacy. M.S. in Astronomy awarded en route.</div>
+          </div>
+          <div class="news-item">
+            <span class="news-date">Dec 2025</span>
+            <div class="news-body">First paper of my PhD is on arXiv: <a href="https://arxiv.org/abs/2512.12720" target="_blank" rel="noopener">arXiv:2512.12720</a>.</div>
+          </div>
+          <div class="news-item">
+            <span class="news-date">Jul 2025</span>
+            <div class="news-body">Presented a poster on shear-driven particle acceleration at the <strong>Midwest Magnetic Fields Workshop 2025</strong>, University of Wisconsin&ndash;Madison (July 9&ndash;11).</div>
+          </div>
+          <div class="news-item">
+            <span class="news-date">Nov 2024</span>
+            <div class="news-body"><a href="https://doi.org/10.1103/PhysRevFluids.9.113203" target="_blank" rel="noopener"><em>Rayleigh&ndash;Taylor unstable flames: The effect of two-mode coupling</em></a> published in <em>Physical Review Fluids</em>.</div>
+          </div>
+          <div class="news-item">
+            <span class="news-date">Nov 2023</span>
+            <div class="news-body">Contributed talk at the 76th Annual Meeting of the <a href="https://meetings-archive.aps.org/dfd/2023/zc40/5" target="_blank" rel="noopener">APS Division of Fluid Dynamics</a>, Washington D.C.</div>
+          </div>
+          <div class="news-item">
+            <span class="news-date">Jun 2022</span>
+            <div class="news-body">My Chinese translation of Janna Levin&rsquo;s <em>Black Hole Survival Guide</em>, <a href="./teaching.html#book">《黑洞旅行指南》</a>, was published by 湖南文艺出版社.</div>
+          </div>
+          </div>
         </section>
+      </div>
 
-        <section class="content_section" id="research">
-            <p class="content_title">Publication</p>
-            <section class="pub">
-                <img src="./img/pubs/flames.png">
-                <section class="pub_detail">
-                    <p class="pub_title">Rayleigh-Taylor Unstable Flames: the Coupled Effect of Multiple Perturbations</p>
-                    <p class="pub_author"><b>Mingxuan Liu</b>, Elizabeth P. Hicks</p>
-                    <p>Physical Review Fluids (under review)</p>
-                    <section>
-                        <span>[<a href="https://arxiv.org/abs/2309.15046" target="_blank">arxiv</a>]</span>
-                    </section>
-                </section>
-            </section>
-        </section>
+    </div>
+  </section>
 
-        <section class="footer">
-            <p>© 2024 Yijun Liu & Mingxuan Liu</p>
-        </section>
-    </section>
+  <section class="wrap section">
+    <div class="section-head">
+      <h2 class="section-title">What I work on</h2>
+      <p class="section-lede">
+        These all come back to the same thing: how ordered flow in a fluid or plasma breaks
+        down, and where the energy ends up.
+      </p>
+    </div>
+
+    <ul class="dir-list">
+      <li class="dir">
+        <span class="dir-mark" aria-hidden="true">
+          <svg class="dir-symbol" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" role="presentation">
+            <path d="M4 32h56" opacity=".45"/>
+            <ellipse cx="15" cy="32" rx="5.6" ry="11"/>
+            <ellipse cx="27" cy="32" rx="5.6" ry="11"/>
+            <ellipse cx="39" cy="32" rx="5.6" ry="11"/>
+            <ellipse cx="51" cy="32" rx="5.6" ry="11"/>
+            <circle cx="56.6" cy="32" r="3" fill="currentColor" stroke="none"/>
+          </svg>
+        </span>
+        <div>
+          <h3><a href="./research.html#cosmic-rays">Cosmic-ray transport and feedback</a></h3>
+          <p>Measuring the scattering rate that sets how far cosmic rays travel and how hard they push on gas, instead of putting it in by hand.</p>
+        </div>
+      </li>
+      <li class="dir">
+        <span class="dir-mark" aria-hidden="true">
+          <svg class="dir-symbol" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" role="presentation">
+            <circle cx="32" cy="32" r="25" opacity=".4" stroke-dasharray="3.5 4.5"/>
+            <circle cx="24" cy="26" r="7" fill="currentColor" stroke="none"/>
+            <circle cx="40" cy="38" r="5" fill="currentColor" stroke="none"/>
+            <circle cx="38" cy="22" r="2.8" fill="currentColor" stroke="none"/>
+            <circle cx="23" cy="42" r="3.4" fill="currentColor" stroke="none"/>
+          </svg>
+        </span>
+        <div>
+          <h3><a href="./research.html#multiphase">Turbulence in multiphase gas</a></h3>
+          <p>What happens to turbulent energy in a medium where hot and cold gas sit side by side. In progress.</p>
+        </div>
+      </li>
+      <li class="dir">
+        <span class="dir-mark" aria-hidden="true">
+          <svg class="dir-symbol" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" role="presentation">
+            <path d="M16 11h26"/>
+            <path d="M37 6.5 43.5 11 37 15.5"/>
+            <path d="M48 53H22"/>
+            <path d="M27 48.5 20.5 53l6.5 4.5"/>
+            <path d="M30.6 31.6Q30.6 31.7 30.5 31.9Q30.5 32.1 30.5 32.2Q30.5 32.4 30.5 32.6Q30.6 32.8 30.6 33.0Q30.7 33.2 30.8 33.3Q31.0 33.5 31.1 33.6Q31.3 33.7 31.5 33.9Q31.7 33.9 32.0 34.0Q32.2 34.0 32.4 34.0Q32.7 34.0 32.9 34.0Q33.2 33.9 33.4 33.8Q33.7 33.6 33.9 33.5Q34.1 33.3 34.3 33.0Q34.4 32.8 34.5 32.5Q34.6 32.2 34.7 31.9Q34.7 31.6 34.7 31.3Q34.7 30.9 34.6 30.6Q34.5 30.3 34.3 29.9Q34.1 29.6 33.8 29.4Q33.5 29.1 33.2 28.9Q32.9 28.7 32.5 28.5Q32.1 28.4 31.7 28.4Q31.2 28.3 30.8 28.4Q30.3 28.5 29.9 28.6Q29.5 28.8 29.0 29.1Q28.6 29.4 28.3 29.7Q28.0 30.1 27.7 30.6Q27.5 31.1 27.3 31.6Q27.2 32.2 27.1 32.7Q27.1 33.3 27.2 33.9Q27.4 34.5 27.6 35.1Q27.9 35.7 28.3 36.2Q28.7 36.7 29.2 37.2Q29.8 37.6 30.4 37.9Q31.1 38.2 31.9 38.4Q32.6 38.5 33.4 38.5Q34.2 38.5 35.0 38.3Q35.8 38.0 36.6 37.7Q37.3 37.2 38.0 36.7Q38.6 36.0 39.2 35.3Q39.7 34.5 40.1 33.6Q40.4 32.7 40.7 31.7Q40.7 30.7 40.7 29.6Q40.6 28.5 40.3 27.5Q39.9 26.4 39.3 25.4Q38.6 24.4 37.8 23.5Q36.9 22.7 35.9 22.0Q34.8 21.4 33.6 20.9Q32.3 20.5 30.9 20.3Q29.5 20.3 28.1 20.4Q26.6 20.7 25.2 21.2Q23.8 21.8 22.5 22.6Q21.3 23.6 20.1 24.8Q19.1 26.1 18.2 27.5Q17.4 29.1 16.9 30.8"/>
+          </svg>
+        </span>
+        <div>
+          <h3><a href="./research.html#shear">Particle acceleration in shear-driven turbulence</a></h3>
+          <p>MHD particle-in-cell simulations of a Kelvin&ndash;Helmholtz layer, following the particles the turbulence energizes. Accepted by <em>ApJ</em>, 2026.</p>
+        </div>
+      </li>
+      <li class="dir">
+        <span class="dir-mark" aria-hidden="true">
+          <svg class="dir-symbol" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" role="presentation">
+            <path d="M5 33h54" opacity=".35"/>
+            <path d="M14 33a9 10 0 0 1 18 0"/>
+            <path d="M37 33a11 12.5 0 0 1 22 0"/>
+            <path d="M32 33c0 8 2.2 13 3.2 17 1.1-4 2.8-9 2.8-17"/>
+            <path d="M8 33c0 6.5 1.8 11 2.8 14.5 1.1-3.5 2.6-8 2.6-14.5"/>
+          </svg>
+        </span>
+        <div>
+          <h3><a href="./research.html#flames">Rayleigh&ndash;Taylor unstable flames</a></h3>
+          <p>Two perturbation modes on a model flame front. Which of five growth behaviors you get depends on GCD(<em>k</em><sub>1</sub>,&nbsp;<em>k</em><sub>2</sub>). Undergraduate work.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>© <span data-year>2026</span> Mingxuan Liu · Ann Arbor, Michigan</p>
+    <p class="footer-links">
+      <a href="mailto:mgxnliu@umich.edu">mgxnliu@umich.edu</a>
+      <a href="https://scholar.google.com/citations?user=96OAFQ8AAAAJ" target="_blank" rel="noopener">Google&nbsp;Scholar</a>
+      <a href="https://orcid.org/0009-0009-1522-9581" target="_blank" rel="noopener">ORCID</a>
+      <a href="https://github.com/Mingxuan-Liu" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://lsa.umich.edu/astro/people/graduate-students/mgxnliu.html" target="_blank" rel="noopener">U-M&nbsp;Astronomy</a>
+    </p>
+  </div>
+</footer>
+
+<script src="./js/site.js"></script>
 </body>
 </html>

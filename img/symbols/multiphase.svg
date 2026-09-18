@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Cold clumps inside a hot volume">
+  <circle cx="32" cy="32" r="25" opacity=".4" stroke-dasharray="3.5 4.5"/>
+  <circle cx="24" cy="26" r="7" fill="currentColor" stroke="none"/>
+  <circle cx="40" cy="38" r="5" fill="currentColor" stroke="none"/>
+  <circle cx="38" cy="22" r="2.8" fill="currentColor" stroke="none"/>
+  <circle cx="23" cy="42" r="3.4" fill="currentColor" stroke="none"/>
+</svg>

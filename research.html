@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research | Mingxuan Liu</title>
+<meta name="description" content="Simulations of particle acceleration in magnetized shear-driven turbulence and of Rayleigh-Taylor unstable flames.">
+<meta name="author" content="Mingxuan Liu">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Research | Mingxuan Liu">
+<meta property="og:description" content="Simulations of particle acceleration in magnetized shear-driven turbulence and of Rayleigh-Taylor unstable flames.">
+<meta property="og:image" content="https://mingxuan-liu.github.io/img/profile_pic.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="./img/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="./img/logo.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/main.css">
+<script>
+  // Set the theme before first paint so there is no flash of the wrong colors.
+  (function () {
+    try {
+      var saved = localStorage.getItem('ml-theme');
+      var dark = saved ? saved === 'dark'
+                       : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+    } catch (e) { /* storage blocked — light theme is a fine default */ }
+  })();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="site-nav">
+  <a class="nav-brand" href="./index.html">Mingxuan Liu</a>
+
+  <div class="nav-links" id="nav-links">
+      <a href="./index.html">about</a>
+      <a href="./research.html" aria-current="page">research</a>
+      <a href="./publications.html">publications</a>
+      <a href="./teaching.html">teaching &amp; outreach</a>
+  </div>
+
+  <div class="nav-tools">
+    <span class="dog-wrap">
+      <a class="dog-link" href="./vanilla.html" aria-label="Vanilla, my husky">
+        <svg viewBox="0 0 120 112" aria-hidden="true" focusable="false">
+        <g class="vn-dog">
+            <g class="vn-ear vn-ear-l">
+              <path d="M26 42c0-14 3-30 6-35 2-4 5-1 7 4 4 9 10 17 15 21Z" fill="#4A403A"/>
+              <path d="M31 38c0-11 2-22 4-26 1.5-2.5 3 0 4.5 3.5C43 23 47 28 50 31Z" fill="#D9A9A0"/>
+            </g>
+            <g class="vn-ear vn-ear-r">
+              <path d="M94 42c0-14-3-30-6-35-2-4-5-1-7 4-4 9-10 17-15 21Z" fill="#4A403A"/>
+              <path d="M89 38c0-11-2-22-4-26-1.5-2.5-3 0-4.5 3.5C77 23 73 28 70 31Z" fill="#D9A9A0"/>
+            </g>
+        
+            <ellipse cx="60" cy="61" rx="41" ry="38" fill="#4A403A"/>
+        
+            <path d="M60 76C58 65 55 54 50 47c-5-5-12-5-17 0-6 6-8 15-7 24 1 15 14 28 34 28s33-13 34-28c1-9-1-18-7-24-5-5-12-5-17 0-5 7-8 18-10 29Z" fill="#FBF7F1"/>
+        
+            <ellipse cx="38" cy="78" rx="6.2" ry="4.4" fill="#E9A9A4" opacity=".5"/>
+            <ellipse cx="82" cy="78" rx="6.2" ry="4.4" fill="#E9A9A4" opacity=".5"/>
+        
+            <g class="vn-eyes">
+              <ellipse cx="43" cy="60" rx="9.5" ry="10" fill="#2A211C"/>
+              <ellipse cx="77" cy="60" rx="9.5" ry="10" fill="#2A211C"/>
+              <circle cx="46.3" cy="55.5" r="3.5" fill="#FFFFFF"/>
+              <circle cx="80.3" cy="55.5" r="3.5" fill="#FFFFFF"/>
+              <circle cx="39.6" cy="64.6" r="1.8" fill="#FFFFFF" opacity=".85"/>
+              <circle cx="73.6" cy="64.6" r="1.8" fill="#FFFFFF" opacity=".85"/>
+            </g>
+        
+            <path d="M60 74.5c4.6 0 7.7 2.1 7.7 4.8 0 2.9-3.4 5-7.7 5s-7.7-2.1-7.7-5c0-2.7 3.1-4.8 7.7-4.8Z" fill="#2A211C"/>
+            <path class="vn-mouth" d="M48.5 86c2.9 8.5 20.1 8.5 23 0 .5-1.2-.7-2.1-1.9-1.4-2.8 1.6-6.2 1.6-9.6-1-3.4 2.6-6.8 2.6-9.6 1-1.2-.7-2.4.2-1.9 1.4Z" fill="#2A211C"/>
+            <path class="vn-tongue" d="M53.5 89.5c0-2 13-2 13 0 0 7.5-2.9 11.5-6.5 11.5s-6.5-4-6.5-11.5Z" fill="#E4919B"/>
+          </g>
+      </svg>
+      </a>
+    </span>
+
+    <button class="icon-btn theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/>
+      </svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M20.5 14.3A8.6 8.6 0 0 1 9.7 3.5a8.6 8.6 0 1 0 10.8 10.8Z"/>
+      </svg>
+    </button>
+
+    <button class="icon-btn nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+<main id="main">
+
+  <section class="wrap section">
+    <div class="section-head">
+      <h1 class="section-title">Research</h1>
+      <p class="section-lede">
+      I run simulations of turbulent, magnetized plasmas: how the turbulence is driven, where
+        its energy ends up, and what it does to the cosmic rays and the cold gas embedded in it.
+        Two of these projects are published, two are underway.
+      </p>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="projects">
+
+      <!-- ------------------------------------------------ project 1 -->
+      <article class="project" id="cosmic-rays">
+        <div class="project-media">
+          <div class="symbol-panel" role="img" aria-label="A particle spiralling along a magnetic field line">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M4 32h56" opacity=".45"/>
+              <ellipse cx="15" cy="32" rx="5.6" ry="11"/>
+              <ellipse cx="27" cy="32" rx="5.6" ry="11"/>
+              <ellipse cx="39" cy="32" rx="5.6" ry="11"/>
+              <ellipse cx="51" cy="32" rx="5.6" ry="11"/>
+              <circle cx="56.6" cy="32" r="3" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="project-text prose">
+          <p class="project-number"><span class="project-mark">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M4 32h56" opacity=".45"/>
+              <ellipse cx="15" cy="32" rx="5.6" ry="11"/>
+              <ellipse cx="27" cy="32" rx="5.6" ry="11"/>
+              <ellipse cx="39" cy="32" rx="5.6" ry="11"/>
+              <ellipse cx="51" cy="32" rx="5.6" ry="11"/>
+              <circle cx="56.6" cy="32" r="3" fill="currentColor" stroke="none"/>
+            </svg>
+            </span>Starting now</p>
+          <h2 class="project-title">Cosmic-ray transport and feedback</h2>
+
+          <p>
+            Cosmic rays carry a large share of the energy that supernovae and AGN put back into a
+            galaxy. They cool slowly and stay tied to magnetized gas, so they can move energy far
+            from where they were accelerated, drive winds, and suppress star formation. How much
+            they actually do depends on one microphysical number: how often they scatter off
+            magnetic fluctuations. That number sets how fast they travel relative to the gas and
+            how hard they push on it.
+          </p>
+          <p>
+            At the moment galaxy-scale models put that number in by hand. I want to compute it
+            instead, at the two ends of the range that bracket the bulk of the Galactic cosmic-ray
+            population: close to a source, where the cosmic rays are dense enough to amplify their
+            own scattering field, and far from one, in cold partially ionized gas, where collisions
+            between ions and neutrals damp the waves that would normally do the scattering and
+            whatever deflection survives has to come from the geometry of the field itself.
+          </p>
+          <p>
+            Both cases use the same tool and the same diagnostic: MHD particle-in-cell simulations
+            in Athena++, with the parallel diffusion coefficient measured directly from the
+            particles, so the two regimes are measured on the same footing.
+          </p>
+        </div>
+      </article>
+
+      <article class="project is-flipped" id="multiphase">
+        <div class="project-media">
+          <div class="symbol-panel" role="img" aria-label="Cold clumps inside a hot volume">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <circle cx="32" cy="32" r="25" opacity=".4" stroke-dasharray="3.5 4.5"/>
+              <circle cx="24" cy="26" r="7" fill="currentColor" stroke="none"/>
+              <circle cx="40" cy="38" r="5" fill="currentColor" stroke="none"/>
+              <circle cx="38" cy="22" r="2.8" fill="currentColor" stroke="none"/>
+              <circle cx="23" cy="42" r="3.4" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="project-text prose">
+          <p class="project-number"><span class="project-mark">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <circle cx="32" cy="32" r="25" opacity=".4" stroke-dasharray="3.5 4.5"/>
+              <circle cx="24" cy="26" r="7" fill="currentColor" stroke="none"/>
+              <circle cx="40" cy="38" r="5" fill="currentColor" stroke="none"/>
+              <circle cx="38" cy="22" r="2.8" fill="currentColor" stroke="none"/>
+              <circle cx="23" cy="42" r="3.4" fill="currentColor" stroke="none"/>
+            </svg>
+            </span>In progress</p>
+          <h2 class="project-title">Turbulence in multiphase gas</h2>
+
+          <p>
+            Hot and cold gas coexist almost everywhere it matters: in cluster cores, in the
+            circumgalactic medium, in the interstellar medium. The cold phase is much denser, much
+            colder, and radiates away far more energy than you would naively expect it to receive,
+            which means something has to keep supplying it. Turbulence is the obvious candidate,
+            but the path from large-scale stirring to heat in a thin cold filament runs through
+            physics that ideal simulations cannot resolve.
+          </p>
+          <p>
+            I am running simulations of driven turbulence in a radiatively cooling, thermally
+            unstable plasma to follow that path with the dissipation treated explicitly rather than
+            left to the grid. The work is still in progress, so I will leave the details until
+            there is a paper to point at.
+          </p>
+        </div>
+      </article>
+
+      <article class="project" id="shear">
+        <div class="project-media">
+          <figure class="figure">
+            <img src="./img/research/shear-turbulence.jpg" width="1200" height="1391" loading="lazy"
+                 alt="Three side-by-side simulation maps of a shear layer in its turbulent steady state,
+                      showing gas density, velocity magnitude and magnetic field strength.">
+            <figcaption>
+              A shear-driven turbulent layer in its statistically steady state: density (left),
+              velocity (middle) and magnetic field strength (right). The field is stretched and folded
+              into thin, bright filaments wherever the flow is most strongly sheared.
+              <span class="figure-credit">From Liu et&nbsp;al., ApJ (accepted), Fig.&nbsp;18.</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="project-text prose">
+          <p class="project-number"><span class="project-mark">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M16 11h26"/>
+              <path d="M37 6.5 43.5 11 37 15.5"/>
+              <path d="M48 53H22"/>
+              <path d="M27 48.5 20.5 53l6.5 4.5"/>
+              <path d="M30.6 31.6Q30.6 31.7 30.5 31.9Q30.5 32.1 30.5 32.2Q30.5 32.4 30.5 32.6Q30.6 32.8 30.6 33.0Q30.7 33.2 30.8 33.3Q31.0 33.5 31.1 33.6Q31.3 33.7 31.5 33.9Q31.7 33.9 32.0 34.0Q32.2 34.0 32.4 34.0Q32.7 34.0 32.9 34.0Q33.2 33.9 33.4 33.8Q33.7 33.6 33.9 33.5Q34.1 33.3 34.3 33.0Q34.4 32.8 34.5 32.5Q34.6 32.2 34.7 31.9Q34.7 31.6 34.7 31.3Q34.7 30.9 34.6 30.6Q34.5 30.3 34.3 29.9Q34.1 29.6 33.8 29.4Q33.5 29.1 33.2 28.9Q32.9 28.7 32.5 28.5Q32.1 28.4 31.7 28.4Q31.2 28.3 30.8 28.4Q30.3 28.5 29.9 28.6Q29.5 28.8 29.0 29.1Q28.6 29.4 28.3 29.7Q28.0 30.1 27.7 30.6Q27.5 31.1 27.3 31.6Q27.2 32.2 27.1 32.7Q27.1 33.3 27.2 33.9Q27.4 34.5 27.6 35.1Q27.9 35.7 28.3 36.2Q28.7 36.7 29.2 37.2Q29.8 37.6 30.4 37.9Q31.1 38.2 31.9 38.4Q32.6 38.5 33.4 38.5Q34.2 38.5 35.0 38.3Q35.8 38.0 36.6 37.7Q37.3 37.2 38.0 36.7Q38.6 36.0 39.2 35.3Q39.7 34.5 40.1 33.6Q40.4 32.7 40.7 31.7Q40.7 30.7 40.7 29.6Q40.6 28.5 40.3 27.5Q39.9 26.4 39.3 25.4Q38.6 24.4 37.8 23.5Q36.9 22.7 35.9 22.0Q34.8 21.4 33.6 20.9Q32.3 20.5 30.9 20.3Q29.5 20.3 28.1 20.4Q26.6 20.7 25.2 21.2Q23.8 21.8 22.5 22.6Q21.3 23.6 20.1 24.8Q19.1 26.1 18.2 27.5Q17.4 29.1 16.9 30.8"/>
+            </svg>
+            </span>Published work</p>
+          <h2 class="project-title">Particle acceleration in magnetized shear-driven turbulence</h2>
+
+          <p>
+            Wherever one parcel of plasma slides past another, the interface between them is
+            unstable. The Kelvin&ndash;Helmholtz instability curls it into vortices, those break down
+            into turbulence, and the turbulence drags the magnetic field into a tangle. This happens
+            at the edge of a jet, along gas stripped from an infalling galaxy, at the boundary of a
+            wind. What I wanted to know is what the tangle does to the charged particles threading
+            through it.
+          </p>
+
+          <p>
+            We simulated particle acceleration in sustained, subsonic, non-relativistic magnetized
+            turbulence driven purely by velocity shear, with the particles allowed to push back on
+            the fluid. Whether the turbulence is being fed turns out to matter a great deal. Keep
+            stirring and the particles go on gaining energy indefinitely. Stop, and the turbulence
+            drains its own reservoirs within a few eddy turnover times, and acceleration stops
+            with it.
+          </p>
+
+          <p>
+            The mechanism is really just geometry. A turbulent electric field distorts a
+            particle&rsquo;s gyro-orbit. On the half-cycle where the force accelerates it, the
+            particle travels further along that force and gains more; on the half-cycle where the
+            force decelerates it, the path is shorter and it loses less. Averaged over many random
+            kicks the asymmetry leaves a net gain, and that gain scales with the square of the shear
+            velocity, which is what second-order Fermi acceleration looks like.
+          </p>
+
+          <div class="callout">
+            An initially monoenergetic population grows a substantial non-thermal tail. Particles
+            that repeatedly cross the shear layers gain energy by what is essentially geometric
+            Brownian motion, which gives a log-normal momentum distribution. Once their gyroradii
+            outgrow the turbulent layer they turn preferentially perpendicular to the background
+            field.
+          </div>
+
+          <p class="project-meta">
+            2D MHD particle-in-cell simulations using the MHD-PIC module
+            (<a href="https://doi.org/10.1093/mnras/stad1548" target="_blank" rel="noopener">Sun&nbsp;&amp;&nbsp;Bai&nbsp;2023</a>)
+            of <a href="https://www.athena-astro.app/" target="_blank" rel="noopener">Athena++</a>.
+          </p>
+
+          <div class="ref-links">
+            <a class="ref-link" href="https://arxiv.org/abs/2512.12720" target="_blank" rel="noopener">arXiv:2512.12720</a>
+            <a class="ref-link" href="https://arxiv.org/pdf/2512.12720" target="_blank" rel="noopener">PDF</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ------------------------------------------------ figure pair -->
+      <section class="figure-pair" aria-label="Additional figures from the shear turbulence project">
+        <figure class="figure">
+          <img src="./img/research/shear-spectrum.png" width="1200" height="954" loading="lazy"
+               alt="Particle momentum distribution at successive times, showing an initially sharp
+                    peak developing an extended high-energy tail.">
+          <figcaption>
+            The particle momentum distribution, color-coded by time. The initially monoenergetic
+            spike flattens into a broad non-thermal tail whose high-energy cutoff keeps advancing
+            for as long as the turbulence is driven.
+          </figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="./img/research/shear-power-spectrum.png" width="1100" height="950" loading="lazy"
+               alt="Kinetic and magnetic energy power spectra of the turbulence versus wavenumber,
+                    with a k to the minus two reference slope.">
+          <figcaption>
+            Kinetic and magnetic energy spectra of the steady-state turbulence. The inertial range
+            follows a <em>k</em><sup>&minus;2</sup> slope, and magnetic energy overtakes kinetic
+            energy at small scales.
+          </figcaption>
+        </figure>
+      </section>
+
+      <figure class="figure figure-wide">
+        <img src="./img/research/shear-random-walk.png" width="1150" height="819" loading="lazy"
+             alt="Top: the running sum of a particle's energy changes over 600 shear-layer crossings,
+                  climbing unevenly from 0 to about 7. Bottom: the individual per-crossing changes,
+                  with gains in red and losses in black, of comparable size.">
+        <figcaption>
+          One particle's energy, crossing by crossing. The bottom panel shows the gain or loss at each
+          crossing of a shear layer: the red gains and black losses look almost symmetric. The top panel
+          is their running total. The gains are very slightly larger on average, and 600 crossings later
+          that small bias has compounded into a factor of several in energy.
+          <span class="figure-credit">From Liu et&nbsp;al., ApJ (accepted).</span>
+        </figcaption>
+      </figure>
+
+      <figure class="figure figure-wide">
+        <img src="./img/research/shear-gbm.png" width="1250" height="622" loading="lazy"
+             alt="Hundreds of particle momentum trajectories fanning out from a common starting value,
+                  colored blue to red by final momentum, with the resulting log-normal distribution
+                  plotted at the right.">
+        <figcaption>
+          The same process for every particle that crosses the layers repeatedly. All of them start at
+          the same momentum and fan out into the spread on the right, which is log-normal, the
+          distribution you get from multiplying many small random factors together. The dashed lines are
+          the measured and predicted means.
+          <span class="figure-credit">From Liu et&nbsp;al., ApJ (accepted), Fig.&nbsp;13.</span>
+        </figcaption>
+      </figure>
+
+      <!-- ------------------------------------------------ project 2 -->
+      <article class="project" id="flames">
+        <div class="project-media">
+          <figure class="figure">
+            <img src="./img/research/flames-chaotic.png" width="1020" height="585" loading="lazy"
+                 alt="Simulation snapshot of a Rayleigh-Taylor unstable flame front, with burnt fluid
+                      in red rising into unburnt fluid in blue as large mushroom-shaped bubbles.">
+            <figcaption>
+              A Rayleigh&ndash;Taylor unstable flame deep in the chaotic burning regime. Burnt fluid
+              (red) rises into unburnt fluid (blue) as bubbles that merge and grow without bound.
+              <span class="figure-credit">From Liu &amp; Hicks, Phys. Rev. Fluids <b>9</b>, 113203 (2024), Fig.&nbsp;6.</span>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="project-text prose">
+          <p class="project-number"><span class="project-mark">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M5 33h54" opacity=".35"/>
+              <path d="M14 33a9 10 0 0 1 18 0"/>
+              <path d="M37 33a11 12.5 0 0 1 22 0"/>
+              <path d="M32 33c0 8 2.2 13 3.2 17 1.1-4 2.8-9 2.8-17"/>
+              <path d="M8 33c0 6.5 1.8 11 2.8 14.5 1.1-3.5 2.6-8 2.6-14.5"/>
+            </svg>
+            </span>Undergraduate work</p>
+          <h2 class="project-title">Rayleigh&ndash;Taylor unstable flames and the inverse cascade</h2>
+
+          <p>
+            Put a light fluid underneath a heavy one and the interface between them goes unstable:
+            bubbles rise, spikes fall, and small wrinkles merge into larger ones. That merging, an
+            inverse cascade in wavenumber, is what makes the classical Rayleigh&ndash;Taylor mixing
+            layer forget its initial conditions and settle into self-similar growth. We wanted to
+            know whether a burning interface forgets in the same way.
+          </p>
+
+          <p>
+            It does not, or at least not straightforwardly. A reacting front can stabilize itself:
+            perturb a model flame with a single mode and it stops growing, locking into a steady
+            traveling wave that can persist almost indefinitely. We perturbed it with two instead, a
+            large-amplitude primary mode <em>k</em><sub>1</sub> and a smaller secondary mode
+            <em>k</em><sub>2</sub>, and looked at what it takes to break that stalemate.
+          </p>
+
+          <p>
+            Early on the two modes ignore each other and the flame propagates as a metastable
+            traveling wave. Once the secondary mode has grown large enough they couple, the traveling
+            wave is destabilized, and the bubbles take off. What the coupling produces is a
+            long-wavelength mode whose wavenumber is the greatest common divisor of the two you
+            started with.
+          </p>
+
+          <div class="callout">
+            We found five distinct flame-growth solution types, selected by
+            GCD(<em>k</em><sub>1</sub>,&nbsp;<em>k</em><sub>2</sub>). Depending on that one number the
+            flame may stall, develop coherent pulsations, settle back into a metastable traveling
+            wave, or run away into chaotic burning. The same two-mode dynamics show up in ablative and
+            classical Rayleigh&ndash;Taylor, which suggests all three share a mode-coupling mechanism.
+          </div>
+
+          <p class="project-meta">
+            Direct numerical simulations of a 2D Boussinesq premixed model flame with
+            <a href="https://nek5000.mcs.anl.gov/" target="_blank" rel="noopener">Nek5000</a>, a spectral-element CFD code:
+            512&nbsp;&times;&nbsp;2304 elements at spectral order <em>N</em>&nbsp;=&nbsp;9.
+          </p>
+
+          <div class="ref-links">
+            <a class="ref-link" href="https://doi.org/10.1103/PhysRevFluids.9.113203" target="_blank" rel="noopener">Phys. Rev. Fluids</a>
+            <a class="ref-link" href="https://arxiv.org/abs/2309.15046" target="_blank" rel="noopener">arXiv:2309.15046</a>
+            <a class="ref-link" href="https://doi.org/10.5281/zenodo.13750992" target="_blank" rel="noopener">Code &amp; data</a>
+          </div>
+        </div>
+      </article>
+
+      <section class="figure-pair" aria-label="Additional figures from the flames project">
+        <figure class="figure">
+          <img src="./img/research/flames-phase-diagram.png" width="1100" height="600" loading="lazy"
+               alt="Phase diagram of flame solution types plotted against secondary-mode wavenumber
+                    and the greatest common divisor of the two wavenumbers.">
+          <figcaption>
+            The solution-type phase diagram. Which of the five behaviors a flame picks depends on
+            GCD(<em>k</em><sub>1</sub>,&nbsp;<em>k</em><sub>2</sub>), not on
+            <em>k</em><sub>2</sub> itself.
+          </figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="./img/research/flames-early-stage.png" width="900" height="957" loading="lazy"
+               alt="Three stacked snapshots showing a flame front growing from a small sinusoidal
+                    perturbation into bubbles and spikes, then stabilising.">
+          <figcaption>
+            The early stage: a small perturbation grows exponentially, bubbles and spikes form, and
+            the flame settles into the metastable traveling wave that two-mode coupling later breaks.
+          </figcaption>
+        </figure>
+      </section>
+
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <div class="section-head">
+      <h2 class="section-title">Codes and computing</h2>
+    </div>
+    <div class="prose">
+      <p>
+        The plasma work uses the MHD particle-in-cell module of
+        <a href="https://www.athena-astro.app/" target="_blank" rel="noopener">Athena++</a>, which
+        evolves the background fluid with MHD while treating the energetic particles kinetically.
+        The flames work used <a href="https://nek5000.mcs.anl.gov/" target="_blank" rel="noopener">Nek5000</a>,
+        a spectral-element code, at 512&nbsp;&times;&nbsp;2304 elements and order
+        <em>N</em>&nbsp;=&nbsp;9. Both ran on NSF-supported machines through XSEDE and ACCESS, and
+        the analysis is Python.
+      </p>
+      <p>
+        Setups, the analysis package and the figure scripts for the flames paper are on Zenodo under
+        GPL-3.0: <a href="https://doi.org/10.5281/zenodo.13750992" target="_blank" rel="noopener">10.5281/zenodo.13750992</a>.
+      </p>
+    </div>
+  </section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>© <span data-year>2026</span> Mingxuan Liu · Ann Arbor, Michigan</p>
+    <p class="footer-links">
+      <a href="mailto:mgxnliu@umich.edu">mgxnliu@umich.edu</a>
+      <a href="https://scholar.google.com/citations?user=96OAFQ8AAAAJ" target="_blank" rel="noopener">Google&nbsp;Scholar</a>
+      <a href="https://orcid.org/0009-0009-1522-9581" target="_blank" rel="noopener">ORCID</a>
+      <a href="https://github.com/Mingxuan-Liu" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://lsa.umich.edu/astro/people/graduate-students/mgxnliu.html" target="_blank" rel="noopener">U-M&nbsp;Astronomy</a>
+    </p>
+  </div>
+</footer>
+
+<script src="./js/site.js"></script>
+</body>
+</html>
