@@ -24,7 +24,7 @@ js/site.js            theme toggle, mobile menu, news expander, husky interactio
 img/favicon.svg       site favicon (a Kelvin–Helmholtz roll)
 img/profile_pic.jpg   portrait
 img/research/         figures used on research.html
-img/pubs/             3:2 thumbnails used on publications.html
+img/pubs/             publication thumbnails and figures
 img/symbols/          geometric marks, one per research project (use currentColor)
 img/vanilla/          vanilla-logo.svg — source of the husky mark, plus her photos
 img/outreach/         photos of the translated book
@@ -41,7 +41,8 @@ inline copies.
 **Add a news item** — copy a `.news-item` block at the top of the `.news-list`
 in `index.html`. Newest first.
 
-**Add a paper** — copy a `.pub` block in `publications.html`. Thumbnails are 840×560 (3:2).
+**Add a paper** — copy a `.pub` block in `publications.html`. Photo thumbnails use 3:2 frames;
+add `pub-thumb-plot` to preserve a figure's natural proportions and show every axis and label.
 
 **Change colours** — edit the `:root` custom properties in `css/main.css`.
 Dark mode overrides live in the `:root[data-theme="dark"]` block right below.
