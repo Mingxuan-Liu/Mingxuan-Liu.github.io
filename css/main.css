@@ -649,7 +649,8 @@ main { padding-bottom: 4rem; }
   color: var(--muted);
   font-size: .86rem;
 }
-.footer-inner { display: flex; flex-wrap: wrap; gap: .9rem 1.5rem; align-items: center; justify-content: space-between; }
+.footer-inner { display: flex; flex-wrap: wrap; gap: .9rem 1.5rem; align-items: baseline; justify-content: space-between; }
+.footer-inner > p { margin: 0; }
 .footer-links { display: flex; flex-wrap: wrap; gap: .9rem; }
 .site-footer a { color: var(--muted); }
 .site-footer a:hover { color: var(--accent); }
