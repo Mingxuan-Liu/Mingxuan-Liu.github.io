@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heating Hα filaments in multiphase turbulence | Mingxuan Liu</title>
+<meta name="description" content="Can magnetized turbulence supply the heat that keeps cold filaments glowing in galaxy clusters?">
+<meta name="author" content="Mingxuan Liu, Yijun Liu">
+<link rel="canonical" href="https://mingxuan-liu.github.io/research/multiphase.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mingxuan Liu">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://mingxuan-liu.github.io/research/multiphase.html">
+<meta property="og:title" content="Heating Hα filaments in multiphase turbulence | Mingxuan Liu">
+<meta property="og:description" content="Can magnetized turbulence supply the heat that keeps cold filaments glowing in galaxy clusters?">
+<meta property="og:image" content="https://mingxuan-liu.github.io/img/profile_pic.jpg">
+<meta property="og:image:width" content="853">
+<meta property="og:image:height" content="853">
+<meta property="og:image:alt" content="Portrait of Mingxuan Liu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Heating Hα filaments in multiphase turbulence | Mingxuan Liu">
+<meta name="twitter:description" content="Can magnetized turbulence supply the heat that keeps cold filaments glowing in galaxy clusters?">
+<meta name="twitter:image" content="https://mingxuan-liu.github.io/img/profile_pic.jpg">
+<link rel="me" href="https://orcid.org/0009-0009-1522-9581">
+<link rel="me" href="https://scholar.google.com/citations?user=96OAFQ8AAAAJ">
+<link rel="me" href="https://github.com/Mingxuan-Liu">
+<link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="../img/logo.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/main.css?v=20261105-map-controls">
+<script>
+  // Set the theme before first paint so there is no flash of the wrong colors.
+  (function () {
+    try {
+      var saved = localStorage.getItem('ml-theme');
+      var dark = saved ? saved === 'dark'
+                       : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+    } catch (e) { /* storage blocked — light theme is a fine default */ }
+  })();
+</script>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PH383HH12X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-PH383HH12X');
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="site-nav">
+  <a class="nav-brand" href="../index.html">Mingxuan Liu</a>
+
+  <div class="nav-links" id="nav-links">
+      <a href="../index.html">about</a>
+      <a href="../research.html" aria-current="page">research</a>
+      <a href="../publications.html">publications</a>
+      <a href="../teaching.html">teaching &amp; outreach</a>
+  </div>
+
+  <div class="nav-tools">
+    <span class="dog-wrap">
+      <a class="dog-link" href="../vanilla.html" aria-label="Vanilla, my husky">
+        <svg viewBox="0 0 120 112" aria-hidden="true" focusable="false">
+          <g class="vn-dog">
+            <defs>
+              <linearGradient id="vn-nav-blaze" gradientUnits="userSpaceOnUse" x1="60" y1="43" x2="60" y2="67">
+                <stop offset="0" stop-color="#282925"/>
+                <stop offset=".46" stop-color="#282925"/>
+                <stop offset=".66" stop-color="#484A41" stop-opacity=".65"/>
+                <stop offset=".87" stop-color="#646558" stop-opacity=".2"/>
+                <stop offset="1" stop-color="#646558" stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="vn-nav-side-stripes" gradientUnits="userSpaceOnUse" x1="60" y1="49" x2="60" y2="62">
+                <stop offset="0" stop-color="#282925"/>
+                <stop offset=".45" stop-color="#282925"/>
+                <stop offset="1" stop-color="#55584E"/>
+              </linearGradient>
+              <radialGradient id="vn-nav-muzzle-warmth">
+                <stop offset="0" stop-color="#D9B879" stop-opacity=".55"/>
+                <stop offset=".5" stop-color="#E5CC9C" stop-opacity=".32"/>
+                <stop offset="1" stop-color="#FAF9F2" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <!-- Separate ears retain their hover animation and pivot at the skull. -->
+            <g class="vn-ear vn-ear-l">
+              <path d="M20 46C16 35 17 13 22 5c3-5 7-1 12 5l17 22Z" fill="#282925" stroke="#151714" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M22 37c-1-10 0-23 3-27 2-2 10 9 17 20Z" fill="#FAF9F2"/>
+              <path d="M26 33c-1-7-1-14 1-17 3 2 7 8 10 14Z" fill="#C8B8AE"/>
+              <path d="m23 37 2-7 3 3 1-5 5 4-1 6Z" fill="#E8E5DC"/>
+            </g>
+            <g class="vn-ear vn-ear-r">
+              <path d="M100 46c4-11 3-33-2-41-3-5-7-1-12 5L69 32Z" fill="#282925" stroke="#151714" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M98 37c1-10 0-23-3-27-2-2-10 9-17 20Z" fill="#FAF9F2"/>
+              <path d="M94 33c1-7 1-14-1-17-3 2-7 8-10 14Z" fill="#C8B8AE"/>
+              <path d="m97 37-2-7-3 3-1-5-5 4 1 6Z" fill="#E8E5DC"/>
+            </g>
+
+            <!-- A taller, rounded forehead and a fluffy head-only silhouette. -->
+            <path d="M19 44C24 30 35 20 47 17Q60 13 73 17C85 20 96 30 101 44l6 13-5-2 7 21-5-3 2 9-6-3c-2 9-8 16-17 20l-1-4c-6 6-13 10-22 12-9-2-16-6-22-12l-1 4c-9-4-15-11-17-20l-6 3 2-9-5 3 7-21-5 2Z" fill="#282925" stroke="#151714" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M21 59c-2 6-3 12-3 17l5-4c0 7 3 13 7 17l-1-8c5 9 14 16 22 19l9 5 9-5c8-3 17-10 22-19l-1 8c4-4 7-10 7-17l5 4c0-5-1-11-3-17-7-9-17-12-25-6-5-7-9-11-14-11s-9 4-14 11c-8-6-18-3-25 6Z" fill="#FAF9F2"/>
+
+            <g class="vn-muzzle" transform="translate(10.8 0) scale(.82 1)">
+              <!-- Slender white muzzle and an open, smiling mouth, without a collar. -->
+              <path d="M37 81c5 11 13 18 23 19 10-1 18-8 23-19-7 6-15 8-23 8s-16-2-23-8Z" fill="#DDDCD3"/>
+              <path class="vn-mouth" d="M35 73c6 11 13 11 25 7 12 4 19 4 25-7-4 10-10 23-25 23S39 83 35 73Z" fill="#10130F" stroke="#10130F" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M50 88q10 5 20 0c0 6-20 6-20 0Z" fill="#FAF9F2"/>
+              <g class="vn-tongue">
+                <path d="M49 84c3-3 7-3 11-1 4-2 8-2 11 1l-2 6c-3 6-15 6-18 0Z" fill="#CD8D89"/>
+                <path d="M60 84v5" fill="none" stroke="#AC6D70" stroke-width=".9" stroke-linecap="round"/>
+              </g>
+              <path d="M39 65c5-7 13-8 21-5 8-3 16-2 21 5 4 4 3 10-1 13-6 5-12 4-20 0-8 4-14 5-20 0-4-3-5-9-1-13Z" fill="#FAF9F2"/>
+              <!-- Cream-gold shading beside her nose. -->
+              <ellipse cx="46" cy="65" rx="12" ry="14" fill="url(#vn-nav-muzzle-warmth)"/>
+              <ellipse cx="74" cy="65" rx="12" ry="14" fill="url(#vn-nav-muzzle-warmth)"/>
+            </g>
+            <!-- Vanilla's white brows frame a narrow dark blaze between her eyes. -->
+            <path d="M34 50c-3 0-3-2-1-5 2-3 5-5 8-6-2-4 1-7 5-7 5 0 10 4 10 10 0 5-3 10-6 13l-3-3-10 1-6 4Z" fill="#FAF9F2"/>
+            <path d="M86 50c3 0 3-2 1-5-2-3-5-5-8-6 2-4-1-7-5-7-5 0-10 4-10 10 0 5 3 10 6 13l3-3 10 1 6 4Z" fill="#FAF9F2"/>
+
+            <!-- Continuous angled markings join a straight, softly fading nose stripe. -->
+            <g class="vn-face-markings">
+              <path d="M58 47C55 49 54 51 52 53S48 57.6 46 60.5C49 58.8 53 56.5 56 54.5C58 53 59 51 60 49ZM62 47C65 49 66 51 68 53S72 57.6 74 60.5C71 58.8 67 56.5 64 54.5C62 53 61 51 60 49Z" fill="url(#vn-nav-side-stripes)"/>
+              <path d="M56 39h8l-.6 25q-3.4 4-6.8 0Z" fill="url(#vn-nav-blaze)"/>
+            </g>
+
+            <g class="vn-eyes">
+              <g class="vn-eyes-open">
+                <path d="M31 49c3-5 7-7 11-6 5 0 8 4 10 8-7 5-15 4-21-2Z" fill="#151714"/>
+                <path d="M89 49c-3-5-7-7-11-6-5 0-8 4-10 8 7 5 15 4 21-2Z" fill="#151714"/>
+                <ellipse cx="41.5" cy="48.8" rx="6.4" ry="6.1" fill="#80502D"/>
+                <ellipse cx="78.5" cy="48.8" rx="6.4" ry="6.1" fill="#80502D"/>
+                <path d="M36.8 50.1q4.4 5.6 9.4-.3M73.8 50.1q4.4 5.6 9.4-.3" fill="none" stroke="#AE7B46" stroke-width="1.6" stroke-linecap="round"/>
+                <ellipse cx="42" cy="48.5" rx="3.6" ry="4.6" fill="#111411"/>
+                <ellipse cx="78" cy="48.5" rx="3.6" ry="4.6" fill="#111411"/>
+                <circle cx="43.7" cy="46.2" r="1.65" fill="#FFFFFF"/>
+                <circle cx="79.7" cy="46.2" r="1.65" fill="#FFFFFF"/>
+              </g>
+              <g class="vn-eyes-happy" opacity="0" fill="none" stroke="#151714" stroke-width="2.7" stroke-linecap="round">
+                <path d="M33 50q8.5-9 17 0"/>
+                <path d="M70 50q8.5-9 17 0"/>
+              </g>
+            </g>
+
+            <g class="vn-nose" transform="translate(10.8 0) scale(.82 1)">
+              <path d="M55 70c0 3-2 6-2 10l7-2 7 2c0-4-2-7-2-10Z" fill="#CFD0C7"/>
+              <path d="M60 62c7 0 11 3 10 8-1 5-6 8-10 9-4-1-9-4-10-9-1-5 3-8 10-8Z" fill="#282B26" stroke="#111410" stroke-width="1.5"/>
+              <ellipse cx="60" cy="65" rx="5.7" ry="1.45" fill="#656960"/>
+              <path d="M51 69c4-3 6 2 4 3-2 1-3 0-4-1m18-2c-4-3-6 2-4 3 2 1 3 0 4-1" fill="#10130F"/>
+              <path d="M60 79v1m-25-7c6 11 14 12 25 7 11 5 19 4 25-7" fill="none" stroke="#10130F" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="m34 74 1-2m51 2-1-2" fill="none" stroke="#10130F" stroke-width="1.8" stroke-linecap="round"/>
+            </g>
+          </g>
+        </svg>
+      </a>
+    </span>
+
+    <button class="icon-btn theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/>
+      </svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M20.5 14.3A8.6 8.6 0 0 1 9.7 3.5a8.6 8.6 0 1 0 10.8 10.8Z"/>
+      </svg>
+    </button>
+
+    <button class="icon-btn nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+<main id="main" class="project-page">
+      <header class="wrap project-page-header">
+        <a class="back-link" href="../research.html">← All research projects</a>
+        <p class="project-number">Manuscript completed · 2026</p>
+        <h1>Heating Hα filaments in multiphase turbulence</h1>
+        <p class="section-lede">Can magnetized turbulence supply the heat that keeps cold filaments glowing in galaxy clusters?</p>
+        <nav class="project-jumps" aria-label="On this project page">
+          <a href="#the-result">The science</a><a href="#native-detail">Native detail</a>
+          <a href="#multiphase-evolution">Evolution movie</a><a href="#multiphase-interactive">3D viewer</a></nav>
+      </header>
+      <div class="wrap project-content">
+        <article class="project is-flipped" id="the-result">
+<div class="project-text prose">
+
+          <p>
+            Cold filaments thread the hot atmospheres of galaxy clusters and glow in Hα.
+            Their emission can exceed what newly cooling gas would produce by recombining
+            just once, so something must keep replacing the energy they radiate. We ask
+            whether magnetized turbulence can deliver that heat to the cold gas.
+          </p>
+          <p>
+            Using three-dimensional Athena++ simulations with explicit resistivity and viscosity,
+            we follow magnetic and kinetic energy as they turn into heat. Radiative cooling
+            creates dense condensations, contraction can amplify their magnetic fields, and
+            turbulent motions produce current sheets and velocity strain. Both Ohmic and
+            viscous dissipation become concentrated in this cold, filamentary network.
+          </p>
+          <div class="callout">
+            About two thirds of the explicitly dissipated power goes into gas at
+            8,000&ndash;30,000 K. In the fiducial run, viscous dissipation supplies about
+            73% of the heating in this temperature range, with equal viscosity and
+            magnetic diffusivity.
+          </div>
+          <p>
+            The combined heating becomes comparable to radiative cooling near
+            10<sup>4</sup> K, helping sustain gas at filament temperatures while a separate
+            heating term maintains the hot phase. This provides a possible energy source for
+            the excess Hα emission; predicting the line luminosity itself will require
+            ionization and excitation modeling.
+          </p>
+          <p class="project-meta">
+            <em>Dissipative Heating of Hα Filaments in Magnetized Turbulence</em><br>
+            Three-dimensional MHD simulations, up to an effective 2048<sup>3</sup> grid.
+            Manuscript completed; arXiv link forthcoming.
+          </p>
+          <div class="ref-links">
+            <!-- Add the arXiv link here when the manuscript is posted. -->
+            <a class="ref-link" href="../publications.html#filament-heating">Manuscript details</a>
+            <a class="ref-link" href="#native-detail">Explore native detail</a>
+          </div>
+        </div>
+        <div class="project-media">
+          <figure class="figure">
+            <a href="../assets/multiphase/2048/native/ohmic_heating.png" target="_blank" rel="noopener">
+              <img src="../assets/multiphase/2048/native/ohmic_heating.png" width="2400" height="2400" loading="lazy"
+                   alt="Standalone Ohmic dissipation rendering from the native 2048 cubed simulation, showing heating concentrated in a filamentary network.">
+            </a>
+            <figcaption>Ohmic dissipation in the native 2048<sup>3</sup> simulation: magnetic energy
+              becomes heat along a filamentary network. Click for the full 2400 × 2400 render.
+              Opacity is illustrative; <a href="#native-detail">explore the native projections below</a>.</figcaption>
+          </figure>
+        </div>
+</article>
+
+  <section class="project-section" id="native-detail" aria-labelledby="native-detail-title">
+    <p class="project-number">Explore the finest structure</p>
+    <h2 id="native-detail-title">Gas and light at native resolution</h2>
+    <p class="simulation-intro">Where does the gas collect, and where does it shine? Slide between
+      total particle column and intrinsic Hα surface brightness along the same line of sight.
+      Zoom in to follow individual filaments.</p>
+    <p class="simulation-note"><strong>2048 × 2048 native pixels · 3.91 pc per pixel · 8 × 8 kpc.</strong>
+      These are integrals through the 2048<sup>3</sup> box, with no spatial averaging in the image plane.
+      They retain the native transverse sampling; depth is integrated along x<sub>3</sub>.</p>
+
+    <div class="native-explorer" data-native-explorer>
+      <div class="native-toolbar" data-native-controls hidden>
+        <div class="native-zoom" role="group" aria-label="Map zoom">
+          <button type="button" data-zoom="fit">Fit map</button>
+          <button type="button" data-zoom="native">Native pixels</button>
+          <button type="button" data-zoom="out" aria-label="Zoom out">−</button>
+          <button type="button" data-zoom="in" aria-label="Zoom in">+</button>
+          <output data-zoom-level aria-live="polite">Fit</output>
+        </div>
+        <span class="native-hint">Drag or scroll to pan after zooming</span>
+      </div>
+      <div class="native-wipe" data-native-controls hidden>
+        <label for="native-wipe">Compare the same structures</label>
+        <output id="native-wipe-value" for="native-wipe" aria-live="off">50% gas / 50% Hα</output>
+        <input id="native-wipe" type="range" min="0" max="100" value="50" aria-describedby="native-wipe-value">
+        <div class="native-wipe-ends"><span>All Hα</span><span>All gas</span></div>
+      </div>
+      <div class="native-viewport" tabindex="0" role="region" aria-label="Native gas and H-alpha maps; use arrow keys to pan when zoomed" aria-describedby="native-map-status">
+        <div class="native-pair">
+          <img src="../assets/multiphase/2048/native/halpha.png" width="2048" height="2048" loading="lazy" decoding="async"
+               alt="Intrinsic H-alpha surface brightness: a web of narrow, bright filaments in the native 2048 by 2048 projection.">
+          <img class="native-gas" src="../assets/multiphase/2048/native/column.png" width="2048" height="2048" loading="lazy" decoding="async"
+               alt="Total particle column through the same volume, showing where dense gas collects along the filaments.">
+          <span class="native-divider" aria-hidden="true"></span>
+        </div>
+        <div class="native-map-labels" aria-hidden="true"><span data-gas-label>Gas column</span><span data-light-label>Hα light</span></div>
+      </div>
+      <p class="native-map-status" id="native-map-status" role="status">Native maps load as you approach this section (about 13 MiB).</p>
+      <div class="native-scales">
+        <div><b>Gas column</b><span class="native-colorbar native-colorbar-gas" aria-hidden="true"></span><span>log₁₀ N<sub>tot</sub>: 20.5 to 23.5 cm<sup>−2</sup></span></div>
+        <div><b>Hα light</b><span class="native-colorbar native-colorbar-light" aria-hidden="true"></span><span>log₁₀ I<sub>Hα</sub>: −18 to −14 erg s<sup>−1</sup> cm<sup>−2</sup> arcsec<sup>−2</sup></span></div>
+      </div>
+    </div>
+    <details class="science-details">
+      <summary>What the maps show</summary>
+      <p>Every native cell contributes once to an integral through the full box along x<sub>3</sub>.
+        Gas column is ∫ n<sub>tot</sub> dl. Hα intensity is ∫ ε<sub>Hα</sub> dl / (4π), converted
+        from steradians to square arcseconds. No rendering opacity, threshold, smoothing or
+        coarsening is applied. Colors saturate outside the displayed limits, and brightness
+        should not be compared numerically between the two different quantities.</p>
+      <p>Hα assumes isotropic, optically thin rest-frame emission, without extinction,
+        cosmological dimming or a telescope response. The fiducial ionization coefficient is
+        clamped below 10<sup>4</sup> K. This map is an illustrative emission diagnostic, not
+        a full prediction of the observed line luminosity.</p>
+      <p>Snapshot 00056 of 2048_eta3e-4, at approximately 2.49 eddy turnover times.
+        <a href="../assets/multiphase/2048/native/projection.json">Projection definitions and provenance</a>.</p>
+    </details>
+    <div class="ref-links">
+      <a class="ref-link" href="../assets/multiphase/2048/native/halpha.png" target="_blank" rel="noopener">Open native Hα map ↗</a>
+      <a class="ref-link" href="../assets/multiphase/2048/native/column.png" target="_blank" rel="noopener">Open native gas map ↗</a>
+      <a class="ref-link" href="../assets/multiphase/2048/native/four_fields.png" target="_blank" rel="noopener">Open four-field render ↗</a>
+    </div>
+    <figure class="figure figure-wide">
+      <a href="../assets/multiphase/2048/native/heating_comparison.png" target="_blank" rel="noopener">
+        <img src="../assets/multiphase/2048/native/heating_comparison.png" width="4800" height="2400" loading="lazy"
+             alt="Native-volume renders of Ohmic and viscous heating side by side, with filamentary structures on matching color scales.">
+      </a>
+      <figcaption>Where turbulent energy becomes heat: Ohmic dissipation (left) and viscous dissipation (right),
+        rendered from the native 2048<sup>3</sup> volume on matching color scales. Click for the
+        4800 × 2400 image. These are fixed views; rendering opacity is illustrative.
+        <a href="../assets/multiphase/2048/native/render.json">Rendering provenance</a>.</figcaption>
+    </figure>
+  </section>
+
+<section class="project-section" id="multiphase-evolution">
+          <h2>Turbulence in motion · 1024<sup>3</sup></h2>
+          <figure class="figure">
+            <video controls playsinline preload="none" width="2880" height="2160"
+                   poster="../img/research/multiphase-evolution.jpg"
+                   aria-label="Evolution of the 1024 cubed multiphase turbulence simulation"
+                   aria-describedby="multiphase-evolution-caption">
+              <source src="../assets/multiphase/1024/evolution.mp4" type="video/mp4">
+              <p><a href="../assets/multiphase/1024/evolution.mp4">Watch the turbulence evolution movie (MP4).</a></p>
+            </video>
+            <figcaption id="multiphase-evolution-caption">
+              A 24-second view of the native 1024<sup>3</sup> simulation in an
+              8 &times; 8 &times; 8 kpc box. The first 12 seconds follow temperature evolution
+              from a fixed viewpoint; the final 12 seconds orbit the last saved state,
+              moving through temperature, plasma β, intrinsic Hα emissivity and density.
+              Transitions blend rendered images of saved states; opacity is illustrative.
+              Use the full-screen control to see the fine structure.
+            </figcaption>
+          </figure>
+          <div class="ref-links simulation-links">
+            <a class="ref-link" href="../assets/multiphase/1024/evolution.mp4" target="_blank" rel="noopener">Open movie · MP4, 59 MiB</a>
+          </div>
+        </section>
+<section class="project-section simulation-interactive" id="multiphase-interactive" aria-labelledby="multiphase-interactive-title">
+          <div class="simulation-heading">
+            <div>
+              <p class="project-number">Explore the geometry</p>
+              <h2 id="multiphase-interactive-title">Explore the simulation in 3D</h2>
+            </div>
+            <a class="ref-link" href="../assets/multiphase/2048/interactive/index.html" target="_blank" rel="noopener">Open full-page viewer ↗</a>
+          </div>
+          <p class="simulation-intro">
+            Turn the volume, reveal its interior, and switch between density, temperature,
+            plasma β, Hα emissivity, Ohmic heating and viscous heating. The two heating fields
+            share a color scale so their structures can be compared directly.
+          </p>
+          <p class="simulation-note" id="multiphase-sampling">
+            <strong>Native simulation: 2048<sup>3</sup> cells. Interactive display: 512<sup>3</sup> averaged cells.</strong>
+            The updated viewer contains 64 times as many display cells as the earlier 128<sup>3</sup>
+            version. Each displayed cell averages 4 &times; 4 &times; 4 native cells.
+            This is the fixed
+            snapshot 00056 at approximately 2.49 eddy turnover times; rotation and the spatial
+            cutaway explore that snapshot.
+          </p>
+          <details class="volume-disclosure" data-volume-disclosure>
+            <summary>Load the 3D viewer <span>512³ display · six fields · 128 MiB per field</span></summary>
+            <div class="volume-mount"></div>
+            <template><iframe class="simulation-frame"
+                  data-src="../assets/multiphase/2048/interactive/index.html"
+                  title="Interactive 2048 cubed simulation snapshot: six physical fields, averaged to a 512 cubed interactive display"
+                  aria-describedby="multiphase-sampling"
+                  width="1000" height="850" allow="fullscreen" allowfullscreen></iframe></template>
+            <noscript><p><a href="../assets/multiphase/2048/interactive/index.html">Open the full-page 3D viewer</a>.</p></noscript>
+          </details>
+          <p class="simulation-note simulation-help">
+            Drag to orbit, scroll to zoom, or focus the volume and use the arrow keys and + / −.
+            Hα loads first; each additional field downloads only when selected (128 MiB per field).
+            Use Rotate to start or pause the turntable; pausing restores the fine view.
+            A desktop browser with WebGL2 is recommended. Hα shows intrinsic emissivity; overlapping layers are an
+            illustrative blend. Full scales and sampling details are available inside the viewer.
+          </p>
+        </section>
+
+      </div>
+      <nav class="wrap more-projects" aria-label="Other research projects">
+        <h2>More research</h2>
+        <a href="./cosmic-rays.html">Cosmic-ray transport and feedback <span aria-hidden="true">→</span></a>
+<a href="./shear.html">Particle acceleration in shear-driven turbulence <span aria-hidden="true">→</span></a>
+<a href="./flames.html">Rayleigh–Taylor unstable flames <span aria-hidden="true">→</span></a>
+      </nav>
+    </main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>© <span data-year>2026</span> <a href="../index.html" aria-label="Mingxuan Liu" title="Mingxuan Liu">M</a> &amp; <a href="https://yijunliu523.github.io/" target="_blank" rel="noopener" aria-label="Yijun Liu" title="Yijun Liu">Y</a> &amp; <a href="../vanilla.html">Vanilla</a> · Ann Arbor, Michigan</p>
+    <p class="footer-links">
+      <a href="mailto:mgxnliu@umich.edu">mgxnliu@umich.edu</a>
+      <a href="https://scholar.google.com/citations?user=96OAFQ8AAAAJ" target="_blank" rel="noopener">Google&nbsp;Scholar</a>
+      <a href="https://orcid.org/0009-0009-1522-9581" target="_blank" rel="noopener">ORCID</a>
+      <a href="https://github.com/Mingxuan-Liu" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://lsa.umich.edu/astro/people/graduate-students/mgxnliu.html" target="_blank" rel="noopener">U-M&nbsp;Astronomy</a>
+    </p>
+  </div>
+</footer>
+
+<script src="../js/site.js"></script>
+<script src="../js/research.js"></script>
+</body>
+</html>

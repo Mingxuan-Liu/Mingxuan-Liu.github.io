@@ -1,0 +1,397 @@
+{
+  "config_hash": "3c68c0b1ba9a0a74ce3f6a688993dd331a9fdd3837903c36c2c5b6392dbec30f",
+  "export_web": true,
+  "fields": [
+    "number_density",
+    "temperature",
+    "plasma_beta",
+    "halpha",
+    "ohmic_heating",
+    "viscous_heating"
+  ],
+  "grid": [
+    2048,
+    2048,
+    2048
+  ],
+  "halpha": "Intrinsic volumetric emissivity, erg cm^-3 s^-1; schure_fi, gamma_total, n_e n_H normalization. Coefficient clamped below 1e4 K; no radiative transfer, extinction or observational PSF.",
+  "halpha_table_sha256": "0aa34bf553da507ce7e4f232c9c16eed539262437ff4ad16039355879cac67e5",
+  "heating": "Saved in-situ ohmic_heating and viscous_heating multiplied by units.pres_cgs / units.time_cgs, in erg cm^-3 s^-1. Irreversible volumetric rates, not per-particle heating, external thermostat, or reconstructed derivatives. Zero rates are transparent; no negative rates are clipped.",
+  "id": "8b3bbd6de2642cc0aa7af617eb17b03482f5d3c0b7294a559c0f0d23b3d8db58",
+  "identity_method": "Raw snapshot path/size/mtime/metadata, not full raw-file checksum. Derived pieces and model inputs use SHA256.",
+  "origin_kpc": [
+    -4.0,
+    -4.0,
+    -4.0
+  ],
+  "representation": "Web-only volume; see web_representation. Native VTK pieces were not generated.",
+  "run": "2048_eta3e-4",
+  "schema": 2,
+  "snapshot": "2048_eta3e-4.out2.00056.athdf",
+  "spacing_kpc": [
+    0.00390625,
+    0.00390625,
+    0.00390625
+  ],
+  "statistics": {
+    "halpha": {
+      "infinite": 0,
+      "positive_max": 9.938258000849601e-22,
+      "positive_min": 7.090529311568416e-38,
+      "zero": 0
+    },
+    "number_density": {
+      "infinite": 0,
+      "positive_max": 9656.79296875,
+      "positive_min": 0.00014988503244239837,
+      "zero": 0
+    },
+    "ohmic_heating": {
+      "infinite": 0,
+      "positive_max": 6.4152541706175585e-21,
+      "positive_min": 6.21028664847331e-31,
+      "zero": 0
+    },
+    "plasma_beta": {
+      "infinite": 0,
+      "positive_max": 20731898.0,
+      "positive_min": 1.2893267012259457e-05,
+      "zero": 0
+    },
+    "temperature": {
+      "below_table_floor": 339792804,
+      "infinite": 0,
+      "positive_max": 119880848.0,
+      "positive_min": 33.41690444946289,
+      "zero": 0
+    },
+    "viscous_heating": {
+      "infinite": 0,
+      "positive_max": 6.795641576353164e-20,
+      "positive_min": 8.193367717604304e-31,
+      "zero": 0
+    }
+  },
+  "time_code": 5.260000228881836,
+  "time_eddy": 2.49272601941028,
+  "units": {
+    "NE_NH_PER_NTOT2": 0.22673027754999997,
+    "heating_cgs": 5.192314046516642e-25,
+    "length_cgs": 3.086e+21,
+    "n_cgs": 1.0,
+    "temp_cgs": 1000000.0
+  },
+  "web_factor": [
+    4,
+    4,
+    4
+  ],
+  "web_only": true,
+  "web_representation": "Volume-weighted means of LINEAR derived fields, then log10; Float32, x1 fastest, little endian. No quantitative use below coarse-cell scale.",
+  "web_sha256": {
+    "halpha": "64501fb4ca4a56d1527f8192a772923e8b500f94b075de492146e2a896c4e843",
+    "number_density": "fd129949e709c0da56c2e034081888941f4ba9f5a33d60e85b3d0533ceb3b835",
+    "ohmic_heating": "6c6733ccf3b32eb74084f2202fb779ceb92daa9e7e69eb32650b1df66031bed9",
+    "plasma_beta": "becd0eaa90bdaff46d742efde3492649f537827c532cb03342fb8d8a815c9bc1",
+    "temperature": "9779681a7cc7fff57809fdeaa708ac93ecde4ce167f765dfa21677866316e80c",
+    "viscous_heating": "d914eb77e1ff41035e59857653d8fd5ee9866fef593a992b6c02610084b94354"
+  },
+  "web_size": 512,
+  "web_textures": {
+    "number_density": {
+      "encoding": "style-r8-v1",
+      "range": [
+        -3,
+        2
+      ],
+      "chunks": [
+        {
+          "file": "number_density-z0000.u8",
+          "bytes": 16777216,
+          "sha256": "55ace3d0c54bb8f1020dfea3ffbdbf0b46eb453b2a9f159b611e9f6d690666b3"
+        },
+        {
+          "file": "number_density-z0064.u8",
+          "bytes": 16777216,
+          "sha256": "8f1fcbd7172777d8b6a5392315f5a2baa5c3a52fbda4e7954a10382a5391a5e2"
+        },
+        {
+          "file": "number_density-z0128.u8",
+          "bytes": 16777216,
+          "sha256": "79bbf53fa979d461c9092da8cd3b5fa5978ca64d0e3719393de5da53b14fb557"
+        },
+        {
+          "file": "number_density-z0192.u8",
+          "bytes": 16777216,
+          "sha256": "393f2c279fa50f2c32979e264b9ae63bc96fe9f384c0a2bb0b7ce923c670a3e7"
+        },
+        {
+          "file": "number_density-z0256.u8",
+          "bytes": 16777216,
+          "sha256": "230cf1d0f5cae5be67ef16500fe270a9a8d44556f6daef1aef1133cf64fae096"
+        },
+        {
+          "file": "number_density-z0320.u8",
+          "bytes": 16777216,
+          "sha256": "8e4398785b22ead26dec7747a0eb6f7a99be0d9aeb1752e0867b5df5169f3251"
+        },
+        {
+          "file": "number_density-z0384.u8",
+          "bytes": 16777216,
+          "sha256": "5589eb4d797a1d0e46fb608d7c54a97a797641c8ac69daca2b93e781fadfdba8"
+        },
+        {
+          "file": "number_density-z0448.u8",
+          "bytes": 16777216,
+          "sha256": "7b8a676a32a5b41d0881a8797f3a3568ccdb831ccb5471ceffc7cf90c006cc3a"
+        }
+      ]
+    },
+    "temperature": {
+      "encoding": "style-r8-v1",
+      "range": [
+        2,
+        8
+      ],
+      "chunks": [
+        {
+          "file": "temperature-z0000.u8",
+          "bytes": 16777216,
+          "sha256": "1289d804b37ab16bcfac1dbe160abd742fecea6f386710ccccab1991f66390ad"
+        },
+        {
+          "file": "temperature-z0064.u8",
+          "bytes": 16777216,
+          "sha256": "2e3ab8eeb000e4afbf36be82723c66a66f5c9bf98603d5f3d6efe41a98e86268"
+        },
+        {
+          "file": "temperature-z0128.u8",
+          "bytes": 16777216,
+          "sha256": "52a4283a3fbd528425082ee8b564e3746bce57ed632cba574f96ea1e5e23fb59"
+        },
+        {
+          "file": "temperature-z0192.u8",
+          "bytes": 16777216,
+          "sha256": "e0115d554805442633efabca63b87376fa5eb2b3abb29cf60710a22d16e7db1f"
+        },
+        {
+          "file": "temperature-z0256.u8",
+          "bytes": 16777216,
+          "sha256": "91b56687f3a9316ed99dcd9a565a32d188e2bf7573138915d7659e24932054b3"
+        },
+        {
+          "file": "temperature-z0320.u8",
+          "bytes": 16777216,
+          "sha256": "ad46af4c564c35c5771a2137f01f93b14d072bc327a5160259c0836c1096c320"
+        },
+        {
+          "file": "temperature-z0384.u8",
+          "bytes": 16777216,
+          "sha256": "c5c9321f42c1eae24f3a9fd9c5892f9b8d099ceeb87646c61e9152ef87f915d7"
+        },
+        {
+          "file": "temperature-z0448.u8",
+          "bytes": 16777216,
+          "sha256": "6c3a91c9abf60a70a26a1591ae74f537862cadefdaf0bf0920fbf9081155e1ad"
+        }
+      ]
+    },
+    "plasma_beta": {
+      "encoding": "style-r8-v1",
+      "range": [
+        -2,
+        2
+      ],
+      "chunks": [
+        {
+          "file": "plasma_beta-z0000.u8",
+          "bytes": 16777216,
+          "sha256": "8414905a1f5705bc1d708b87e1ac853e0f83428c35c0335731af930842c80c60"
+        },
+        {
+          "file": "plasma_beta-z0064.u8",
+          "bytes": 16777216,
+          "sha256": "7dbae1e958bb88bf21fe2505cf38bd6bfc9428c3882d914126bad04487beacac"
+        },
+        {
+          "file": "plasma_beta-z0128.u8",
+          "bytes": 16777216,
+          "sha256": "6e768f9d3a265bf7fca18f5c3dfc40ab96ebadaf7a6174d3f87d6748282a43db"
+        },
+        {
+          "file": "plasma_beta-z0192.u8",
+          "bytes": 16777216,
+          "sha256": "e2865228e675cd0d415eafd0b5b3eb26b7ae81e24468bef9b7adc4906aee2cec"
+        },
+        {
+          "file": "plasma_beta-z0256.u8",
+          "bytes": 16777216,
+          "sha256": "e429281f6ba234501d570d3172de911ebeaf3850748d4f955bd6d0f076cca40d"
+        },
+        {
+          "file": "plasma_beta-z0320.u8",
+          "bytes": 16777216,
+          "sha256": "2a34adc9765a850ee18271743423490ec4c866e2fb608206a3fbf9116d6030e3"
+        },
+        {
+          "file": "plasma_beta-z0384.u8",
+          "bytes": 16777216,
+          "sha256": "c748fd31a2477528b88ac029f66f0ef843301b0203e77eb27917f3fbe8f21474"
+        },
+        {
+          "file": "plasma_beta-z0448.u8",
+          "bytes": 16777216,
+          "sha256": "fd385aaac0fb943747aed3895faf0852b63e0bd2c707d460066fb59631a31e01"
+        }
+      ]
+    },
+    "halpha": {
+      "encoding": "style-r8-v1",
+      "range": [
+        -30,
+        -24
+      ],
+      "chunks": [
+        {
+          "file": "halpha-z0000.u8",
+          "bytes": 16777216,
+          "sha256": "6ed0fcdd64d89f0a7f1f62eb85b5bae534a9223dbdce6699298edaef38d318f3"
+        },
+        {
+          "file": "halpha-z0064.u8",
+          "bytes": 16777216,
+          "sha256": "1815bb761b492731927fb0f0fb07afe6da48e1022d4d68068446fb3b05742fab"
+        },
+        {
+          "file": "halpha-z0128.u8",
+          "bytes": 16777216,
+          "sha256": "595c0083971ece251e7ffc094297bae0d2d6eff421cf6931e9f8a2d032ee7a8a"
+        },
+        {
+          "file": "halpha-z0192.u8",
+          "bytes": 16777216,
+          "sha256": "eb996ac85d39ffe39e5499d08143657d1252ff438141a1b56ed99d3f8ef9b16f"
+        },
+        {
+          "file": "halpha-z0256.u8",
+          "bytes": 16777216,
+          "sha256": "2e4fe1e57528c4072d95e66a9b56da41c4332e488da10e7de74debcb9e8d4caa"
+        },
+        {
+          "file": "halpha-z0320.u8",
+          "bytes": 16777216,
+          "sha256": "b547ccfcea2c666dc7078e1e9a2c9938b363f6b47624b8ac874f0266293358e6"
+        },
+        {
+          "file": "halpha-z0384.u8",
+          "bytes": 16777216,
+          "sha256": "878cf6a7996d8e38277385f48e4996c67589ae7106148eb34747fd6e37a805f7"
+        },
+        {
+          "file": "halpha-z0448.u8",
+          "bytes": 16777216,
+          "sha256": "12cd3357a5e8d2b631aedf217de8a25bea6fc2fc116423f527ec572a65b2b2b3"
+        }
+      ]
+    },
+    "ohmic_heating": {
+      "encoding": "style-r8-v1",
+      "range": [
+        -29,
+        -22
+      ],
+      "chunks": [
+        {
+          "file": "ohmic_heating-z0000.u8",
+          "bytes": 16777216,
+          "sha256": "8ee9898543cb9b4762783c74bac2c584e1277d17bd88acf7f2121639be94197b"
+        },
+        {
+          "file": "ohmic_heating-z0064.u8",
+          "bytes": 16777216,
+          "sha256": "71d6a1701895b802ed2363a6bd137501086def4f4f4f9a7e26a50694284e92eb"
+        },
+        {
+          "file": "ohmic_heating-z0128.u8",
+          "bytes": 16777216,
+          "sha256": "7a3c27265bf27619e4cbb8a8ea0e220758a69da2fd5cf83877bf1bca8fc2db20"
+        },
+        {
+          "file": "ohmic_heating-z0192.u8",
+          "bytes": 16777216,
+          "sha256": "d7bf7d8d861ab0410751e30e9abb83f34d7ce00a69c13290e836e1975ede46b9"
+        },
+        {
+          "file": "ohmic_heating-z0256.u8",
+          "bytes": 16777216,
+          "sha256": "10d2feabdfb126d1aa94dfda7016ec3dc047c126e08bf23419e0fc74996a33b1"
+        },
+        {
+          "file": "ohmic_heating-z0320.u8",
+          "bytes": 16777216,
+          "sha256": "78d7fe530050c8f39a944f03a7fc5d8fa33739e58440bf9e33c25bf698b0501f"
+        },
+        {
+          "file": "ohmic_heating-z0384.u8",
+          "bytes": 16777216,
+          "sha256": "62c0ed2102434ab2b69fda4f91ef0b41775a917a86ab66a4be2db42b76e66cb1"
+        },
+        {
+          "file": "ohmic_heating-z0448.u8",
+          "bytes": 16777216,
+          "sha256": "20e6c4c920eaecac7022ffb88840bc90c38cf11a94932246d4ed398208e5c648"
+        }
+      ]
+    },
+    "viscous_heating": {
+      "encoding": "style-r8-v1",
+      "range": [
+        -29,
+        -22
+      ],
+      "chunks": [
+        {
+          "file": "viscous_heating-z0000.u8",
+          "bytes": 16777216,
+          "sha256": "51876b812456d4e583b39992db755faffbcdb0d6c2806e0242f21f61799c0dd0"
+        },
+        {
+          "file": "viscous_heating-z0064.u8",
+          "bytes": 16777216,
+          "sha256": "28bf9cd7e412d69bd8560ea3f5e4d7707f2cd1ad54493b6e1642a8c6b891c333"
+        },
+        {
+          "file": "viscous_heating-z0128.u8",
+          "bytes": 16777216,
+          "sha256": "94e1f8844e1a1c11bb0bb70697e52228b021b6f82e064bb4d47a945303d8d14c"
+        },
+        {
+          "file": "viscous_heating-z0192.u8",
+          "bytes": 16777216,
+          "sha256": "9d489fe8de6df5357d06e4767cf3718556ef51769f64cf3bc23f04e05490aab1"
+        },
+        {
+          "file": "viscous_heating-z0256.u8",
+          "bytes": 16777216,
+          "sha256": "6a3d57da906b8f88f2c4e3eee366f68caaea11dae9f1d568b690b86b441a1cbb"
+        },
+        {
+          "file": "viscous_heating-z0320.u8",
+          "bytes": 16777216,
+          "sha256": "2cb04c123366da8d674e53acc96813948e2f31916795a10d9125101c98e23122"
+        },
+        {
+          "file": "viscous_heating-z0384.u8",
+          "bytes": 16777216,
+          "sha256": "afdde28df4060e7a87e22ac59e93546f7ec16b5de9f92720a9220541597fde6a"
+        },
+        {
+          "file": "viscous_heating-z0448.u8",
+          "bytes": 16777216,
+          "sha256": "420d279d090bc226d61f0b47c588cb39cc8cb389cedd9bb0b23882240d6d2b5a"
+        }
+      ]
+    }
+  },
+  "texture_note": "Each R8 value maps the Float32 log10 of the volume-weighted linear mean to the fixed style range. 0 is transparent; 1 and 255 include endpoint clipping. Float32 hashes describe the source, not downloadable textures."
+}
