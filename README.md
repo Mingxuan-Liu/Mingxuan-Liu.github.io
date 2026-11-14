@@ -23,10 +23,10 @@ the repository root as-is.
 css/main.css          all styling; design tokens are the :root variables at the top
 js/site.js            theme toggle, mobile menu, news expander, husky interactions
 js/research.js        native-map zoom/comparison and on-demand 3D viewer
-generated_images/interstellar-ink.png  full-resolution ink-wash logo artwork
-img/favicon.png       96-pixel logo for the header and search favicon
+img/logo.png          full-resolution ink-wash artwork shown on the Research page
+img/favicon.png       circular crop of the artwork for the header and search favicon
 img/favicon.svg       same mark at the previous favicon address
-img/logo.ico          browser fallback at 16, 32 and 48 pixels
+favicon.ico           browser fallback, also served at the previous img/logo.ico address
 img/profile_pic.jpg   portrait
 img/research/         research figures and movie poster
 img/pubs/             publication thumbnails and figures
@@ -91,9 +91,10 @@ update the status text and the publication's JSON-LD, and update the sitemap dat
 - `assets/multiphase/2048/native/` preserves the original 2048 × 2048 gas-column
   and Hα projections, 4800 × 4000 four-field render, 4800 × 2400 heating comparison,
   standalone 2400 × 2400 Ohmic dissipation render, and their provenance.
-  The maps integrate through the native 2048³ volume along
-  x3, without averaging in the image plane: 3.90625 pc per pixel across 8 kpc.
-  The zoomable comparison preserves that sampling. “Native pixels” means one
+  The zoomable comparison uses `native/emission/` for the paired intrinsic Hα and
+  0.5–2 keV surface brightness maps. Each pixel samples one native sightline along
+  x3, at 3.90625 pc per pixel across 8 kpc. The two colorscales independently
+  stretch each band's contrast and apply a 3 × 3 filter to the display tones. “Native pixels” means one
   image pixel per CSS pixel; further zoom adds no new data. The fixed volume
   renders and 2D projections are distinct from the rotatable 512³ viewer.
   The comparison slider's track follows the visible map width, and its thumb
@@ -116,7 +117,8 @@ such as selected subvolumes or multiresolution bricks.
 
 ### Project navigation
 
-The research overview has no image, video or iframe downloads. Existing
+The header logo opens the artwork on the research overview. Selecting the artwork
+opens the full-resolution PNG. Existing
 `research.html#cosmic-rays`, `#multiphase`, `#shear`, `#flames`,
 `#multiphase-evolution` and `#multiphase-interactive` URLs forward to their new
 project destinations. With JavaScript disabled, overview links and project

@@ -69,9 +69,13 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <nav class="site-nav">
-  <a class="nav-brand" href="./">
-    <img src="./img/favicon.png" width="32" height="32" alt="" title="Cosmic-ray paths bending near a magnetized interstellar cloud">Mingxuan Liu
-  </a>
+  <div class="nav-brand">
+    <a class="nav-logo" href="./research.html#research-artwork" aria-label="View the cosmic-ray artwork on the Research page"
+       title="Cosmic-ray paths bending near a magnetized interstellar cloud">
+      <img src="./img/favicon.png" width="36" height="36" alt="">
+    </a>
+    <a class="nav-name" href="./">Mingxuan Liu</a>
+  </div>
 
   <div class="nav-links" id="nav-links">
       <a href="./">about</a>
@@ -195,11 +199,20 @@
 </nav>
 <main id="main">
 
-  <section class="wrap research-intro">
-    <h1 class="section-title">Research</h1>
-    <p class="section-lede">I study how turbulence moves energy through magnetized plasmas:
-      into cosmic rays, into cold filaments, and across unstable interfaces.
-      Explore a project for the science, figures and simulations.</p>
+  <section class="wrap research-intro" id="research-artwork" aria-labelledby="research-title">
+    <h1 class="section-title" id="research-title">Research</h1>
+    <div class="research-intro-body">
+      <a class="research-artwork" href="./img/logo.png" aria-label="Open the full-resolution cosmic-ray artwork">
+        <img src="./img/logo.png" width="1254" height="1254"
+             alt="Blue ink clouds and stars rise above two curved cosmic-ray paths on warm paper.">
+      </a>
+      <div class="research-intro-copy">
+        <p class="section-lede">I study how turbulence moves energy through magnetized plasmas:
+          into cosmic rays, into cold filaments, and across unstable interfaces.</p>
+        <p>The ink landscape shows cosmic-ray paths bending near a magnetized interstellar cloud.</p>
+        <p>Explore a project for the science, figures and simulations.</p>
+      </div>
+    </div>
   </section>
   <section class="wrap" aria-label="Research projects">
     <div class="research-grid">

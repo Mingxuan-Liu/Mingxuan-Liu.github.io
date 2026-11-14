@@ -64,9 +64,13 @@
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <nav class="site-nav">
-  <a class="nav-brand" href="../">
-    <img src="../img/favicon.png" width="32" height="32" alt="" title="Cosmic-ray paths bending near a magnetized interstellar cloud">Mingxuan Liu
-  </a>
+  <div class="nav-brand">
+    <a class="nav-logo" href="../research.html#research-artwork" aria-label="View the cosmic-ray artwork on the Research page"
+       title="Cosmic-ray paths bending near a magnetized interstellar cloud">
+      <img src="../img/favicon.png" width="36" height="36" alt="">
+    </a>
+    <a class="nav-name" href="../">Mingxuan Liu</a>
+  </div>
 
   <div class="nav-links" id="nav-links">
       <a href="../">about</a>
@@ -199,9 +203,16 @@
           <a href="#multiphase-evolution">Evolution movie</a><a href="#multiphase-interactive">3D viewer</a></nav>
       </header>
       <div class="wrap project-content">
-        <article class="project is-flipped" id="the-result">
-<div class="project-text prose">
-
+        <figure class="figure">
+          <a href="../img/research/filament_cover_2048_ohmic.png" target="_blank" rel="noopener">
+            <img src="../img/pubs/filament-cover-2048-ohmic.webp" width="1200" height="862"
+                 alt="Filaments in the 2048³ simulation, shown in blended bands of temperature, magnetic field strength, and Ohmic heating from left to right.">
+          </a>
+          <figcaption>Three views of the same filaments at 2.49 eddy turnover times. From left to right,
+            the bands show gas temperature, magnetic field strength, and the local Ohmic heating rate.
+            Select the image for the full 3840 × 2758 render.</figcaption>
+        </figure>
+        <article class="filament-overview prose" id="the-result">
           <p>
             Cold filaments thread the hot atmospheres of galaxy clusters and glow in Hα.
             Their emission can exceed what newly cooling gas would produce by recombining
@@ -238,29 +249,14 @@
             <a class="ref-link" href="../publications.html#filament-heating">Manuscript details</a>
             <a class="ref-link" href="#native-detail">Explore native detail</a>
           </div>
-        </div>
-        <div class="project-media">
-          <figure class="figure">
-            <a href="../img/research/filament_cover_2048_ohmic.png" target="_blank" rel="noopener">
-              <img src="../img/pubs/filament-cover-2048-ohmic.webp" width="1200" height="862" loading="lazy"
-                   alt="Filaments in the 2048³ simulation, shown in blended bands of temperature, magnetic field strength, and Ohmic heating from left to right.">
-            </a>
-            <figcaption>Three views of the same filaments at 2.49 eddy turnover times. From left to right,
-              the bands show gas temperature, magnetic field strength, and the local Ohmic heating rate.
-              Select the image for the full 3840 × 2758 render.</figcaption>
-          </figure>
-        </div>
-</article>
+        </article>
 
   <section class="project-section" id="native-detail" aria-labelledby="native-detail-title">
-    <p class="project-number">Explore the finest structure</p>
-    <h2 id="native-detail-title">Gas and light at native resolution</h2>
-    <p class="simulation-intro">Where does the gas collect, and where does it shine? Slide between
-      total particle column and intrinsic Hα surface brightness along the same line of sight.
-      Zoom in to follow individual filaments.</p>
-    <p class="simulation-note"><strong>2048 × 2048 native pixels · 3.91 pc per pixel · 8 × 8 kpc.</strong>
-      These are integrals through the 2048<sup>3</sup> box, with no spatial averaging in the image plane.
-      They retain the native transverse sampling; depth is integrated along x<sub>3</sub>.</p>
+    <h2 id="native-detail-title">Hα and soft X-rays at native resolution</h2>
+    <p class="simulation-intro">Slide between Hα emission at 6563 Å and soft X-ray emission at
+      0.5–2 keV. Both maps show intrinsic surface brightness along the same lines of sight.
+      Zoom in to see where the two bands trace the same filaments.</p>
+    <p class="simulation-note"><strong>2048 × 2048 pixels · 3.91 pc per pixel · 8 × 8 kpc.</strong></p>
 
     <div class="native-explorer" data-native-explorer>
       <div class="native-toolbar" data-native-controls hidden>
@@ -275,43 +271,42 @@
       </div>
       <div class="native-wipe" data-native-controls hidden>
         <label for="native-wipe">Compare the same structures</label>
-        <output id="native-wipe-value" for="native-wipe" aria-live="off">50% gas / 50% Hα</output>
+        <output id="native-wipe-value" for="native-wipe" aria-live="off">50% Hα / 50% soft X-ray</output>
         <input id="native-wipe" type="range" min="0" max="100" value="50" aria-describedby="native-wipe-value">
-        <div class="native-wipe-ends"><span>All Hα</span><span>All gas</span></div>
+        <div class="native-wipe-ends"><span>All soft X-ray</span><span>All Hα</span></div>
       </div>
-      <div class="native-viewport" tabindex="0" role="region" aria-label="Native gas and H-alpha maps; use arrow keys to pan when zoomed" aria-describedby="native-map-status">
+      <div class="native-viewport" tabindex="0" role="region" aria-label="Native H-alpha and soft X-ray maps. Use the arrow keys to pan when zoomed." aria-describedby="native-map-status">
         <div class="native-pair">
-          <img src="../assets/multiphase/2048/native/halpha.png" width="2048" height="2048" loading="lazy" decoding="async"
-               alt="Intrinsic H-alpha surface brightness: a web of narrow, bright filaments in the native 2048 by 2048 projection.">
-          <img class="native-gas" src="../assets/multiphase/2048/native/column.png" width="2048" height="2048" loading="lazy" decoding="async"
-               alt="Total particle column through the same volume, showing where dense gas collects along the filaments.">
+          <img src="../assets/multiphase/2048/native/emission/soft_xray.png" width="2048" height="2048" loading="lazy" decoding="async"
+               alt="Blue and cyan soft X-ray emission around the filament network.">
+          <img class="native-overlay" src="../assets/multiphase/2048/native/emission/halpha.png" width="2048" height="2048" loading="lazy" decoding="async"
+               alt="H-alpha emission outlining narrow filaments in coral and peach.">
           <span class="native-divider" aria-hidden="true"></span>
         </div>
-        <div class="native-map-labels" aria-hidden="true"><span data-gas-label>Gas column</span><span data-light-label>Hα light</span></div>
+        <div class="native-map-labels" aria-hidden="true"><span data-left-label>Hα</span><span data-right-label>Soft X-ray</span></div>
       </div>
-      <p class="native-map-status" id="native-map-status" role="status">Native maps load as you approach this section (about 13 MiB).</p>
+      <p class="native-map-status" id="native-map-status" role="status">Native maps load as you approach this section (about 16 MiB).</p>
       <div class="native-scales">
-        <div><b>Gas column</b><span class="native-colorbar native-colorbar-gas" aria-hidden="true"></span><span>log₁₀ N<sub>tot</sub>: 20.5 to 23.5 cm<sup>−2</sup></span></div>
-        <div><b>Hα light</b><span class="native-colorbar native-colorbar-light" aria-hidden="true"></span><span>log₁₀ I<sub>Hα</sub>: −18 to −14 erg s<sup>−1</sup> cm<sup>−2</sup> arcsec<sup>−2</sup></span></div>
+        <div><b>Hα · 6563 Å</b><span class="native-colorbar native-colorbar-halpha" aria-hidden="true"></span>
+          <span class="native-scale-ticks"><span>P55</span><span>P99.25</span></span></div>
+        <div><b>Soft X-ray · 0.5–2 keV</b><span class="native-colorbar native-colorbar-xray" aria-hidden="true"></span>
+          <span class="native-scale-ticks"><span>P55</span><span>P99.25</span></span></div>
+        <p>The ticks mark the 55th and 99.25th percentiles of positive surface brightness in each band.</p>
       </div>
     </div>
     <details class="science-details">
-      <summary>What the maps show</summary>
-      <p>Every native cell contributes once to an integral through the full box along x<sub>3</sub>.
-        Gas column is ∫ n<sub>tot</sub> dl. Hα intensity is ∫ ε<sub>Hα</sub> dl / (4π), converted
-        from steradians to square arcseconds. No rendering opacity, threshold, smoothing or
-        coarsening is applied. Colors saturate outside the displayed limits, and brightness
-        should not be compared numerically between the two different quantities.</p>
-      <p>Hα assumes isotropic, optically thin rest-frame emission, without extinction,
-        cosmological dimming or a telescope response. The fiducial ionization coefficient is
-        clamped below 10<sup>4</sup> K. This map is an illustrative emission diagnostic, not
-        a full prediction of the observed line luminosity.</p>
-      <p>Snapshot 00056 of 2048_eta3e-4, at approximately 2.49 eddy turnover times.
-        <a href="../assets/multiphase/2048/native/projection.json">Projection definitions and provenance</a>.</p>
+      <summary>How to read the maps</summary>
+      <p>Each pixel samples one sightline through the full 8 kpc box along x<sub>3</sub>.
+        We integrate the optically thin emissivity in each band, divide by 4π, and convert
+        from steradians to square arcseconds. The resulting intrinsic surface brightness is in erg s<sup>−1</sup> cm<sup>−2</sup> arcsec<sup>−2</sup>.</p>
+      <p>Each band has its own contrast scale. Its 55th and 99.25th percentiles fall at 10% and 90%
+        of the color ramp before a 3 × 3 edge-preserving smoothing pass on the displayed tones.
+        The same position on the two ramps can represent different physical intensities.</p>
+      <p>Both projections use snapshot 00056 of 2048_eta3e-4 at 2.49 eddy turnover times.</p>
     </details>
     <div class="ref-links">
-      <a class="ref-link" href="../assets/multiphase/2048/native/halpha.png" target="_blank" rel="noopener">Open native Hα map ↗</a>
-      <a class="ref-link" href="../assets/multiphase/2048/native/column.png" target="_blank" rel="noopener">Open native gas map ↗</a>
+      <a class="ref-link" href="../assets/multiphase/2048/native/emission/halpha.png" target="_blank" rel="noopener">Open native Hα map ↗</a>
+      <a class="ref-link" href="../assets/multiphase/2048/native/emission/soft_xray.png" target="_blank" rel="noopener">Open native soft X-ray map ↗</a>
       <a class="ref-link" href="../assets/multiphase/2048/native/four_fields.png" target="_blank" rel="noopener">Open four-field render ↗</a>
     </div>
   </section>
@@ -403,6 +398,6 @@
 </footer>
 
 <script src="../js/site.js"></script>
-<script src="../js/research.js"></script>
+<script src="../js/research.js?v=20261114-emission"></script>
 </body>
 </html>

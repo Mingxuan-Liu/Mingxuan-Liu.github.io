@@ -6,7 +6,7 @@
   if (explorer) {
     var viewport = explorer.querySelector('.native-viewport');
     var pair = explorer.querySelector('.native-pair');
-    var gas = explorer.querySelector('.native-gas');
+    var overlay = explorer.querySelector('.native-overlay');
     var divider = explorer.querySelector('.native-divider');
     var wipe = explorer.querySelector('#native-wipe');
     var wipeControl = explorer.querySelector('.native-wipe');
@@ -57,12 +57,12 @@
       wipeControl.style.marginLeft = visibleLeft + 'px';
       wipe.style.setProperty('--wipe-percent', fraction + '%');
       var split = Math.max(0, Math.min(width, visibleLeft - mapLeft + visibleWidth * fraction / 100));
-      gas.style.clipPath = 'inset(0 ' + (100 - 100 * split / width) + '% 0 0)';
+      overlay.style.clipPath = 'inset(0 ' + (100 - 100 * split / width) + '% 0 0)';
       divider.style.left = split + 'px';
       divider.hidden = fraction === 0 || fraction === 100;
-      explorer.querySelector('[data-gas-label]').style.visibility = fraction === 0 ? 'hidden' : 'visible';
-      explorer.querySelector('[data-light-label]').style.visibility = fraction === 100 ? 'hidden' : 'visible';
-      wipeValue.textContent = fraction + '% gas / ' + (100 - fraction) + '% Hα';
+      explorer.querySelector('[data-left-label]').style.visibility = fraction === 0 ? 'hidden' : 'visible';
+      explorer.querySelector('[data-right-label]').style.visibility = fraction === 100 ? 'hidden' : 'visible';
+      wipeValue.textContent = fraction + '% Hα / ' + (100 - fraction) + '% soft X-ray';
       wipe.setAttribute('aria-valuetext', wipeValue.textContent);
     }
 
@@ -103,7 +103,7 @@
       var loaded = maps.every(function (img) { return img.complete && img.naturalWidth === size; });
       status.textContent = failed ? 'A map could not load. Use the original-image links below, or reload to retry.' :
         loaded ? 'Both 2048 × 2048 maps loaded. Magnifying beyond native pixels adds no new detail.' :
-        'Loading native maps (about 13 MiB)…';
+        'Loading native maps (about 16 MiB)…';
     }
     maps.forEach(function (img) { img.addEventListener('load', mapStatus); img.addEventListener('error', mapStatus); });
     mapStatus();
