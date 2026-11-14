@@ -133,6 +133,7 @@ a:hover { color: var(--ink); }
   white-space: nowrap;
 }
 .nav-brand:hover { color: var(--accent); }
+.nav-brand img { flex: none; width: 32px; height: 32px; border-radius: 6px; }
 
 .nav-links {
   display: flex; align-items: center; gap: .15rem;
@@ -209,6 +210,9 @@ a:hover { color: var(--ink); }
   }
   .nav-links.is-open { display: flex; }
   .nav-links a { padding: .7rem .8rem; border-radius: 10px; }
+}
+@media (max-width: 360px) {
+  .site-nav { padding-inline: .75rem; gap: .5rem; }
 }
 
 /* ------------------------------------------------------------- layout -- */

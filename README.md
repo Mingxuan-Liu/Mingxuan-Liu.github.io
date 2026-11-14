@@ -23,7 +23,9 @@ the repository root as-is.
 css/main.css          all styling; design tokens are the :root variables at the top
 js/site.js            theme toggle, mobile menu, news expander, husky interactions
 js/research.js        native-map zoom/comparison and on-demand 3D viewer
-img/favicon.svg       site favicon (a Kelvin–Helmholtz roll)
+img/favicon.png       plasma and particle mark used in the header and search favicon
+img/favicon.svg       same mark at the previous favicon address
+img/logo.ico          browser fallback at 16, 32 and 48 pixels
 img/profile_pic.jpg   portrait
 img/research/         research figures and movie poster
 img/pubs/             publication thumbnails and figures
@@ -80,8 +82,8 @@ update the status text and the publication's JSON-LD, and update the sitemap dat
 - The 3D viewer represents snapshot `00056` of `2048_eta3e-4`: a native 2048³ grid
   displayed as 512³ volume-weighted averaged cells (4³ native cells per display
   cell). This is 64 times as many cells as the earlier 128³ display. It is a fixed
-  snapshot with rotation and a spatial cutaway, not a movie. Hα loads first;
-  other fields load only when selected (128 MiB each, 768 MiB for all six).
+  snapshot with rotation and a spatial cutaway, not a movie. Plasma β loads first.
+  Other fields load only when selected (128 MiB each, 768 MiB for all six).
   The page labels both resolutions and links to a full-page viewer. The iframe is
   created only after opening the disclosure, and removed when it closes to stop
   background animation and release GPU resources.

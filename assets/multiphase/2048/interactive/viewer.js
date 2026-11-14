@@ -111,7 +111,7 @@ async function start(){
  for(const f of style.fields){
   const [lo,hi]=f.range;
   const row=document.createElement('div');row.className='layer';
-  const toggle=document.createElement('label');toggle.className='toggle';const input=document.createElement('input');input.type='checkbox';input.checked=f.key==='halpha';toggle.append(input,document.createTextNode(f.title));
+  const toggle=document.createElement('label');toggle.className='toggle';const input=document.createElement('input');input.type='checkbox';input.checked=f.key==='plasma_beta';toggle.append(input,document.createTextNode(f.title));
   const unit=document.createElement('div');unit.className='unit';unit.textContent=f.label;
   const ramp=document.createElement('div');ramp.className='ramp';ramp.style.background='linear-gradient(to right,'+f.rgb.map(p=>`rgb(${p.slice(1).map(v=>Math.round(v*255)).join(',')}) ${100*(p[0]-lo)/(hi-lo)}%`).join(',')+')';
   const ticks=document.createElement('div');ticks.className='ticks';for(let v of [lo,(lo+hi)/2,hi]){let e=document.createElement('span');e.textContent=String(v);ticks.append(e);}
