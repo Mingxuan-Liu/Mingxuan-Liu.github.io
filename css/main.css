@@ -134,7 +134,11 @@ a:hover { color: var(--ink); }
 .nav-name { color: var(--ink); text-decoration: none; }
 .nav-name:hover { color: var(--accent); }
 .nav-logo { display: grid; place-items: center; }
-.nav-logo img { width: 36px; height: 36px; }
+.nav-logo img {
+  width: 36px;
+  height: 36px;
+  clip-path: polygon(12% 0, 88% 0, 100% 12%, 100% 88%, 88% 100%, 12% 100%, 0 88%, 0 12%);
+}
 
 .nav-links {
   display: flex; align-items: center; gap: .15rem;
@@ -546,7 +550,13 @@ main { padding-bottom: 4rem; }
 .volume-disclosure > noscript p { padding: 0 1.2rem 1rem; }
 
 /* The two native projections share their sampling, pan, zoom and wipe boundary. */
-.native-explorer { max-width: 54rem; margin-inline: auto; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--surface); }
+.native-explorer {
+  /* Reserve space above the square map for the sticky header and controls. */
+  max-width: clamp(15rem, calc(100vh - 16rem), 42rem);
+  max-width: clamp(15rem, calc(100svh - 16rem), 42rem);
+  margin-inline: auto;
+  border: 1px solid var(--rule); border-radius: var(--radius); background: var(--surface);
+}
 .native-toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .65rem; padding: .8rem; }
 .native-toolbar[hidden], .native-wipe[hidden] { display: none; }
 .native-zoom { display: flex; align-items: center; flex-wrap: wrap; gap: .4rem; }
@@ -628,6 +638,7 @@ main { padding-bottom: 4rem; }
   box-shadow: var(--shadow-lift);
 }
 .figure img, .figure video { width: 100%; display: block; }
+.filament-cover { max-width: var(--measure); margin-inline: auto; }
 .figure figcaption {
   font-size: .82rem;
   color: var(--muted);
