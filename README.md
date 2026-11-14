@@ -23,7 +23,8 @@ the repository root as-is.
 css/main.css          all styling; design tokens are the :root variables at the top
 js/site.js            theme toggle, mobile menu, news expander, husky interactions
 js/research.js        native-map zoom/comparison and on-demand 3D viewer
-img/favicon.png       plasma and particle mark used in the header and search favicon
+generated_images/interstellar-ink.png  full-resolution ink-wash logo artwork
+img/favicon.png       96-pixel logo for the header and search favicon
 img/favicon.svg       same mark at the previous favicon address
 img/logo.ico          browser fallback at 16, 32 and 48 pixels
 img/profile_pic.jpg   portrait
