@@ -12,6 +12,23 @@ aside{height:100svh;padding:30px 24px;background:#0b1018;border-right:1px solid 
 @media(max-width:760px){main{height:auto;grid-template-columns:1fr}#stage{grid-row:1;height:65svh;min-height:360px}aside{height:auto;padding:24px;border-right:0;border-top:1px solid #263142}h1{font-size:28px}.layers{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}#hud{font-size:10px;top:14px;left:16px}#status{left:16px;bottom:14px;font-size:10px}}
 #layers>.layer:not(.active) .unit,#layers>.layer:not(.active) .ticks,#layers>.layer:not(.active) .opacity{display:none}
 #layers>.layer:not(.active) .ramp{margin-top:9px;opacity:.55}
+/* Keep feedback in the visible part of the canvas, including embedded mobile views. */
+#load-panel, #error {
+  position:absolute; top:clamp(5rem,17%,9rem); left:50%; right:auto; bottom:auto;
+  transform:translateX(-50%); width:min(25rem,calc(100% - 2rem)); padding:18px 20px;
+  border:1px solid #45586c; border-radius:8px; background:#101a25; color:#e6edf7;
+}
+#load-panel {pointer-events:none}
+#load-panel[hidden] {display:none}
+#load-panel.compact {top:auto; bottom:3.7rem; left:1rem; transform:none; width:min(19rem,calc(100% - 2rem))}
+#load-title {display:block; font-size:15px; font-weight:600}
+#load-progress {display:block; width:100%; height:9px; margin:12px 0 8px; accent-color:#9bd4f5}
+#load-detail {display:block; font-size:13px; color:#c5d4e5; font-variant-numeric:tabular-nums}
+#retry {margin-top:.8rem}
+.layer #error {position:static; transform:none; width:auto; margin:.6rem 0 0; padding:.7rem; font-size:12px}
+.sr-only {position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap}
+#status {right:110px}
+@media(prefers-reduced-motion:reduce) {#load-progress:indeterminate {visibility:hidden}}
 </style>
 <main>
 <aside>
@@ -29,10 +46,17 @@ aside{height:100svh;padding:30px 24px;background:#0b1018;border-right:1px solid 
 </aside>
 <section id="stage" aria-label="Interactive scientific volume">
  <canvas id="volume" tabindex="0" role="img" aria-label="Rotatable volume rendering; use arrow keys to rotate and plus or minus to zoom"></canvas>
- <div id="hud"></div><div id="status" role="status">Loading the volume…</div>
+ <div id="hud"></div>
+ <div id="load-panel">
+  <span id="load-title" role="status" aria-atomic="true">Opening the 3D viewer…</span>
+  <progress id="load-progress" max="100" aria-labelledby="load-title"></progress>
+  <span id="load-detail">Preparing the first field, Hα emission.</span>
+ </div>
+ <div id="status"></div>
+ <span id="load-notice" class="sr-only" role="status" aria-atomic="true"></span>
  <svg id="axes" viewBox="0 0 100 100" aria-label="Simulation coordinate directions"></svg>
- <div id="error" role="alert"></div>
+ <div id="error"><div id="error-message" role="alert"></div><button id="retry" type="button" hidden>Try again</button></div>
 </section>
 </main>
-<script type="module" src="viewer.js"></script>
+<script type="module" src="viewer.js" onerror="document.getElementById('load-panel').hidden=true;document.getElementById('error').style.display='block';document.getElementById('error-message').textContent='The viewer script could not load. Reload the page to try again.'"></script>
 </html>

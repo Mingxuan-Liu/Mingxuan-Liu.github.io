@@ -119,14 +119,20 @@
   if (disclosure) {
     disclosure.addEventListener('toggle', function () {
       var mount = disclosure.querySelector('.volume-mount');
+      var opening = disclosure.querySelector('[data-volume-opening]');
       if (disclosure.open && !mount.firstElementChild) {
         var frame = disclosure.querySelector('template').content.querySelector('iframe').cloneNode(true);
+        opening.hidden = false;
+        frame.addEventListener('load', function () {
+          if (mount.firstElementChild === frame) opening.hidden = true;
+        });
         frame.src = frame.dataset.src;
         frame.removeAttribute('data-src');
         mount.appendChild(frame);
       } else if (!disclosure.open) {
         // Closing the viewer releases its WebGL context and stops animation work.
         mount.replaceChildren();
+        opening.hidden = true;
       }
     });
   }

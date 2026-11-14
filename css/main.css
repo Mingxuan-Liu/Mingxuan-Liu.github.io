@@ -521,6 +521,7 @@ main { padding-bottom: 4rem; }
 .volume-disclosure { border: 1px solid var(--rule); border-radius: var(--radius); background: var(--surface); }
 .volume-disclosure > summary { cursor: pointer; padding: 1rem 1.2rem; font-family: var(--font-display); font-weight: 700; color: var(--accent); }
 .volume-disclosure > summary span { display: inline-block; color: var(--muted); font-size: .83rem; font-weight: 400; margin-left: .5rem; }
+.volume-opening { margin: 0; padding: .4rem 1.2rem 1rem; color: var(--ink-2); }
 .volume-disclosure .simulation-frame { box-shadow: none; border-radius: 0 0 var(--radius) var(--radius); }
 .volume-disclosure > noscript p { padding: 0 1.2rem 1rem; }
 
