@@ -30,7 +30,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/main.css?v=20261105-map-controls">
+<link rel="stylesheet" href="../css/main.css?v=20261114-filaments">
 <script>
   // Set the theme before first paint so there is no flash of the wrong colors.
   (function () {
@@ -67,7 +67,7 @@
   <div class="nav-brand">
     <a class="nav-logo" href="../research.html#research-artwork" aria-label="View the cosmic-ray artwork on the Research page"
        title="Cosmic-ray paths bending near a magnetized interstellar cloud">
-      <img src="../img/favicon.png" width="36" height="36" alt="">
+      <img src="../img/header-logo.png" width="36" height="36" alt="">
     </a>
     <a class="nav-name" href="../">Mingxuan Liu</a>
   </div>
@@ -205,7 +205,7 @@
       <div class="wrap project-content">
         <figure class="figure">
           <a href="../img/research/filament_cover_2048_ohmic.png" target="_blank" rel="noopener">
-            <img src="../img/pubs/filament-cover-2048-ohmic.webp" width="1200" height="862"
+            <img src="../img/research/filament_cover_2048_ohmic.png" width="3840" height="2758"
                  alt="Filaments in the 2048³ simulation, shown in blended bands of temperature, magnetic field strength, and Ohmic heating from left to right.">
           </a>
           <figcaption>Three views of the same filaments at 2.49 eddy turnover times. From left to right,
@@ -253,10 +253,8 @@
 
   <section class="project-section" id="native-detail" aria-labelledby="native-detail-title">
     <h2 id="native-detail-title">Hα and soft X-rays at native resolution</h2>
-    <p class="simulation-intro">Slide between Hα emission at 6563 Å and soft X-ray emission at
-      0.5–2 keV. Both maps show intrinsic surface brightness along the same lines of sight.
-      Zoom in to see where the two bands trace the same filaments.</p>
-    <p class="simulation-note"><strong>2048 × 2048 pixels · 3.91 pc per pixel · 8 × 8 kpc.</strong></p>
+    <p class="simulation-intro">Move the slider to see where Hα emission (6563 Å) and soft X-rays
+      (0.5–2 keV) trace the same filaments across this 8 kpc field.</p>
 
     <div class="native-explorer" data-native-explorer>
       <div class="native-toolbar" data-native-controls hidden>
@@ -270,12 +268,10 @@
         <span class="native-hint">Drag or scroll to pan after zooming</span>
       </div>
       <div class="native-wipe" data-native-controls hidden>
-        <label for="native-wipe">Compare the same structures</label>
-        <output id="native-wipe-value" for="native-wipe" aria-live="off">50% Hα / 50% soft X-ray</output>
-        <input id="native-wipe" type="range" min="0" max="100" value="50" aria-describedby="native-wipe-value">
+        <input id="native-wipe" type="range" min="0" max="100" value="50" aria-label="Hα and soft X-ray map divider">
         <div class="native-wipe-ends"><span>All soft X-ray</span><span>All Hα</span></div>
       </div>
-      <div class="native-viewport" tabindex="0" role="region" aria-label="Native H-alpha and soft X-ray maps. Use the arrow keys to pan when zoomed." aria-describedby="native-map-status">
+      <div class="native-viewport" tabindex="0" role="region" aria-label="Native H-alpha and soft X-ray maps. Use the arrow keys to pan when zoomed.">
         <div class="native-pair">
           <img src="../assets/multiphase/2048/native/emission/soft_xray.png" width="2048" height="2048" loading="lazy" decoding="async"
                alt="Blue and cyan soft X-ray emission around the filament network.">
@@ -285,24 +281,14 @@
         </div>
         <div class="native-map-labels" aria-hidden="true"><span data-left-label>Hα</span><span data-right-label>Soft X-ray</span></div>
       </div>
-      <p class="native-map-status" id="native-map-status" role="status">Native maps load as you approach this section (about 16 MiB).</p>
-      <div class="native-scales">
-        <div><b>Hα · 6563 Å</b><span class="native-colorbar native-colorbar-halpha" aria-hidden="true"></span>
-          <span class="native-scale-ticks"><span>P55</span><span>P99.25</span></span></div>
-        <div><b>Soft X-ray · 0.5–2 keV</b><span class="native-colorbar native-colorbar-xray" aria-hidden="true"></span>
-          <span class="native-scale-ticks"><span>P55</span><span>P99.25</span></span></div>
-        <p>The ticks mark the 55th and 99.25th percentiles of positive surface brightness in each band.</p>
-      </div>
+      <p class="native-map-status" role="status"></p>
     </div>
     <details class="science-details">
       <summary>How to read the maps</summary>
-      <p>Each pixel samples one sightline through the full 8 kpc box along x<sub>3</sub>.
-        We integrate the optically thin emissivity in each band, divide by 4π, and convert
-        from steradians to square arcseconds. The resulting intrinsic surface brightness is in erg s<sup>−1</sup> cm<sup>−2</sup> arcsec<sup>−2</sup>.</p>
-      <p>Each band has its own contrast scale. Its 55th and 99.25th percentiles fall at 10% and 90%
-        of the color ramp before a 3 × 3 edge-preserving smoothing pass on the displayed tones.
-        The same position on the two ramps can represent different physical intensities.</p>
-      <p>Both projections use snapshot 00056 of 2048_eta3e-4 at 2.49 eddy turnover times.</p>
+      <p>Each pixel spans 3.91 pc and shows the emission integrated along the same line of
+        sight through the simulated gas. Brighter regions have higher surface brightness
+        within each band. Each map has its own contrast scale, so the colors let you
+        compare filament shapes and positions across the two bands.</p>
     </details>
     <div class="ref-links">
       <a class="ref-link" href="../assets/multiphase/2048/native/emission/halpha.png" target="_blank" rel="noopener">Open native Hα map ↗</a>
@@ -336,10 +322,7 @@
         </section>
 <section class="project-section simulation-interactive" id="multiphase-interactive" aria-labelledby="multiphase-interactive-title">
           <div class="simulation-heading">
-            <div>
-              <p class="project-number">Explore the geometry</p>
-              <h2 id="multiphase-interactive-title">Explore the simulation in 3D</h2>
-            </div>
+            <h2 id="multiphase-interactive-title">Explore the simulation in 3D</h2>
             <a class="ref-link" href="../assets/multiphase/2048/interactive/index.html" target="_blank" rel="noopener">Open full-page viewer ↗</a>
           </div>
           <p class="simulation-intro">
@@ -349,14 +332,9 @@
           </p>
           <p class="simulation-note" id="multiphase-sampling">
             <strong>Native simulation: 2048<sup>3</sup> cells. Interactive display: 512<sup>3</sup> averaged cells.</strong>
-            The updated viewer contains 64 times as many display cells as the earlier 128<sup>3</sup>
-            version. Each displayed cell averages 4 &times; 4 &times; 4 native cells.
-            This is the fixed
-            snapshot 00056 at approximately 2.49 eddy turnover times; rotation and the spatial
-            cutaway explore that snapshot.
           </p>
           <details class="volume-disclosure" data-volume-disclosure>
-            <summary>Load the 3D viewer <span>512³ display · six fields · 128 MiB per field</span></summary>
+            <summary>Load the 3D viewer <span>128 MiB per field</span></summary>
             <p class="volume-opening" data-volume-opening role="status" hidden>Opening the 3D viewer…</p>
             <div class="volume-mount"></div>
             <template><iframe class="simulation-frame"
@@ -369,10 +347,7 @@
           <p class="simulation-note simulation-help">
             Drag to orbit, scroll to zoom, or focus the volume and use the arrow keys and + / −.
             The viewer opens with plasma β, the ratio of gas pressure to magnetic pressure.
-            Each additional field downloads when selected (128 MiB per field).
-            Use Rotate to start or pause the turntable; pausing restores the fine view.
-            A desktop browser with WebGL2 is recommended. Hα shows intrinsic emissivity; overlapping layers are an
-            illustrative blend. Full scales and sampling details are available inside the viewer.
+            Use Rotate to start or pause the turntable.
           </p>
         </section>
 
@@ -398,6 +373,6 @@
 </footer>
 
 <script src="../js/site.js"></script>
-<script src="../js/research.js?v=20261114-emission"></script>
+<script src="../js/research.js?v=20261114-map"></script>
 </body>
 </html>

@@ -10,7 +10,6 @@
     var divider = explorer.querySelector('.native-divider');
     var wipe = explorer.querySelector('#native-wipe');
     var wipeControl = explorer.querySelector('.native-wipe');
-    var wipeValue = explorer.querySelector('#native-wipe-value');
     var zoomLevel = explorer.querySelector('[data-zoom-level]');
     var status = explorer.querySelector('[role="status"]');
     var maps = Array.from(pair.querySelectorAll('img'));
@@ -62,8 +61,7 @@
       divider.hidden = fraction === 0 || fraction === 100;
       explorer.querySelector('[data-left-label]').style.visibility = fraction === 0 ? 'hidden' : 'visible';
       explorer.querySelector('[data-right-label]').style.visibility = fraction === 100 ? 'hidden' : 'visible';
-      wipeValue.textContent = fraction + '% Hα / ' + (100 - fraction) + '% soft X-ray';
-      wipe.setAttribute('aria-valuetext', wipeValue.textContent);
+      wipe.setAttribute('aria-valuetext', fraction + '% Hα, ' + (100 - fraction) + '% soft X-ray');
     }
 
     wipe.addEventListener('input', updateWipe);
@@ -100,10 +98,9 @@
 
     function mapStatus() {
       var failed = maps.some(function (img) { return img.complete && !img.naturalWidth; });
-      var loaded = maps.every(function (img) { return img.complete && img.naturalWidth === size; });
-      status.textContent = failed ? 'A map could not load. Use the original-image links below, or reload to retry.' :
-        loaded ? 'Both 2048 × 2048 maps loaded. Magnifying beyond native pixels adds no new detail.' :
-        'Loading native maps (about 16 MiB)…';
+      var loaded = maps.every(function (img) { return img.complete; });
+      status.textContent = failed ? 'A map could not load. Open the individual maps below or reload to retry.' :
+        loaded ? '' : 'Loading maps…';
     }
     maps.forEach(function (img) { img.addEventListener('load', mapStatus); img.addEventListener('error', mapStatus); });
     mapStatus();

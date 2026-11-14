@@ -24,7 +24,8 @@ css/main.css          all styling; design tokens are the :root variables at the 
 js/site.js            theme toggle, mobile menu, news expander, husky interactions
 js/research.js        native-map zoom/comparison and on-demand 3D viewer
 img/logo.png          full-resolution ink-wash artwork shown on the Research page
-img/favicon.png       circular crop of the artwork for the header and search favicon
+img/header-logo.png   square thumbnail of the complete artwork for the site header
+img/favicon.png       close crop of the mountain and cosmic-ray paths for the search favicon
 img/favicon.svg       same mark at the previous favicon address
 favicon.ico           browser fallback, also served at the previous img/logo.ico address
 img/profile_pic.jpg   portrait
