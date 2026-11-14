@@ -30,7 +30,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/main.css?v=20261114-filaments">
+<link rel="stylesheet" href="../css/main.css?v=20261114-framing">
 <script>
   // Set the theme before first paint so there is no flash of the wrong colors.
   (function () {
@@ -203,7 +203,7 @@
           <a href="#multiphase-evolution">Evolution movie</a><a href="#multiphase-interactive">3D viewer</a></nav>
       </header>
       <div class="wrap project-content">
-        <figure class="figure">
+        <figure class="figure filament-cover">
           <a href="../img/research/filament_cover_2048_ohmic.png" target="_blank" rel="noopener">
             <img src="../img/research/filament_cover_2048_ohmic.png" width="3840" height="2758"
                  alt="Filaments in the 2048³ simulation, shown in blended bands of temperature, magnetic field strength, and Ohmic heating from left to right.">
@@ -251,12 +251,12 @@
           </div>
         </article>
 
-  <section class="project-section" id="native-detail" aria-labelledby="native-detail-title">
+  <section class="project-section" aria-labelledby="native-detail-title">
     <h2 id="native-detail-title">Hα and soft X-rays at native resolution</h2>
     <p class="simulation-intro">Move the slider to see where Hα emission (6563 Å) and soft X-rays
       (0.5–2 keV) trace the same filaments across this 8 kpc field.</p>
 
-    <div class="native-explorer" data-native-explorer>
+    <div class="native-explorer" id="native-detail" role="group" aria-labelledby="native-detail-title" data-native-explorer>
       <div class="native-toolbar" data-native-controls hidden>
         <div class="native-zoom" role="group" aria-label="Map zoom">
           <button type="button" data-zoom="fit">Fit map</button>
