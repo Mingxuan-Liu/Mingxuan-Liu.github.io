@@ -4,17 +4,21 @@ const canvas = $('volume');
 const gl = canvas.getContext('webgl2', {alpha:false, antialias:false});
 const panel = $('load-panel');
 const progress = $('load-progress');
+const arc = $('load-arc');
 let unavailable = false;
 
-function showLoading(title, detail, percent, compact = false) {
+function showLoading(title, detail, percent) {
  panel.hidden = false;
- panel.classList.toggle('compact', compact);
  canvas.setAttribute('aria-busy', 'true');
  // Keeping the announcement separate from byte counts avoids reading every packet aloud.
  if ($('load-title').textContent !== title) $('load-title').textContent = title;
  $('load-detail').textContent = detail;
- if (percent === null) progress.removeAttribute('value');
- else progress.value = percent;
+ if (percent === null) {
+  progress.removeAttribute('value');
+ } else {
+  progress.value = percent;
+  arc.setAttribute('stroke-dashoffset', 100 - percent);
+ }
 }
 
 function hideLoading() {
@@ -90,7 +94,7 @@ function interp(points,x,col){if(x<=points[0][0])return points[0][col];for(let i
 
 async function start(){
  if(!gl)throw Error('This viewer requires WebGL2. Enable browser hardware acceleration or try a recent browser.');
- showLoading('Preparing the viewer…', 'Reading the field sizes and color scales.', null);
+ showLoading('Opening the 3D viewer…', '', null);
  const [meta,style]=await Promise.all([json('manifest.json'),json('style.json')]);
  if(style.fields.length!==6 || style.fields.some(f=>!meta.fields.includes(f.key)))throw Error('This viewer needs a six-field export including saved Ohmic and viscous heating. Re-export the snapshot.');
  const n=meta.web_size;
@@ -156,9 +160,9 @@ async function start(){
   } else {
    data = await response.arrayBuffer();
    signal.throwIfAborted();
+   if(data.byteLength!==size)throw Error(`Wrong byte count for ${file}`);
    onBytes(data.byteLength);
   }
-  if(data.byteLength!==size)throw Error(`Wrong byte count for ${file}`);
   if(crypto.subtle){
    const digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',data)),b=>b.toString(16).padStart(2,'0')).join('');
    if(digest!==expected)throw Error(`Checksum mismatch for ${file}`);
@@ -167,7 +171,6 @@ async function start(){
  }
  async function loadField(q,signal){
   const f=style.fields[q], desc=meta.web_textures?.[f.key],tex=gl.createTexture();
-  const compact = layers.some(layer => layer.tex && layer.input.checked);
   const total = meta.web_textures ? n**3 : 4*n**3;
   const totalMiB = total / 1024**2;
   const name = f.title;
@@ -182,10 +185,9 @@ async function start(){
    const percent = Math.floor(100 * received / total);
    const amount = (received / 1024**2).toLocaleString('en-US', {maximumFractionDigits:1});
    const detail = `${amount} of ${totalMiB.toLocaleString('en-US')} MiB · ${percent}%`;
-   showLoading(received === total ? 'Preparing ' + name + ' for display…' : title,
-    received === total ? detail + ' · Processing volume data' : detail, percent, compact);
+   showLoading(received === total ? 'Preparing ' + name + '…' : title, detail, percent);
   }
-  showLoading(title, `0 of ${totalMiB.toLocaleString('en-US')} MiB · 0%`, 0, compact);
+  showLoading(title, `0 of ${totalMiB.toLocaleString('en-US')} MiB · 0%`, 0);
   try {
    bind(q,tex);gl.texStorage3D(gl.TEXTURE_3D,1,gl.R8,n,n,n);filters();gpuCheck(f.title);
    if(meta.web_textures){
