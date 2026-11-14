@@ -11,7 +11,7 @@ copied without resampling or recoloring. Snapshot 00056, t / t_eddy ≈ 2.493.
 - `four_fields.png`: 4800 × 4000 native-volume render of density, temperature,
   plasma beta and Hα emissivity.
 - `ohmic_heating.png`: 2400 × 2400 standalone Ohmic dissipation render from the
-  native 2048³ volume; used as the project and publication thumbnail.
+  native 2048³ volume.
 - `heating_comparison.png`: 4800 × 2400 native-volume heating renders with matched
   color scales.
 - `render.json`: original rendering provenance. It also describes other products

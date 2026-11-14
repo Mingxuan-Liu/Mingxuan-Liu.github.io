@@ -87,7 +87,7 @@ update the status text and the publication's JSON-LD, and update the sitemap dat
   background animation and release GPU resources.
 - `assets/multiphase/2048/native/` preserves the original 2048 × 2048 gas-column
   and Hα projections, 4800 × 4000 four-field render, 4800 × 2400 heating comparison,
-  standalone 2400 × 2400 Ohmic dissipation thumbnail, and their provenance.
+  standalone 2400 × 2400 Ohmic dissipation render, and their provenance.
   The maps integrate through the native 2048³ volume along
   x3, without averaging in the image plane: 3.90625 pc per pixel across 8 kpc.
   The zoomable comparison preserves that sampling. “Native pixels” means one
