@@ -205,8 +205,11 @@
         <h1>Heating Hα filaments in multiphase turbulence</h1>
         <p class="section-lede">Can magnetized turbulence supply the heat that keeps cold filaments glowing in galaxy clusters?</p>
         <nav class="project-jumps" aria-label="On this project page">
-          <a href="#the-result">The science</a><a href="#native-detail">Native detail</a>
-          <a href="#multiphase-evolution">Evolution movie</a><a href="#multiphase-interactive">3D viewer</a></nav>
+          <a href="#the-result">The science</a>
+          <a href="#multiphase-interactive">3D viewer</a>
+          <a href="#multiphase-evolution">Evolution movie</a>
+          <a href="#native-detail">Native detail</a>
+        </nav>
       </header>
       <div class="wrap project-content">
         <figure class="figure filament-cover">
@@ -257,6 +260,63 @@
           </div>
         </article>
 
+<section class="project-section simulation-interactive" id="multiphase-interactive" aria-labelledby="multiphase-interactive-title">
+          <div class="simulation-heading">
+            <h2 id="multiphase-interactive-title">Explore the simulation in 3D</h2>
+            <a class="ref-link" href="../assets/multiphase/2048/interactive/index.html" target="_blank" rel="noopener">Open full-page viewer ↗</a>
+          </div>
+          <p class="simulation-intro">
+            Turn the volume, reveal its interior, and switch between density, temperature,
+            plasma β, Hα emissivity, Ohmic heating and viscous heating. The two heating fields
+            share a color scale so their structures can be compared directly.
+          </p>
+          <p class="simulation-note" id="multiphase-sampling">
+            <strong>Native simulation: 2048<sup>3</sup> cells. Interactive display: 512<sup>3</sup> averaged cells.</strong>
+          </p>
+          <details class="volume-disclosure" data-volume-disclosure>
+            <summary>Load the 3D viewer <span>128 MiB per field</span></summary>
+            <p class="volume-opening" data-volume-opening role="status" hidden>Opening the 3D viewer…</p>
+            <div class="volume-mount"></div>
+            <template><iframe class="simulation-frame"
+                  data-src="../assets/multiphase/2048/interactive/index.html"
+                  title="Interactive 2048 cubed simulation snapshot: six physical fields, averaged to a 512 cubed interactive display"
+                  aria-describedby="multiphase-sampling"
+                  width="1000" height="850" allow="fullscreen" allowfullscreen></iframe></template>
+            <noscript><p><a href="../assets/multiphase/2048/interactive/index.html">Open the full-page 3D viewer</a>.</p></noscript>
+          </details>
+          <p class="simulation-note simulation-help">
+            Drag to orbit, scroll to zoom, or focus the volume and use the arrow keys and + / −.
+            The viewer opens with plasma β, the ratio of gas pressure to magnetic pressure.
+            Use Rotate to start or pause the turntable.
+          </p>
+        </section>
+
+<section class="project-section" id="multiphase-evolution">
+          <h2>Turbulence in motion · 1024<sup>3</sup></h2>
+          <figure class="figure">
+            <video controls playsinline preload="none" width="2880" height="2160"
+                   poster="../img/research/multiphase-evolution.jpg"
+                   aria-label="Evolution of the 1024 cubed multiphase turbulence simulation"
+                   aria-describedby="multiphase-evolution-caption">
+              <source src="../assets/multiphase/1024/evolution.mp4" type="video/mp4">
+              <track kind="subtitles" srclang="en" label="English" src="/assets/multiphase/1024/evolution.en.vtt">
+              <track kind="subtitles" srclang="zh-Hans" label="简体中文" src="/assets/multiphase/1024/evolution.zh.vtt">
+              <p><a href="../assets/multiphase/1024/evolution.mp4">Watch the turbulence evolution movie (MP4).</a></p>
+            </video>
+            <figcaption id="multiphase-evolution-caption">
+              A 24-second view of the native 1024<sup>3</sup> simulation in an
+              8 &times; 8 &times; 8 kpc box. The first 12 seconds follow temperature evolution
+              from a fixed viewpoint; the final 12 seconds orbit the last saved state,
+              moving through temperature, plasma β, intrinsic Hα emissivity and density.
+              Transitions blend rendered images of saved states; opacity is illustrative.
+              Use the full-screen control to see the fine structure.
+            </figcaption>
+          </figure>
+          <div class="ref-links simulation-links">
+            <a class="ref-link" href="../assets/multiphase/1024/evolution.mp4" target="_blank" rel="noopener">Open movie · MP4, 59 MiB</a>
+          </div>
+        </section>
+
   <section class="project-section" aria-labelledby="native-detail-title">
     <h2 id="native-detail-title">Hα and soft X-rays at native resolution</h2>
     <p class="simulation-intro">Move the slider to see where Hα emission (6563 Å) and soft X-rays
@@ -302,62 +362,6 @@
       <a class="ref-link" href="../assets/multiphase/2048/native/four_fields.png" target="_blank" rel="noopener">Open four-field render ↗</a>
     </div>
   </section>
-
-<section class="project-section" id="multiphase-evolution">
-          <h2>Turbulence in motion · 1024<sup>3</sup></h2>
-          <figure class="figure">
-            <video controls playsinline preload="none" width="2880" height="2160"
-                   poster="../img/research/multiphase-evolution.jpg"
-                   aria-label="Evolution of the 1024 cubed multiphase turbulence simulation"
-                   aria-describedby="multiphase-evolution-caption">
-              <source src="../assets/multiphase/1024/evolution.mp4" type="video/mp4">
-              <track kind="subtitles" srclang="en" label="English" src="/assets/multiphase/1024/evolution.en.vtt">
-              <track kind="subtitles" srclang="zh-Hans" label="简体中文" src="/assets/multiphase/1024/evolution.zh.vtt">
-              <p><a href="../assets/multiphase/1024/evolution.mp4">Watch the turbulence evolution movie (MP4).</a></p>
-            </video>
-            <figcaption id="multiphase-evolution-caption">
-              A 24-second view of the native 1024<sup>3</sup> simulation in an
-              8 &times; 8 &times; 8 kpc box. The first 12 seconds follow temperature evolution
-              from a fixed viewpoint; the final 12 seconds orbit the last saved state,
-              moving through temperature, plasma β, intrinsic Hα emissivity and density.
-              Transitions blend rendered images of saved states; opacity is illustrative.
-              Use the full-screen control to see the fine structure.
-            </figcaption>
-          </figure>
-          <div class="ref-links simulation-links">
-            <a class="ref-link" href="../assets/multiphase/1024/evolution.mp4" target="_blank" rel="noopener">Open movie · MP4, 59 MiB</a>
-          </div>
-        </section>
-<section class="project-section simulation-interactive" id="multiphase-interactive" aria-labelledby="multiphase-interactive-title">
-          <div class="simulation-heading">
-            <h2 id="multiphase-interactive-title">Explore the simulation in 3D</h2>
-            <a class="ref-link" href="../assets/multiphase/2048/interactive/index.html" target="_blank" rel="noopener">Open full-page viewer ↗</a>
-          </div>
-          <p class="simulation-intro">
-            Turn the volume, reveal its interior, and switch between density, temperature,
-            plasma β, Hα emissivity, Ohmic heating and viscous heating. The two heating fields
-            share a color scale so their structures can be compared directly.
-          </p>
-          <p class="simulation-note" id="multiphase-sampling">
-            <strong>Native simulation: 2048<sup>3</sup> cells. Interactive display: 512<sup>3</sup> averaged cells.</strong>
-          </p>
-          <details class="volume-disclosure" data-volume-disclosure>
-            <summary>Load the 3D viewer <span>128 MiB per field</span></summary>
-            <p class="volume-opening" data-volume-opening role="status" hidden>Opening the 3D viewer…</p>
-            <div class="volume-mount"></div>
-            <template><iframe class="simulation-frame"
-                  data-src="../assets/multiphase/2048/interactive/index.html"
-                  title="Interactive 2048 cubed simulation snapshot: six physical fields, averaged to a 512 cubed interactive display"
-                  aria-describedby="multiphase-sampling"
-                  width="1000" height="850" allow="fullscreen" allowfullscreen></iframe></template>
-            <noscript><p><a href="../assets/multiphase/2048/interactive/index.html">Open the full-page 3D viewer</a>.</p></noscript>
-          </details>
-          <p class="simulation-note simulation-help">
-            Drag to orbit, scroll to zoom, or focus the volume and use the arrow keys and + / −.
-            The viewer opens with plasma β, the ratio of gas pressure to magnetic pressure.
-            Use Rotate to start or pause the turntable.
-          </p>
-        </section>
 
       </div>
       <nav class="wrap more-projects" aria-label="Other research projects">

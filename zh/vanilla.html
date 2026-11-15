@@ -193,7 +193,9 @@
       <div>
         <h1 class="section-title">香草 <span class="hero-han" lang="en">Vanilla</span></h1>
         <p class="section-lede">2026 年 1 月 3 日，我们从安娜堡的动物收容所把香草接回了家。没人知道她确切的出生日期，就把 2024 年 6 月 18 日定为她的生日。</p>
-        <p style="margin-top:1.1rem;color:var(--muted);font-size:.92rem">点点头像，摸摸香草。<span data-pet-count style="font-weight:700;color:var(--accent)">已摸 0 次</span></p>
+        <p data-pet-prompt hidden style="margin-top:1.1rem;color:var(--muted);font-size:.92rem">
+          点点头像，摸摸香草。<span data-pet-count role="status" data-one="大家一共摸了 1 次" data-many="大家一共摸了 {n} 次" data-offline="暂时无法获取总次数。" data-stale="上次累计：{n} 次" style="font-weight:700;color:var(--accent)">正在加载总次数…</span>
+        </p>
       </div>
       <div class="vanilla-portrait">
         <svg viewBox="0 0 120 112" aria-hidden="true" focusable="false">
@@ -334,6 +336,7 @@
   </div>
 </footer>
 
-<script src="/js/site.js?v=bilingual-1"></script>
+<script src="/js/site.js?v=global-pets-1"></script>
+<script src="/js/vanilla.js"></script>
 </body>
 </html>

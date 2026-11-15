@@ -1,8 +1,9 @@
 name = "vanilla-counter"
 main = "worker.js"
 compatibility_date = "2026-01-01"
+workers_dev = true
 
-# Replace id with the one `wrangler kv namespace create COUNTER` prints.
-[[kv_namespaces]]
+[[d1_databases]]
 binding = "COUNTER"
-id = "PUT_YOUR_KV_NAMESPACE_ID_HERE"
+database_name = "vanilla-pets"
+database_id = "f346b997-c71a-4c3e-b4b9-83e7e128c1ee"

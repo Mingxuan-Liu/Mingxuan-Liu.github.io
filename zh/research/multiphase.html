@@ -213,8 +213,11 @@
         <h1>多相湍流中 Hα 丝状结构的加热</h1>
         <p class="section-lede">星系团中的冷气体丝状结构持续发出 Hα 辐射。磁化湍流能否为它们提供所需的热量？</p>
         <nav class="project-jumps" aria-label="本页导航">
-          <a href="#the-result">研究结果</a><a href="#native-detail">辐射图像对比</a>
-          <a href="#multiphase-evolution">演化动画</a><a href="#multiphase-interactive">三维交互视图</a></nav>
+          <a href="#the-result">研究结果</a>
+          <a href="#multiphase-interactive">三维交互视图</a>
+          <a href="#multiphase-evolution">演化动画</a>
+          <a href="#native-detail">辐射图像对比</a>
+        </nav>
       </header>
       <div class="wrap project-content">
         <figure class="figure filament-cover">
@@ -247,6 +250,54 @@
             <a class="ref-link" href="#native-detail">对比原始分辨率图像</a>
           </div>
         </article>
+
+<section class="project-section simulation-interactive" id="multiphase-interactive" aria-labelledby="multiphase-interactive-title">
+          <div class="simulation-heading">
+            <h2 id="multiphase-interactive-title">从三维视角探索模拟结果</h2>
+            <a class="ref-link" href="../assets/multiphase/2048/interactive/index.html" target="_blank" rel="noopener">在独立页面打开 ↗</a>
+          </div>
+          <p class="simulation-intro">
+            旋转视角或剖开模拟区域，可以查看密度、温度、等离子体 β、Hα 体积发射率、欧姆加热率和黏性加热率。两种加热率共用同一色标，便于直接比较它们的空间分布。
+          </p>
+          <p class="simulation-note" id="multiphase-sampling">
+            <strong>原始模拟网格为 2048<sup>3</sup>，交互视图显示空间平均后的 512<sup>3</sup> 网格。</strong>
+          </p>
+          <details class="volume-disclosure" data-volume-disclosure>
+            <summary>加载三维交互视图<span>每个物理量 128 MiB</span></summary>
+            <p class="volume-opening" data-volume-opening role="status" hidden>正在打开三维交互视图…</p>
+            <div class="volume-mount"></div>
+            <template><iframe class="simulation-frame"
+                  data-src="../assets/multiphase/2048/interactive/index.html"
+                  title="2048³ 模拟的交互式三维快照：六个物理量均经过空间平均，在 512³ 网格上显示。"
+                  aria-describedby="multiphase-sampling"
+                  width="1000" height="850" allow="fullscreen" allowfullscreen></iframe></template>
+            <noscript><p><a href="../assets/multiphase/2048/interactive/index.html">在独立页面打开三维交互视图</a>。</p></noscript>
+          </details>
+          <p class="simulation-note simulation-help">
+            拖动可旋转视角，滚动可缩放。也可将键盘焦点移至三维图像，再用方向键和 + / − 键操作。初始画面显示等离子体 β，即气体压强与磁压之比。点击“自动旋转”开始转动，再次点击即可暂停。
+          </p>
+        </section>
+
+<section class="project-section" id="multiphase-evolution">
+          <h2>湍流演化 · 1024<sup>3</sup></h2>
+          <figure class="figure">
+            <video controls playsinline preload="none" width="2880" height="2160"
+                   poster="/img/research/multiphase-evolution.jpg"
+                   aria-label="1024³ 网格上的多相湍流演化"
+                   aria-describedby="multiphase-evolution-caption">
+              <source src="/assets/multiphase/1024/evolution.mp4" type="video/mp4">
+              <track kind="subtitles" srclang="en" label="English" src="/assets/multiphase/1024/evolution.en.vtt">
+              <track kind="subtitles" srclang="zh-Hans" label="简体中文" src="/assets/multiphase/1024/evolution.zh.vtt" default>
+              <p><a href="/assets/multiphase/1024/evolution.mp4">观看湍流演化动画（MP4）。</a></p>
+            </video>
+            <figcaption id="multiphase-evolution-caption">
+              这段 24 秒的动画展示了 1024<sup>3</sup> 网格上、边长为 8 kpc 的立方体模拟区域。前 12 秒从固定视角观察温度演化，后 12 秒则环绕最终状态，依次展示温度、等离子体 β、本征 Hα 体积发射率和密度。不同模拟时刻的画面通过渐变衔接，透明度仅用于呈现结构。可全屏观看细节。
+            </figcaption>
+          </figure>
+          <div class="ref-links simulation-links">
+            <a class="ref-link" href="/assets/multiphase/1024/evolution.mp4" target="_blank" rel="noopener">打开动画 · MP4，59 MiB</a>
+          </div>
+        </section>
 
   <section class="project-section" aria-labelledby="native-detail-title">
     <h2 id="native-detail-title">原始分辨率下的 Hα 与软 X 射线辐射</h2>
@@ -289,53 +340,6 @@
       <a class="ref-link" href="/assets/multiphase/2048/native/four_fields.png" target="_blank" rel="noopener">查看四种物理量的三维图像 ↗</a>
     </div>
   </section>
-
-<section class="project-section" id="multiphase-evolution">
-          <h2>湍流演化 · 1024<sup>3</sup></h2>
-          <figure class="figure">
-            <video controls playsinline preload="none" width="2880" height="2160"
-                   poster="/img/research/multiphase-evolution.jpg"
-                   aria-label="1024³ 网格上的多相湍流演化"
-                   aria-describedby="multiphase-evolution-caption">
-              <source src="/assets/multiphase/1024/evolution.mp4" type="video/mp4">
-              <track kind="subtitles" srclang="en" label="English" src="/assets/multiphase/1024/evolution.en.vtt">
-              <track kind="subtitles" srclang="zh-Hans" label="简体中文" src="/assets/multiphase/1024/evolution.zh.vtt" default>
-              <p><a href="/assets/multiphase/1024/evolution.mp4">观看湍流演化动画（MP4）。</a></p>
-            </video>
-            <figcaption id="multiphase-evolution-caption">
-              这段 24 秒的动画展示了 1024<sup>3</sup> 网格上、边长为 8 kpc 的立方体模拟区域。前 12 秒从固定视角观察温度演化，后 12 秒则环绕最终状态，依次展示温度、等离子体 β、本征 Hα 体积发射率和密度。不同模拟时刻的画面通过渐变衔接，透明度仅用于呈现结构。可全屏观看细节。
-            </figcaption>
-          </figure>
-          <div class="ref-links simulation-links">
-            <a class="ref-link" href="/assets/multiphase/1024/evolution.mp4" target="_blank" rel="noopener">打开动画 · MP4，59 MiB</a>
-          </div>
-        </section>
-<section class="project-section simulation-interactive" id="multiphase-interactive" aria-labelledby="multiphase-interactive-title">
-          <div class="simulation-heading">
-            <h2 id="multiphase-interactive-title">从三维视角探索模拟结果</h2>
-            <a class="ref-link" href="../assets/multiphase/2048/interactive/index.html" target="_blank" rel="noopener">在独立页面打开 ↗</a>
-          </div>
-          <p class="simulation-intro">
-            旋转视角或剖开模拟区域，可以查看密度、温度、等离子体 β、Hα 体积发射率、欧姆加热率和黏性加热率。两种加热率共用同一色标，便于直接比较它们的空间分布。
-          </p>
-          <p class="simulation-note" id="multiphase-sampling">
-            <strong>原始模拟网格为 2048<sup>3</sup>，交互视图显示空间平均后的 512<sup>3</sup> 网格。</strong>
-          </p>
-          <details class="volume-disclosure" data-volume-disclosure>
-            <summary>加载三维交互视图<span>每个物理量 128 MiB</span></summary>
-            <p class="volume-opening" data-volume-opening role="status" hidden>正在打开三维交互视图…</p>
-            <div class="volume-mount"></div>
-            <template><iframe class="simulation-frame"
-                  data-src="../assets/multiphase/2048/interactive/index.html"
-                  title="2048³ 模拟的交互式三维快照：六个物理量均经过空间平均，在 512³ 网格上显示。"
-                  aria-describedby="multiphase-sampling"
-                  width="1000" height="850" allow="fullscreen" allowfullscreen></iframe></template>
-            <noscript><p><a href="../assets/multiphase/2048/interactive/index.html">在独立页面打开三维交互视图</a>。</p></noscript>
-          </details>
-          <p class="simulation-note simulation-help">
-            拖动可旋转视角，滚动可缩放。也可将键盘焦点移至三维图像，再用方向键和 + / − 键操作。初始画面显示等离子体 β，即气体压强与磁压之比。点击“自动旋转”开始转动，再次点击即可暂停。
-          </p>
-        </section>
 
       </div>
       <nav class="wrap more-projects" aria-label="其他研究项目">

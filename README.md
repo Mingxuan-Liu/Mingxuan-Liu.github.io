@@ -147,11 +147,11 @@ the manuscript's status explicitly identified.
 
 ## Pet counter
 
-The tally on `vanilla.html` is stored in `localStorage`, so it persists per browser.
-`counter/` holds an optional Cloudflare Worker that turns it into a single total
-shared by everyone. It is inert until you set `PET_API` in `js/site.js`, and it is
-deployed by clicking through the Cloudflare dashboard, no Node required. See
-`counter/README.md`.
+Both editions of Vanilla’s page share one total. The portrait queues pets on the
+visitor’s device, retries after a lost connection, and refreshes the public count
+while the page is visible. A returning visitor’s earlier browser-only tally is
+imported once. The endpoint is configured in `js/vanilla.js`. Deployment details
+are in [counter/README.md](counter/README.md).
 
 ## Analytics
 

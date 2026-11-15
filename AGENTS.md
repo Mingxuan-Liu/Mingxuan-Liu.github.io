@@ -1,5 +1,9 @@
 # Personal website
 
+Make website edits in the local checkout. Publish by pushing those local commits
+so GitHub Desktop and GitHub retain the same history. Check branch and stash
+state before reconciling work from another session.
+
 Write for visitors who want to understand the research. For a figure or interactive
 viewer, explain what is shown, what to look for, and how to use any unfamiliar
 controls. Put the figure where readers can see it alongside that explanation.

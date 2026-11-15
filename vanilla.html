@@ -198,8 +198,8 @@
           She came home from the humane society in Ann Arbor on 3 January 2026. Nobody
           knew her real birthday, so she was given a nominal one: 18 June 2024.
         </p>
-        <p style="margin-top:1.1rem;color:var(--muted);font-size:.92rem">
-          Click her. <span data-pet-count style="font-weight:700;color:var(--accent)">0 pets</span>
+        <p data-pet-prompt hidden style="margin-top:1.1rem;color:var(--muted);font-size:.92rem">
+          Click her portrait to pet her. <span data-pet-count role="status" data-one="1 pet in total" data-many="{n} pets in total" data-offline="Pet total temporarily unavailable." data-stale="Last known total: {n}" style="font-weight:700;color:var(--accent)">Loading total…</span>
         </p>
       </div>
       <div class="vanilla-portrait">
@@ -352,6 +352,7 @@
   </div>
 </footer>
 
-<script src="./js/site.js?v=bilingual-1"></script>
+<script src="./js/site.js?v=global-pets-1"></script>
+<script src="./js/vanilla.js"></script>
 </body>
 </html>
