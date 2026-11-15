@@ -6,16 +6,25 @@
   /* ---------------------------------------------------------- theme -- */
 
   var root = document.documentElement;
+  var chinese = root.lang === 'zh-Hans';
+
+  function describeTheme(mode) {
+    var btn = document.querySelector('.theme-toggle');
+    if (!btn) return;
+    var label = mode === 'dark'
+      ? (chinese ? '切换到浅色模式' : 'Switch to light theme')
+      : (chinese ? '切换到深色模式' : 'Switch to dark theme');
+    btn.setAttribute('aria-label', label);
+    btn.setAttribute('aria-pressed', String(mode === 'dark'));
+  }
 
   function setTheme(mode) {
     root.setAttribute('data-theme', mode);
     try { localStorage.setItem('ml-theme', mode); } catch (e) { /* private mode */ }
-    var btn = document.querySelector('.theme-toggle');
-    if (btn) {
-      btn.setAttribute('aria-label', mode === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
-      btn.setAttribute('aria-pressed', String(mode === 'dark'));
-    }
+    describeTheme(mode);
   }
+
+  describeTheme(root.getAttribute('data-theme'));
 
   document.addEventListener('click', function (e) {
     var toggle = e.target.closest('.theme-toggle');
@@ -70,7 +79,9 @@
     newsBtn.hidden = false;
     newsBtn.addEventListener('click', function () {
       var expanded = newsList.classList.toggle('is-expanded');
-      newsBtn.textContent = expanded ? 'show less' : 'show all news';
+      newsBtn.textContent = expanded
+        ? (chinese ? '收起动态' : 'show less')
+        : (chinese ? '查看全部动态' : 'show all news');
       newsBtn.setAttribute('aria-expanded', String(expanded));
     });
   }
@@ -95,7 +106,8 @@
   }
   function renderPets(n) {
     document.querySelectorAll('[data-pet-count]').forEach(function (el) {
-      el.textContent = n === 1 ? '1 pet' : n.toLocaleString() + ' pets';
+      el.textContent = chinese ? '已摸头 ' + n.toLocaleString('zh-CN') + ' 次'
+        : (n === 1 ? '1 pet' : n.toLocaleString() + ' pets');
     });
   }
 
@@ -134,7 +146,7 @@
     if (!dog) return;
     portrait.setAttribute('tabindex', '0');
     portrait.setAttribute('role', 'button');
-    portrait.setAttribute('aria-label', 'Pet Vanilla');
+    portrait.setAttribute('aria-label', chinese ? '摸摸香草的头' : 'Pet Vanilla');
 
     var squintTimer = null;
 

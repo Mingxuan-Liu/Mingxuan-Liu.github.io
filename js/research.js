@@ -3,6 +3,7 @@
   'use strict';
 
   var explorer = document.querySelector('[data-native-explorer]');
+  var chinese = document.documentElement.lang === 'zh-Hans';
   if (explorer) {
     var viewport = explorer.querySelector('.native-viewport');
     var pair = explorer.querySelector('.native-pair');
@@ -61,7 +62,9 @@
       divider.hidden = fraction === 0 || fraction === 100;
       explorer.querySelector('[data-left-label]').style.visibility = fraction === 0 ? 'hidden' : 'visible';
       explorer.querySelector('[data-right-label]').style.visibility = fraction === 100 ? 'hidden' : 'visible';
-      wipe.setAttribute('aria-valuetext', fraction + '% Hα, ' + (100 - fraction) + '% soft X-ray');
+      wipe.setAttribute('aria-valuetext', chinese
+        ? '左侧 Hα 图占 ' + fraction + '%，右侧软 X 射线图占 ' + (100 - fraction) + '%'
+        : fraction + '% Hα, ' + (100 - fraction) + '% soft X-ray');
     }
 
     wipe.addEventListener('input', updateWipe);
@@ -99,8 +102,12 @@
     function mapStatus() {
       var failed = maps.some(function (img) { return img.complete && !img.naturalWidth; });
       var loaded = maps.every(function (img) { return img.complete; });
-      status.textContent = failed ? 'A map could not load. Open the individual maps below or reload to retry.' :
-        loaded ? '' : 'Loading maps…';
+      if (failed) {
+        status.textContent = chinese ? '图像加载失败。可打开下方的单张图像，或刷新页面重试。'
+          : 'A map could not load. Open the individual maps below or reload to retry.';
+      } else {
+        status.textContent = loaded ? '' : (chinese ? '正在加载图像…' : 'Loading maps…');
+      }
     }
     maps.forEach(function (img) { img.addEventListener('load', mapStatus); img.addEventListener('error', mapStatus); });
     mapStatus();

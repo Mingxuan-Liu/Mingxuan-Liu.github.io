@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "Site Han Sans";
+  src: local("Source Han Sans SC"), local("Noto Sans CJK SC"), url("../assets/fonts/site-sans-sc.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Site Han Serif";
+  src: local("Source Han Serif SC Medium"), local("Noto Serif CJK SC Medium"), url("../assets/fonts/site-serif-sc.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+:root:lang(zh-Hans) {
+  --font-body: "Site Han Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-display: var(--font-body);
+  --font-editorial: "Site Han Serif", "Songti SC", "SimSun", serif;
+  line-break: strict;
+}
+:lang(zh-Hans) body { line-height: 1.8; }
+:lang(zh-Hans) h1 {
+  font-family: var(--font-editorial);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: .015em;
+}
+:lang(zh-Hans) h2, :lang(zh-Hans) h3, :lang(zh-Hans) h4 { line-height: 1.45; }
+:lang(zh-Hans) .hero-han { font: 500 .53em/1.35 var(--font-body); }
+:lang(zh-Hans) .nav-links, :lang(zh-Hans) .project-number { letter-spacing: normal; }

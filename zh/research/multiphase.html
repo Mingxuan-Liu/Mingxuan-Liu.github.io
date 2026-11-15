@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>多相湍流中 Hα 丝状结构的加热｜刘明轩</title>
+<meta name="description" content="刘明轩通过三维模拟研究欧姆耗散和黏性耗散如何加热星系团中的 Hα 丝状结构，并提供原始分辨率的辐射图像和交互式三维视图。">
+<meta name="author" content="Mingxuan Liu, Yijun Liu">
+<link rel="canonical" href="https://mingxuan-liu.github.io/zh/research/multiphase.html">
+<link rel="alternate" hreflang="en" href="https://mingxuan-liu.github.io/research/multiphase.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://mingxuan-liu.github.io/zh/research/multiphase.html">
+<link rel="alternate" hreflang="x-default" href="https://mingxuan-liu.github.io/research/multiphase.html">
+<script async src="/js/language.js"></script>
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="刘明轩">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:url" content="https://mingxuan-liu.github.io/zh/research/multiphase.html">
+<meta property="og:title" content="多相湍流中 Hα 丝状结构的加热｜刘明轩">
+<meta property="og:description" content="刘明轩通过三维模拟研究欧姆耗散和黏性耗散如何加热星系团中的 Hα 丝状结构，并提供原始分辨率的辐射图像和交互式三维视图。">
+<meta property="og:image" content="https://mingxuan-liu.github.io/img/pubs/filament-cover-2048-ohmic.webp">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="862">
+<meta property="og:image:alt" content="2048³ 网格模拟中，星系团丝状结构的温度、磁场强度和欧姆加热率。">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="多相湍流中 Hα 丝状结构的加热｜刘明轩">
+<meta name="twitter:description" content="刘明轩通过三维模拟研究欧姆耗散和黏性耗散如何加热星系团中的 Hα 丝状结构，并提供原始分辨率的辐射图像和交互式三维视图。">
+<meta name="twitter:image" content="https://mingxuan-liu.github.io/img/pubs/filament-cover-2048-ohmic.webp">
+<meta name="twitter:image:alt" content="2048³ 网格模拟中，星系团丝状结构的温度、磁场强度和欧姆加热率。">
+<link rel="me" href="https://orcid.org/0009-0009-1522-9581">
+<link rel="me" href="https://scholar.google.com/citations?user=96OAFQ8AAAAJ">
+<link rel="me" href="https://github.com/Mingxuan-Liu">
+<link rel="icon" href="/img/favicon.png" type="image/png" sizes="96x96">
+<link rel="alternate icon" href="/img/logo.ico">
+<link rel="stylesheet" href="/css/main.css?v=bilingual-1">
+<link rel="stylesheet" href="/css/zh.css">
+<script>
+  // Set the theme before first paint so there is no flash of the wrong colors.
+  (function () {
+    try {
+      var saved = localStorage.getItem('ml-theme');
+      var dark = saved ? saved === 'dark'
+                       : window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+    } catch (e) { /* storage blocked — light theme is a fine default */ }
+  })();
+</script>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PH383HH12X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-PH383HH12X');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "研究",
+      "item": "https://mingxuan-liu.github.io/zh/research.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "多相湍流中 Hα 丝状结构的加热",
+      "item": "https://mingxuan-liu.github.io/zh/research/multiphase.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳至正文</a>
+<nav class="site-nav">
+  <div class="nav-brand">
+    <a class="nav-logo" href="../research.html#research-artwork" aria-label="在研究页面查看宇宙线主题插画"
+       title="宇宙线经过带有磁场的星际云时，运动轨迹发生弯曲">
+      <img src="/img/header-logo.png" width="36" height="36" alt="">
+    </a>
+    <a class="nav-name" href="../">刘明轩</a>
+  </div>
+
+  <div class="nav-links" id="nav-links">
+      <a href="../">关于我</a>
+      <a href="../research.html" aria-current="page">研究</a>
+      <a href="../publications.html">论文与成果</a>
+      <a href="../teaching.html">教学与科普</a>
+  </div>
+
+  <div class="nav-tools">
+    <span class="dog-wrap">
+      <a class="dog-link" href="../vanilla.html" aria-label="我的哈士奇香草">
+        <svg viewBox="0 0 120 112" aria-hidden="true" focusable="false">
+          <g class="vn-dog">
+            <defs>
+              <linearGradient id="vn-nav-blaze" gradientUnits="userSpaceOnUse" x1="60" y1="43" x2="60" y2="67">
+                <stop offset="0" stop-color="#282925"/>
+                <stop offset=".46" stop-color="#282925"/>
+                <stop offset=".66" stop-color="#484A41" stop-opacity=".65"/>
+                <stop offset=".87" stop-color="#646558" stop-opacity=".2"/>
+                <stop offset="1" stop-color="#646558" stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="vn-nav-side-stripes" gradientUnits="userSpaceOnUse" x1="60" y1="49" x2="60" y2="62">
+                <stop offset="0" stop-color="#282925"/>
+                <stop offset=".45" stop-color="#282925"/>
+                <stop offset="1" stop-color="#55584E"/>
+              </linearGradient>
+              <radialGradient id="vn-nav-muzzle-warmth">
+                <stop offset="0" stop-color="#D9B879" stop-opacity=".55"/>
+                <stop offset=".5" stop-color="#E5CC9C" stop-opacity=".32"/>
+                <stop offset="1" stop-color="#FAF9F2" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <!-- Separate ears retain their hover animation and pivot at the skull. -->
+            <g class="vn-ear vn-ear-l">
+              <path d="M20 46C16 35 17 13 22 5c3-5 7-1 12 5l17 22Z" fill="#282925" stroke="#151714" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M22 37c-1-10 0-23 3-27 2-2 10 9 17 20Z" fill="#FAF9F2"/>
+              <path d="M26 33c-1-7-1-14 1-17 3 2 7 8 10 14Z" fill="#C8B8AE"/>
+              <path d="m23 37 2-7 3 3 1-5 5 4-1 6Z" fill="#E8E5DC"/>
+            </g>
+            <g class="vn-ear vn-ear-r">
+              <path d="M100 46c4-11 3-33-2-41-3-5-7-1-12 5L69 32Z" fill="#282925" stroke="#151714" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M98 37c1-10 0-23-3-27-2-2-10 9-17 20Z" fill="#FAF9F2"/>
+              <path d="M94 33c1-7 1-14-1-17-3 2-7 8-10 14Z" fill="#C8B8AE"/>
+              <path d="m97 37-2-7-3 3-1-5-5 4 1 6Z" fill="#E8E5DC"/>
+            </g>
+
+            <!-- A taller, rounded forehead and a fluffy head-only silhouette. -->
+            <path d="M19 44C24 30 35 20 47 17Q60 13 73 17C85 20 96 30 101 44l6 13-5-2 7 21-5-3 2 9-6-3c-2 9-8 16-17 20l-1-4c-6 6-13 10-22 12-9-2-16-6-22-12l-1 4c-9-4-15-11-17-20l-6 3 2-9-5 3 7-21-5 2Z" fill="#282925" stroke="#151714" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M21 59c-2 6-3 12-3 17l5-4c0 7 3 13 7 17l-1-8c5 9 14 16 22 19l9 5 9-5c8-3 17-10 22-19l-1 8c4-4 7-10 7-17l5 4c0-5-1-11-3-17-7-9-17-12-25-6-5-7-9-11-14-11s-9 4-14 11c-8-6-18-3-25 6Z" fill="#FAF9F2"/>
+
+            <g class="vn-muzzle" transform="translate(10.8 0) scale(.82 1)">
+              <!-- Slender white muzzle and an open, smiling mouth, without a collar. -->
+              <path d="M37 81c5 11 13 18 23 19 10-1 18-8 23-19-7 6-15 8-23 8s-16-2-23-8Z" fill="#DDDCD3"/>
+              <path class="vn-mouth" d="M35 73c6 11 13 11 25 7 12 4 19 4 25-7-4 10-10 23-25 23S39 83 35 73Z" fill="#10130F" stroke="#10130F" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M50 88q10 5 20 0c0 6-20 6-20 0Z" fill="#FAF9F2"/>
+              <g class="vn-tongue">
+                <path d="M49 84c3-3 7-3 11-1 4-2 8-2 11 1l-2 6c-3 6-15 6-18 0Z" fill="#CD8D89"/>
+                <path d="M60 84v5" fill="none" stroke="#AC6D70" stroke-width=".9" stroke-linecap="round"/>
+              </g>
+              <path d="M39 65c5-7 13-8 21-5 8-3 16-2 21 5 4 4 3 10-1 13-6 5-12 4-20 0-8 4-14 5-20 0-4-3-5-9-1-13Z" fill="#FAF9F2"/>
+              <!-- Cream-gold shading beside her nose. -->
+              <ellipse cx="46" cy="65" rx="12" ry="14" fill="url(#vn-nav-muzzle-warmth)"/>
+              <ellipse cx="74" cy="65" rx="12" ry="14" fill="url(#vn-nav-muzzle-warmth)"/>
+            </g>
+            <!-- Vanilla's white brows frame a narrow dark blaze between her eyes. -->
+            <path d="M34 50c-3 0-3-2-1-5 2-3 5-5 8-6-2-4 1-7 5-7 5 0 10 4 10 10 0 5-3 10-6 13l-3-3-10 1-6 4Z" fill="#FAF9F2"/>
+            <path d="M86 50c3 0 3-2 1-5-2-3-5-5-8-6 2-4-1-7-5-7-5 0-10 4-10 10 0 5 3 10 6 13l3-3 10 1 6 4Z" fill="#FAF9F2"/>
+
+            <!-- Continuous angled markings join a straight, softly fading nose stripe. -->
+            <g class="vn-face-markings">
+              <path d="M58 47C55 49 54 51 52 53S48 57.6 46 60.5C49 58.8 53 56.5 56 54.5C58 53 59 51 60 49ZM62 47C65 49 66 51 68 53S72 57.6 74 60.5C71 58.8 67 56.5 64 54.5C62 53 61 51 60 49Z" fill="url(#vn-nav-side-stripes)"/>
+              <path d="M56 39h8l-.6 25q-3.4 4-6.8 0Z" fill="url(#vn-nav-blaze)"/>
+            </g>
+
+            <g class="vn-eyes">
+              <g class="vn-eyes-open">
+                <path d="M31 49c3-5 7-7 11-6 5 0 8 4 10 8-7 5-15 4-21-2Z" fill="#151714"/>
+                <path d="M89 49c-3-5-7-7-11-6-5 0-8 4-10 8 7 5 15 4 21-2Z" fill="#151714"/>
+                <ellipse cx="41.5" cy="48.8" rx="6.4" ry="6.1" fill="#80502D"/>
+                <ellipse cx="78.5" cy="48.8" rx="6.4" ry="6.1" fill="#80502D"/>
+                <path d="M36.8 50.1q4.4 5.6 9.4-.3M73.8 50.1q4.4 5.6 9.4-.3" fill="none" stroke="#AE7B46" stroke-width="1.6" stroke-linecap="round"/>
+                <ellipse cx="42" cy="48.5" rx="3.6" ry="4.6" fill="#111411"/>
+                <ellipse cx="78" cy="48.5" rx="3.6" ry="4.6" fill="#111411"/>
+                <circle cx="43.7" cy="46.2" r="1.65" fill="#FFFFFF"/>
+                <circle cx="79.7" cy="46.2" r="1.65" fill="#FFFFFF"/>
+              </g>
+              <g class="vn-eyes-happy" opacity="0" fill="none" stroke="#151714" stroke-width="2.7" stroke-linecap="round">
+                <path d="M33 50q8.5-9 17 0"/>
+                <path d="M70 50q8.5-9 17 0"/>
+              </g>
+            </g>
+
+            <g class="vn-nose" transform="translate(10.8 0) scale(.82 1)">
+              <path d="M55 70c0 3-2 6-2 10l7-2 7 2c0-4-2-7-2-10Z" fill="#CFD0C7"/>
+              <path d="M60 62c7 0 11 3 10 8-1 5-6 8-10 9-4-1-9-4-10-9-1-5 3-8 10-8Z" fill="#282B26" stroke="#111410" stroke-width="1.5"/>
+              <ellipse cx="60" cy="65" rx="5.7" ry="1.45" fill="#656960"/>
+              <path d="M51 69c4-3 6 2 4 3-2 1-3 0-4-1m18-2c-4-3-6 2-4 3 2 1 3 0 4-1" fill="#10130F"/>
+              <path d="M60 79v1m-25-7c6 11 14 12 25 7 11 5 19 4 25-7" fill="none" stroke="#10130F" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="m34 74 1-2m51 2-1-2" fill="none" stroke="#10130F" stroke-width="1.8" stroke-linecap="round"/>
+            </g>
+          </g>
+        </svg>
+      </a>
+    </span>
+
+    <a class="icon-btn language-switch" data-language-switch href="/research/multiphase.html" hreflang="en" lang="en" aria-label="Switch to English" title="Switch to English">EN</a>
+    <button class="icon-btn theme-toggle" type="button" aria-label="切换到深色模式" aria-pressed="false">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/>
+      </svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M20.5 14.3A8.6 8.6 0 0 1 9.7 3.5a8.6 8.6 0 1 0 10.8 10.8Z"/>
+      </svg>
+    </button>
+
+    <button class="icon-btn nav-toggle" type="button" aria-label="菜单" aria-expanded="false" aria-controls="nav-links">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+<main id="main" class="project-page">
+      <header class="wrap project-page-header">
+        <a class="back-link" href="../research.html">← 返回研究总览</a>
+        <p class="project-number">稿件已完成 · 2026</p>
+        <h1>多相湍流中 Hα 丝状结构的加热</h1>
+        <p class="section-lede">星系团中的冷气体丝状结构持续发出 Hα 辐射。磁化湍流能否为它们提供所需的热量？</p>
+        <nav class="project-jumps" aria-label="本页导航">
+          <a href="#the-result">研究结果</a><a href="#native-detail">辐射图像对比</a>
+          <a href="#multiphase-evolution">演化动画</a><a href="#multiphase-interactive">三维交互视图</a></nav>
+      </header>
+      <div class="wrap project-content">
+        <figure class="figure filament-cover">
+          <a href="/img/research/filament_cover_2048_ohmic.png" target="_blank" rel="noopener">
+            <img src="/img/research/filament_cover_2048_ohmic.png" width="3840" height="2758"
+                 alt="2048³ 网格模拟中的丝状结构。图中自左至右依次叠合展示温度、磁场强度和欧姆加热率。">
+          </a>
+          <figcaption>模拟时间为 2.49 个大涡翻转时间。图中三条色带从左至右分别用气体温度、磁场强度和局部欧姆加热率显示同一组丝状结构。点击可查看 3840 × 2758 像素的原图。</figcaption>
+        </figure>
+        <article class="filament-overview prose" id="the-result">
+          <p>
+            星系团的高温气体中穿插着冷气体丝状结构，在 Hα 谱线上发光。观测到的 Hα 辐射可能强于仅靠气体冷却时每个氢离子复合一次所能产生的辐射。这意味着需要额外的能量持续补充辐射损失。我们想知道，磁化湍流能否将这部分能量输送给冷气体。
+          </p>
+          <p>
+            我们用 Athena++ 进行三维模拟，显式计入电阻率和黏性，追踪磁能和动能转化为热的过程。辐射冷却形成致密的气体凝聚体，气体收缩可以放大其中的磁场，湍流运动则形成电流片，同时使流体发生形变。欧姆耗散和黏性耗散都集中在这些冷气体构成的丝状网络中。
+          </p>
+          <div class="callout">
+            显式计算的耗散功率约有三分之二注入了温度为 8,000–30,000 K 的气体。在基准模拟中，运动黏度与磁扩散率相等，黏性耗散贡献了该温区耗散加热功率的约 73%。
+          </div>
+          <p>
+            在 10<sup>4</sup> K 附近，欧姆和黏性加热率之和与辐射冷却率相当，有助于使丝状气体维持在这一温度，而热相气体则由另一项加热机制维持。这种耗散可能为超额的 Hα 辐射供能。要定量预测 Hα 谱线的光度，还需要对电离和激发过程进行建模。
+          </p>
+          <p class="project-meta">
+            <em>磁化湍流中 Hα 丝状结构的耗散加热</em><br>
+            三维磁流体力学模拟，最高有效网格分辨率为 2048<sup>3</sup>。稿件已完成，预印本发布后将补上 arXiv 链接。
+          </p>
+          <div class="ref-links">
+            <!-- Add the arXiv link here when the manuscript is posted. -->
+            <a class="ref-link" href="../publications.html#filament-heating">论文信息</a>
+            <a class="ref-link" href="#native-detail">对比原始分辨率图像</a>
+          </div>
+        </article>
+
+  <section class="project-section" aria-labelledby="native-detail-title">
+    <h2 id="native-detail-title">原始分辨率下的 Hα 与软 X 射线辐射</h2>
+    <p class="simulation-intro">拖动滑块，对比 Hα（6563 Å）和软 X 射线（0.5–2 keV）图像，看看这片宽 8 kpc 的区域内，哪些丝状结构在两个波段都能看到。</p>
+
+    <div class="native-explorer" id="native-detail" role="group" aria-labelledby="native-detail-title" data-native-explorer>
+      <div class="native-toolbar" data-native-controls hidden>
+        <div class="native-zoom" role="group" aria-label="图像缩放">
+          <button type="button" data-zoom="fit">显示全图</button>
+          <button type="button" data-zoom="native">原始像素</button>
+          <button type="button" data-zoom="out" aria-label="缩小">−</button>
+          <button type="button" data-zoom="in" aria-label="放大">+</button>
+          <output data-zoom-level aria-live="polite">全图</output>
+        </div>
+        <span class="native-hint">放大后可拖动或滚动以平移图像</span>
+      </div>
+      <div class="native-wipe" data-native-controls hidden>
+        <input id="native-wipe" type="range" min="0" max="100" value="50" aria-label="Hα 与软 X 射线图像的分界线">
+        <div class="native-wipe-ends"><span>仅软 X 射线</span><span>仅 Hα</span></div>
+      </div>
+      <div class="native-viewport" tabindex="0" role="region" aria-label="原始分辨率的 Hα 与软 X 射线图像。放大后可用方向键平移。">
+        <div class="native-pair">
+          <img src="/assets/multiphase/2048/native/emission/soft_xray.png" width="2048" height="2048" loading="lazy" decoding="async"
+               alt="蓝色和青色显示丝状网络周围的软 X 射线辐射。">
+          <img class="native-overlay" src="/assets/multiphase/2048/native/emission/halpha.png" width="2048" height="2048" loading="lazy" decoding="async"
+               alt="珊瑚红与浅橙色的 Hα 辐射勾勒出细长的丝状结构。">
+          <span class="native-divider" aria-hidden="true"></span>
+        </div>
+        <div class="native-map-labels" aria-hidden="true"><span data-left-label>Hα</span><span data-right-label>软 X 射线</span></div>
+      </div>
+      <p class="native-map-status" role="status"></p>
+    </div>
+    <details class="science-details">
+      <summary>如何解读这两幅图</summary>
+      <p>每个像素宽 3.91 pc。两幅图中位置相同的像素，分别记录沿同一条视线积分得到的 Hα 辐射和软 X 射线辐射。在同一波段内，图像越亮，表面亮度越高。两个波段分别调节了对比度，因此可以用这些图像比较丝状结构的形状和位置。</p>
+    </details>
+    <div class="ref-links">
+      <a class="ref-link" href="/assets/multiphase/2048/native/emission/halpha.png" target="_blank" rel="noopener">打开 Hα 原图 ↗</a>
+      <a class="ref-link" href="/assets/multiphase/2048/native/emission/soft_xray.png" target="_blank" rel="noopener">打开软 X 射线原图 ↗</a>
+      <a class="ref-link" href="/assets/multiphase/2048/native/four_fields.png" target="_blank" rel="noopener">查看四种物理量的三维图像 ↗</a>
+    </div>
+  </section>
+
+<section class="project-section" id="multiphase-evolution">
+          <h2>湍流演化 · 1024<sup>3</sup></h2>
+          <figure class="figure">
+            <video controls playsinline preload="none" width="2880" height="2160"
+                   poster="/img/research/multiphase-evolution.jpg"
+                   aria-label="1024³ 网格上的多相湍流演化"
+                   aria-describedby="multiphase-evolution-caption">
+              <source src="/assets/multiphase/1024/evolution.mp4" type="video/mp4">
+              <track kind="subtitles" srclang="en" label="English" src="/assets/multiphase/1024/evolution.en.vtt">
+              <track kind="subtitles" srclang="zh-Hans" label="简体中文" src="/assets/multiphase/1024/evolution.zh.vtt" default>
+              <p><a href="/assets/multiphase/1024/evolution.mp4">观看湍流演化动画（MP4）。</a></p>
+            </video>
+            <figcaption id="multiphase-evolution-caption">
+              这段 24 秒的动画展示了 1024<sup>3</sup> 网格上、边长为 8 kpc 的立方体模拟区域。前 12 秒从固定视角观察温度演化，后 12 秒则环绕最终状态，依次展示温度、等离子体 β、本征 Hα 体积发射率和密度。不同模拟时刻的画面通过渐变衔接，透明度仅用于呈现结构。可全屏观看细节。
+            </figcaption>
+          </figure>
+          <div class="ref-links simulation-links">
+            <a class="ref-link" href="/assets/multiphase/1024/evolution.mp4" target="_blank" rel="noopener">打开动画 · MP4，59 MiB</a>
+          </div>
+        </section>
+<section class="project-section simulation-interactive" id="multiphase-interactive" aria-labelledby="multiphase-interactive-title">
+          <div class="simulation-heading">
+            <h2 id="multiphase-interactive-title">从三维视角探索模拟结果</h2>
+            <a class="ref-link" href="../assets/multiphase/2048/interactive/index.html" target="_blank" rel="noopener">在独立页面打开 ↗</a>
+          </div>
+          <p class="simulation-intro">
+            旋转视角或剖开模拟区域，可以查看密度、温度、等离子体 β、Hα 体积发射率、欧姆加热率和黏性加热率。两种加热率共用同一色标，便于直接比较它们的空间分布。
+          </p>
+          <p class="simulation-note" id="multiphase-sampling">
+            <strong>原始模拟网格为 2048<sup>3</sup>，交互视图显示空间平均后的 512<sup>3</sup> 网格。</strong>
+          </p>
+          <details class="volume-disclosure" data-volume-disclosure>
+            <summary>加载三维交互视图<span>每个物理量 128 MiB</span></summary>
+            <p class="volume-opening" data-volume-opening role="status" hidden>正在打开三维交互视图…</p>
+            <div class="volume-mount"></div>
+            <template><iframe class="simulation-frame"
+                  data-src="../assets/multiphase/2048/interactive/index.html"
+                  title="2048³ 模拟的交互式三维快照：六个物理量均经过空间平均，在 512³ 网格上显示。"
+                  aria-describedby="multiphase-sampling"
+                  width="1000" height="850" allow="fullscreen" allowfullscreen></iframe></template>
+            <noscript><p><a href="../assets/multiphase/2048/interactive/index.html">在独立页面打开三维交互视图</a>。</p></noscript>
+          </details>
+          <p class="simulation-note simulation-help">
+            拖动可旋转视角，滚动可缩放。也可将键盘焦点移至三维图像，再用方向键和 + / − 键操作。初始画面显示等离子体 β，即气体压强与磁压之比。点击“自动旋转”开始转动，再次点击即可暂停。
+          </p>
+        </section>
+
+      </div>
+      <nav class="wrap more-projects" aria-label="其他研究项目">
+        <h2>其他研究</h2>
+        <a href="./cosmic-rays.html">宇宙线输运与反馈<span aria-hidden="true">→</span></a>
+<a href="./shear.html">剪切驱动湍流中的粒子加速<span aria-hidden="true">→</span></a>
+<a href="./flames.html">火焰中的瑞利–泰勒不稳定性<span aria-hidden="true">→</span></a>
+      </nav>
+    </main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>© <span data-year>2026</span> <a href="../" aria-label="刘明轩" title="刘明轩">M</a> &amp; <a href="https://yijunliu523.github.io/" target="_blank" rel="noopener" aria-label="Yijun Liu" title="Yijun Liu">Y</a> &amp; <a href="../vanilla.html">香草</a> · 美国密歇根州安娜堡</p>
+    <p class="footer-links">
+      <a href="mailto:mgxnliu@umich.edu">mgxnliu@umich.edu</a>
+      <a href="https://scholar.google.com/citations?user=96OAFQ8AAAAJ" target="_blank" rel="noopener">谷歌学术</a>
+      <a href="https://orcid.org/0009-0009-1522-9581" target="_blank" rel="noopener">ORCID</a>
+      <a href="https://github.com/Mingxuan-Liu" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://lsa.umich.edu/astro/people/graduate-students/mgxnliu.html" target="_blank" rel="noopener">密歇根大学天文学系</a>
+    </p>
+  </div>
+</footer>
+
+<script src="/js/site.js?v=bilingual-1"></script>
+<script src="/js/research.js?v=bilingual-1"></script>
+</body>
+</html>

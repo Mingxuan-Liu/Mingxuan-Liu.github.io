@@ -1,0 +1,44 @@
+:root{font-family:Inter,system-ui,-apple-system,sans-serif;color:#e6edf7;background:#030508;color-scheme:dark}
+*{box-sizing:border-box}body{margin:0}main{display:grid;grid-template-columns:310px minmax(0,1fr);height:100svh}
+aside{height:100svh;padding:30px 24px;background:#0b1018;border-right:1px solid #263142;z-index:1;overflow:auto}
+.eyebrow{letter-spacing:.18em;text-transform:uppercase;color:#93adc6;font-size:10px}h1{font-size:32px;letter-spacing:-.035em;line-height:1.04;font-weight:550;margin:16px 0}p{font-size:12px;line-height:1.6;color:#a9b8cc}
+.layer{padding:11px 0;border-top:1px solid #263142}.toggle{display:flex;align-items:center;gap:10px;font-size:14px;cursor:pointer}.toggle input{accent-color:#b5d4e8;width:17px;height:17px}.unit{font-size:10px;color:#a9b8cc;margin:10px 0 6px}.ramp{height:5px;border-radius:2px}.ticks{display:flex;justify-content:space-between;font-size:10px;color:#a9b8cc;margin-top:5px}.opacity{display:flex;align-items:center;gap:9px;font-size:10px;margin-top:9px;color:#a9b8cc}input[type=range]{width:100%;accent-color:#8aaecb}button,select{font:inherit;font-size:12px;padding:9px 12px;background:#142031;color:#e6edf7;border:1px solid #344258;border-radius:5px;cursor:pointer}button:hover{background:#25364b}button:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid #a4d4f5;outline-offset:4px}.buttons{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}details{margin-top:22px;font-size:12px;color:#bac9dd}summary{cursor:pointer}a{color:#a9dcff}#stage{position:relative;min-height:600px;height:100svh;overflow:hidden}canvas{width:100%;height:100%;display:block;touch-action:none;outline:none}#hud{position:absolute;left:26px;top:28px;pointer-events:none;font-size:11px;line-height:1.8;color:#b1c3d8}#error{position:absolute;inset:30% 10% auto;background:#1b2637;border:1px solid #8092aa;border-radius:7px;padding:25px;line-height:1.6;display:none}.mode{color:#d9c697!important}#axes{position:absolute;right:30px;bottom:28px;width:100px;height:100px;pointer-events:none}#axes line{stroke-width:1.4}#axes text{font:11px system-ui;fill:#c5d4e7}
+@media(max-width:760px){main{height:auto;grid-template-columns:1fr}#stage{grid-row:1;height:65svh;min-height:360px}aside{height:auto;padding:24px;border-right:0;border-top:1px solid #263142}h1{font-size:28px}.layers{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}#hud{font-size:10px;top:14px;left:16px}}
+#layers>.layer:not(.active) .unit,#layers>.layer:not(.active) .ticks,#layers>.layer:not(.active) .opacity{display:none}
+#layers>.layer:not(.active) .ramp{margin-top:9px;opacity:.55}
+#error {
+  position:absolute; top:clamp(5rem,17%,9rem); left:50%; right:auto; bottom:auto;
+  transform:translateX(-50%); width:min(25rem,calc(100% - 2rem)); padding:18px 20px;
+  border:1px solid #45586c; border-radius:8px; background:#101a25; color:#e6edf7;
+}
+#viewer-status {
+  position:absolute; left:26px; right:140px; bottom:27px; pointer-events:none;
+  color:#b1c3d8; font-size:14px; line-height:1.35; text-shadow:0 1px 3px #030508;
+}
+#load-panel {display:flex; align-items:center; gap:10px}
+#load-panel[hidden], #load-panel:not([hidden]) + #status {display:none}
+.load-ring {flex:none; width:32px; height:32px; fill:none; stroke-width:3}
+.load-track {stroke:#435263}
+#load-arc {stroke:#b5d4e8}
+#load-progress:indeterminate + .load-ring #load-arc {stroke-dashoffset:75}
+@media (prefers-reduced-motion:no-preference) {
+  #load-progress:indeterminate + .load-ring {animation:load-turn 1.2s linear infinite}
+}
+@keyframes load-turn {to {transform:rotate(1turn)}}
+#load-title {display:block; color:#dfebf5; font-weight:500}
+#load-detail {display:block; font-size:12px; font-variant-numeric:tabular-nums}
+@media (max-width:760px) {
+  #viewer-status {left:16px; right:122px; bottom:14px; font-size:13px}
+  .load-ring {width:30px; height:30px}
+}
+#retry {margin-top:.8rem}
+.layer #error {position:static; transform:none; width:auto; margin:.6rem 0 0; padding:.7rem; font-size:12px}
+.sr-only {position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap}
+
+.viewer-heading {display:flex; justify-content:space-between; align-items:center; gap:.8rem}
+[data-language-switch] {font-size:.8rem; text-underline-offset:.2em}
+:root:lang(zh) {font-family:var(--font-body,"PingFang SC"),"Microsoft YaHei",sans-serif}
+:lang(zh) h1 {font-family:var(--font-editorial,serif); line-height:1.3; letter-spacing:0}
+:lang(zh) .eyebrow {letter-spacing:.06em}
+:lang(zh) .opacity {white-space:nowrap}
+:lang(zh) .opacity input {min-width:0}

@@ -177,6 +177,12 @@ a:hover { color: var(--ink); }
 .icon-btn:hover { background: var(--marker); border-color: var(--rule); }
 .icon-btn:active { transform: scale(.94); }
 .icon-btn svg { width: 18px; height: 18px; }
+.language-switch {
+  flex: none;
+  font: 600 .79rem/1 var(--font-body);
+  text-decoration: none;
+}
+.language-switch:lang(zh-Hans) { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; }
 
 .theme-toggle .moon { display: none; }
 :root[data-theme="dark"] .theme-toggle .sun  { display: none; }
@@ -218,6 +224,9 @@ a:hover { color: var(--ink); }
 }
 @media (max-width: 360px) {
   .site-nav { padding-inline: .75rem; gap: .5rem; }
+  .nav-tools { gap: .12rem; }
+  .nav-brand { gap: .35rem; }
+  .nav-tools .icon-btn, .nav-tools .dog-link { width: 33px; height: 33px; }
 }
 
 /* ------------------------------------------------------------- layout -- */
