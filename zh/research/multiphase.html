@@ -32,8 +32,8 @@
 <link rel="me" href="https://github.com/Mingxuan-Liu">
 <link rel="icon" href="/img/favicon.png" type="image/png" sizes="96x96">
 <link rel="alternate icon" href="/img/logo.ico">
-<link rel="stylesheet" href="/css/main.css?v=bilingual-1">
-<link rel="stylesheet" href="/css/zh.css">
+<link rel="stylesheet" href="/css/main.css?v=ink-1">
+<link rel="stylesheet" href="/css/zh.css?v=ink-1">
 <script>
   // Set the theme before first paint so there is no flash of the wrong colors.
   (function () {
@@ -210,7 +210,7 @@
       <header class="wrap project-page-header">
         <a class="back-link" href="../research.html">← 返回研究总览</a>
         <p class="project-number">稿件已完成 · 2026</p>
-        <h1>多相湍流中 Hα 丝状结构的加热</h1>
+        <h1><span class="title-phrase">多相湍流中</span> <span class="title-phrase">Hα 丝状结构的加热</span></h1>
         <p class="section-lede">星系团中的冷气体丝状结构持续发出 Hα 辐射。磁化湍流能否为它们提供所需的热量？</p>
         <nav class="project-jumps" aria-label="本页导航">
           <a href="#the-result">研究结果</a>
@@ -225,7 +225,7 @@
             <img src="/img/research/filament_cover_2048_ohmic.png" width="3840" height="2758"
                  alt="2048³ 网格模拟中的丝状结构。图中自左至右依次叠合展示温度、磁场强度和欧姆加热率。">
           </a>
-          <figcaption>模拟时间为 2.49 个大涡翻转时间。图中三条色带从左至右分别用气体温度、磁场强度和局部欧姆加热率显示同一组丝状结构。点击可查看 3840 × 2758 像素的原图。</figcaption>
+          <figcaption>模拟时间为 2.49 个大涡翻转时间。图中三条色带从左至右分别用气体温度、磁场强度和局部欧姆加热率显示同一组丝状结构。点击可查看 <span class="quantity">3840 × 2758</span> 像素的原图。</figcaption>
         </figure>
         <article class="filament-overview prose" id="the-result">
           <p>
@@ -235,10 +235,10 @@
             我们用 Athena++ 进行三维模拟，显式计入电阻率和黏性，追踪磁能和动能转化为热的过程。辐射冷却形成致密的气体凝聚体，气体收缩可以放大其中的磁场，湍流运动则形成电流片，同时使流体发生形变。欧姆耗散和黏性耗散都集中在这些冷气体构成的丝状网络中。
           </p>
           <div class="callout">
-            显式计算的耗散功率约有三分之二注入了温度为 8,000–30,000 K 的气体。在基准模拟中，运动黏度与磁扩散率相等，黏性耗散贡献了该温区耗散加热功率的约 73%。
+            显式计算的耗散功率约有三分之二注入了温度为 <span class="quantity">8,000–30,000 K</span> 的气体。在基准模拟中，运动黏度与磁扩散率相等，黏性耗散贡献了该温区耗散加热功率的约 73%。
           </div>
           <p>
-            在 10<sup>4</sup> K 附近，欧姆和黏性加热率之和与辐射冷却率相当，有助于使丝状气体维持在这一温度，而热相气体则由另一项加热机制维持。这种耗散可能为超额的 Hα 辐射供能。要定量预测 Hα 谱线的光度，还需要对电离和激发过程进行建模。
+            在 10<sup>4</sup>&nbsp;K 附近，欧姆和黏性加热率之和与辐射冷却率相当，有助于使丝状气体维持在这一温度，而热相气体则由另一项加热机制维持。这种耗散可能为超额的 Hα 辐射供能。要定量预测 Hα 谱线的光度，还需要对电离和激发过程进行建模。
           </p>
           <p class="project-meta">
             <em>磁化湍流中 Hα 丝状结构的耗散加热</em><br>
@@ -253,17 +253,17 @@
 
 <section class="project-section simulation-interactive" id="multiphase-interactive" aria-labelledby="multiphase-interactive-title">
           <div class="simulation-heading">
-            <h2 id="multiphase-interactive-title">从三维视角探索模拟结果</h2>
+            <h2 id="multiphase-interactive-title"><span class="title-phrase">从三维视角</span><span class="title-phrase">探索模拟结果</span></h2>
             <a class="ref-link" href="../assets/multiphase/2048/interactive/index.html" target="_blank" rel="noopener">在独立页面打开 ↗</a>
           </div>
           <p class="simulation-intro">
-            旋转视角或剖开模拟区域，可以查看密度、温度、等离子体 β、Hα 体积发射率、欧姆加热率和黏性加热率。两种加热率共用同一色标，便于直接比较它们的空间分布。
+            旋转视角或剖开模拟区域，可以查看密度、温度、等离子体&nbsp;β（气体热压与磁压之比）、Hα 体积发射率、欧姆加热率和黏性加热率。两种加热率共用同一色标，便于直接比较它们的空间分布。
           </p>
           <p class="simulation-note" id="multiphase-sampling">
             <strong>原始模拟网格为 2048<sup>3</sup>，交互视图显示空间平均后的 512<sup>3</sup> 网格。</strong>
           </p>
           <details class="volume-disclosure" data-volume-disclosure>
-            <summary>加载三维交互视图<span>每个物理量 128 MiB</span></summary>
+            <summary>加载三维交互视图<span>每个物理量 128&nbsp;MiB</span></summary>
             <p class="volume-opening" data-volume-opening role="status" hidden>正在打开三维交互视图…</p>
             <div class="volume-mount"></div>
             <template><iframe class="simulation-frame"
@@ -274,7 +274,7 @@
             <noscript><p><a href="../assets/multiphase/2048/interactive/index.html">在独立页面打开三维交互视图</a>。</p></noscript>
           </details>
           <p class="simulation-note simulation-help">
-            拖动可旋转视角，滚动可缩放。也可将键盘焦点移至三维图像，再用方向键和 + / − 键操作。初始画面显示等离子体 β，即气体压强与磁压之比。点击“自动旋转”开始转动，再次点击即可暂停。
+            拖动可旋转视角，滚动可缩放。也可将键盘焦点移至三维图像，再用方向键和 + / − 键操作。初始画面显示等离子体&nbsp;β。点击“自动旋转”开始转动，再次点击即可暂停。
           </p>
         </section>
 
@@ -291,19 +291,19 @@
               <p><a href="/assets/multiphase/1024/evolution.mp4">观看湍流演化动画（MP4）。</a></p>
             </video>
             <figcaption id="multiphase-evolution-caption">
-              这段 24 秒的动画展示了 1024<sup>3</sup> 网格上、边长为 8 kpc 的立方体模拟区域。前 12 秒从固定视角观察温度演化，后 12 秒则环绕最终状态，依次展示温度、等离子体 β、本征 Hα 体积发射率和密度。不同模拟时刻的画面通过渐变衔接，透明度仅用于呈现结构。可全屏观看细节。
+              这段 24 秒的动画展示了 1024<sup>3</sup> 网格上、边长为 8&nbsp;kpc 的立方体模拟区域。前 12 秒从固定视角观察温度演化，后 12 秒则环绕最终状态，依次展示温度、等离子体&nbsp;β、本征 Hα 体积发射率和密度。不同模拟时刻的画面通过渐变衔接，透明度仅用于呈现结构。可全屏观看细节。
             </figcaption>
           </figure>
           <div class="ref-links simulation-links">
-            <a class="ref-link" href="/assets/multiphase/1024/evolution.mp4" target="_blank" rel="noopener">打开动画 · MP4，59 MiB</a>
+            <a class="ref-link" href="/assets/multiphase/1024/evolution.mp4" target="_blank" rel="noopener">打开动画 · MP4，59&nbsp;MiB</a>
           </div>
         </section>
 
-  <section class="project-section" aria-labelledby="native-detail-title">
-    <h2 id="native-detail-title">原始分辨率下的 Hα 与软 X 射线辐射</h2>
-    <p class="simulation-intro">拖动滑块，对比 Hα（6563 Å）和软 X 射线（0.5–2 keV）图像，看看这片宽 8 kpc 的区域内，哪些丝状结构在两个波段都能看到。</p>
+  <section class="project-section" id="native-detail" aria-labelledby="native-detail-title">
+    <h2 id="native-detail-title"><span class="title-phrase">原始分辨率下的</span> <span class="title-phrase">Hα 与软 X 射线</span><span class="title-phrase">表面亮度图</span></h2>
+    <p class="simulation-intro">拖动滑块，对比 Hα（6563&nbsp;Å）和软 X 射线（<span class="quantity">0.5–2 keV</span>）图像，看看这片宽 8&nbsp;kpc 的区域内，哪些丝状结构在两个波段都能看到。</p>
 
-    <div class="native-explorer" id="native-detail" role="group" aria-labelledby="native-detail-title" data-native-explorer>
+    <div class="native-explorer" role="group" aria-labelledby="native-detail-title" data-native-explorer>
       <div class="native-toolbar" data-native-controls hidden>
         <div class="native-zoom" role="group" aria-label="图像缩放">
           <button type="button" data-zoom="fit">显示全图</button>
@@ -332,7 +332,7 @@
     </div>
     <details class="science-details">
       <summary>如何解读这两幅图</summary>
-      <p>每个像素宽 3.91 pc。两幅图中位置相同的像素，分别记录沿同一条视线积分得到的 Hα 辐射和软 X 射线辐射。在同一波段内，图像越亮，表面亮度越高。两个波段分别调节了对比度，因此可以用这些图像比较丝状结构的形状和位置。</p>
+      <p>每个像素宽 3.91&nbsp;pc。两幅图中位置相同的像素，分别记录沿同一条视线积分得到的 Hα 辐射和软 X 射线辐射。在同一波段内，图像越亮，表面亮度越高。两个波段分别调节了对比度，因此可以用这些图像比较丝状结构的形状和位置。</p>
     </details>
     <div class="ref-links">
       <a class="ref-link" href="/assets/multiphase/2048/native/emission/halpha.png" target="_blank" rel="noopener">打开 Hα 原图 ↗</a>

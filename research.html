@@ -32,10 +32,8 @@
 <link rel="me" href="https://github.com/Mingxuan-Liu">
 <link rel="icon" href="./img/favicon.png" type="image/png" sizes="96x96">
 <link rel="alternate icon" href="./img/logo.ico">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./css/main.css?v=bilingual-1">
+<link rel="stylesheet" href="css/type.css">
+<link rel="stylesheet" href="./css/main.css?v=ink-1">
 <script>
   // Set the theme before first paint so there is no flash of the wrong colors.
   (function () {
@@ -216,14 +214,13 @@
         <p class="section-lede">I study how turbulence moves energy through magnetized plasmas:
           into cosmic rays, into cold filaments, and across unstable interfaces.</p>
         <p>The ink landscape shows cosmic-ray paths bending near a magnetized interstellar cloud.</p>
-        <p>Explore a project for the science, figures and simulations.</p>
       </div>
     </div>
   </section>
   <section class="wrap" aria-label="Research projects">
     <div class="research-grid">
 
-      <article class="research-card" id="cosmic-rays">
+      <a class="research-card" id="cosmic-rays" href="./research/cosmic-rays.html" aria-labelledby="cosmic-rays-title">
         <div class="research-card-top"><span class="research-card-mark"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
               <circle cx="16" cy="22" r="9" fill="currentColor" stroke="none" opacity=".22"/>
               <circle cx="46" cy="18" r="7.2" fill="currentColor" stroke="none" opacity=".22"/>
@@ -232,15 +229,11 @@
               <circle cx="60" cy="33" r="3.2" fill="currentColor" stroke="none"/>
             </svg></span>
           <p class="project-number">Starting now</p></div>
-        <h2><a href="./research/cosmic-rays.html">Cosmic-ray transport and feedback</a></h2>
+        <h2 id="cosmic-rays-title">Cosmic-ray transport and feedback<span class="research-arrow" aria-hidden="true">→</span></h2>
         <p class="research-card-summary">How often do cosmic rays scatter, and how does that set their ability to move energy through a galaxy?</p>
-        <div class="research-card-footer">
-          <p>MHD particle-in-cell · Athena++</p>
-          <a class="research-card-link" href="./research/cosmic-rays.html" aria-label="Explore project: Cosmic-ray transport and feedback">Explore project <span aria-hidden="true">→</span></a>
-        </div>
-      </article>
+      </a>
 
-      <article class="research-card" id="multiphase">
+      <a class="research-card" id="multiphase" href="./research/multiphase.html" aria-labelledby="multiphase-title">
         <div class="research-card-top"><span class="research-card-mark"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
               <circle cx="32" cy="32" r="25" opacity=".4" stroke-dasharray="3.5 4.5"/>
               <circle cx="24" cy="26" r="7" fill="currentColor" stroke="none"/>
@@ -249,15 +242,11 @@
               <circle cx="23" cy="42" r="3.4" fill="currentColor" stroke="none"/>
             </svg></span>
           <p class="project-number">Manuscript completed · 2026</p></div>
-        <h2><a href="./research/multiphase.html">Heating filaments in multiphase turbulence</a></h2>
+        <h2 id="multiphase-title">Heating filaments in multiphase turbulence<span class="research-arrow" aria-hidden="true">→</span></h2>
         <p class="research-card-summary">Can magnetized turbulence supply the heat that keeps cold filaments glowing in galaxy clusters?</p>
-        <div class="research-card-footer">
-          <p>1024³ movie · Native 2048² maps · 3D overview</p>
-          <a class="research-card-link" href="./research/multiphase.html" aria-label="Explore project: Heating filaments in multiphase turbulence">Explore project <span aria-hidden="true">→</span></a>
-        </div>
-      </article>
+      </a>
 
-      <article class="research-card" id="shear">
+      <a class="research-card" id="shear" href="./research/shear.html" aria-labelledby="shear-title">
         <div class="research-card-top"><span class="research-card-mark"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
               <path d="M16 11h26"/>
               <path d="M37 6.5 43.5 11 37 15.5"/>
@@ -266,15 +255,11 @@
               <path d="M30.6 31.6Q30.6 31.7 30.5 31.9Q30.5 32.1 30.5 32.2Q30.5 32.4 30.5 32.6Q30.6 32.8 30.6 33.0Q30.7 33.2 30.8 33.3Q31.0 33.5 31.1 33.6Q31.3 33.7 31.5 33.9Q31.7 33.9 32.0 34.0Q32.2 34.0 32.4 34.0Q32.7 34.0 32.9 34.0Q33.2 33.9 33.4 33.8Q33.7 33.6 33.9 33.5Q34.1 33.3 34.3 33.0Q34.4 32.8 34.5 32.5Q34.6 32.2 34.7 31.9Q34.7 31.6 34.7 31.3Q34.7 30.9 34.6 30.6Q34.5 30.3 34.3 29.9Q34.1 29.6 33.8 29.4Q33.5 29.1 33.2 28.9Q32.9 28.7 32.5 28.5Q32.1 28.4 31.7 28.4Q31.2 28.3 30.8 28.4Q30.3 28.5 29.9 28.6Q29.5 28.8 29.0 29.1Q28.6 29.4 28.3 29.7Q28.0 30.1 27.7 30.6Q27.5 31.1 27.3 31.6Q27.2 32.2 27.1 32.7Q27.1 33.3 27.2 33.9Q27.4 34.5 27.6 35.1Q27.9 35.7 28.3 36.2Q28.7 36.7 29.2 37.2Q29.8 37.6 30.4 37.9Q31.1 38.2 31.9 38.4Q32.6 38.5 33.4 38.5Q34.2 38.5 35.0 38.3Q35.8 38.0 36.6 37.7Q37.3 37.2 38.0 36.7Q38.6 36.0 39.2 35.3Q39.7 34.5 40.1 33.6Q40.4 32.7 40.7 31.7Q40.7 30.7 40.7 29.6Q40.6 28.5 40.3 27.5Q39.9 26.4 39.3 25.4Q38.6 24.4 37.8 23.5Q36.9 22.7 35.9 22.0Q34.8 21.4 33.6 20.9Q32.3 20.5 30.9 20.3Q29.5 20.3 28.1 20.4Q26.6 20.7 25.2 21.2Q23.8 21.8 22.5 22.6Q21.3 23.6 20.1 24.8Q19.1 26.1 18.2 27.5Q17.4 29.1 16.9 30.8"/>
             </svg></span>
           <p class="project-number">Published · ApJ, 2026</p></div>
-        <h2><a href="./research/shear.html">Particle acceleration in shear-driven turbulence</a></h2>
+        <h2 id="shear-title">Particle acceleration in shear-driven turbulence<span class="research-arrow" aria-hidden="true">→</span></h2>
         <p class="research-card-summary">How a turbulent shear layer turns a sequence of small, random kicks into a high-energy particle population.</p>
-        <div class="research-card-footer">
-          <p>Particle acceleration · Second-order Fermi process</p>
-          <a class="research-card-link" href="./research/shear.html" aria-label="Explore project: Particle acceleration in shear-driven turbulence">Explore project <span aria-hidden="true">→</span></a>
-        </div>
-      </article>
+      </a>
 
-      <article class="research-card" id="flames">
+      <a class="research-card" id="flames" href="./research/flames.html" aria-labelledby="flames-title">
         <div class="research-card-top"><span class="research-card-mark"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
               <path d="M5 33h54" opacity=".35"/>
               <path d="M14 33a9 10 0 0 1 18 0"/>
@@ -283,13 +268,9 @@
               <path d="M8 33c0 6.5 1.8 11 2.8 14.5 1.1-3.5 2.6-8 2.6-14.5"/>
             </svg></span>
           <p class="project-number">Published · Physical Review Fluids, 2024</p></div>
-        <h2><a href="./research/flames.html">Rayleigh–Taylor unstable flames</a></h2>
+        <h2 id="flames-title">Rayleigh–Taylor unstable flames<span class="research-arrow" aria-hidden="true">→</span></h2>
         <p class="research-card-summary">Why some burning fronts settle into traveling waves while others break into chaotic, growing bubbles.</p>
-        <div class="research-card-footer">
-          <p>Reacting flows · Mode coupling · Inverse cascade</p>
-          <a class="research-card-link" href="./research/flames.html" aria-label="Explore project: Rayleigh–Taylor unstable flames">Explore project <span aria-hidden="true">→</span></a>
-        </div>
-      </article>
+      </a>
 
     </div>
     <noscript><p class="legacy-media-links"><a id="multiphase-evolution" href="./research/multiphase.html#multiphase-evolution">Turbulence evolution movie</a>

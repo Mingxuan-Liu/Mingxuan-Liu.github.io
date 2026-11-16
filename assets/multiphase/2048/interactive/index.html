@@ -10,6 +10,7 @@
 <link rel="alternate" hreflang="x-default" href="https://mingxuan-liu.github.io/assets/multiphase/2048/interactive/index.html">
 <script async src="/js/language.js"></script>
 <link rel="icon" href="../../../../img/favicon.png" type="image/png" sizes="96x96">
+<link rel="stylesheet" href="../../../../css/type.css">
 <link rel="stylesheet" href="viewer.css">
 <main>
 <aside>
@@ -17,7 +18,7 @@
    <div class="eyebrow">Cooling · magnetism · light</div>
    <a href="/zh/assets/multiphase/2048/interactive/index.html" hreflang="zh-Hans" lang="zh-Hans" data-language-switch aria-label="切换到简体中文" title="切换到简体中文">中文</a>
  </div>
- <h1>A volume portrait<br>of filaments.</h1>
+ <h1>Cold gas filaments in 3D</h1>
  <p>One simulated volume, six physical fields. Turn the box and compare the structures they reveal.</p>
  <p id="transfer"></p>
  <div class="layers" id="layers"></div>
@@ -26,7 +27,7 @@
  <div class="layer" style="margin-top:18px"><label class="toggle" for="cut">Reveal the interior</label><p>Slide a cut through the box along x1.</p><input id="cut" type="range" min="0" max="100" step="1" value="100" aria-label="Visible depth along x1"><div id="cut-label" class="unit">Full box</div></div>
  <p>Drag to orbit · scroll to zoom<br>Arrow keys rotate · + / − zoom</p>
  <p id="mode" class="mode" aria-live="polite"></p>
- <details><summary>What am I seeing?</summary><p id="description"></p><p>Colors encode scalar values on fixed logarithmic scales. Opacity controls visibility; it is not physical absorption. Multiple layers mix colors illustratively and cannot establish a quantitative correlation. The cut hides gas with x1 above the selected position without changing the retained field values; it is a spatial cutaway, not time evolution.</p><p>Hα is intrinsic volume emissivity, not an observed image. The fiducial <code>schure_fi</code> coefficient is clamped below 10⁴ K. No extinction, radiative transfer or telescope response is applied.</p><p>Density means total particle number density. Plasma β = gas pressure / magnetic pressure; β = 1 is equipartition. Temperature and β are volume-weighted means in the coarse web cells.</p><p>Ohmic and viscous heating are saved solver dissipation rates per unit volume, in erg cm⁻³ s⁻¹. Both use the same color and opacity scale. They exclude the external thermostat and reversible compressive work; zero rates are transparent.</p><p id="sampling"></p><p>Density and β palettes use Fabio Crameri's <a href="https://www.fabiocrameri.ch/colourmaps/">Scientific colour maps</a> (lipari and reversed managua).</p><p><a href="manifest.json">Data provenance</a> · <a href="style.json">Color and opacity scales</a></p></details>
+ <details><summary>What am I seeing?</summary><p id="description"></p><p>Colors encode scalar values on fixed logarithmic scales. Opacity controls visibility; it is not physical absorption. Multiple layers mix colors illustratively and cannot establish a quantitative correlation. The cut hides gas with x1 above the selected position without changing the retained field values; it is a spatial cutaway, not time evolution.</p><p>Hα is intrinsic volume emissivity, not an observed image. The fiducial <code>schure_fi</code> coefficient is clamped below 10⁴&nbsp;K. No extinction, radiative transfer or telescope response is applied.</p><p>Density means total particle number density. Plasma β = gas pressure / magnetic pressure; β&nbsp;=&nbsp;1 means the thermal and magnetic pressures are equal. Temperature and β are volume-weighted means in the coarse web cells.</p><p>Ohmic and viscous heating are saved solver dissipation rates per unit volume, in erg&nbsp;cm⁻³&nbsp;s⁻¹. Both use the same color and opacity scale. They exclude the external thermostat and reversible compressive work; zero rates are transparent.</p><p id="sampling"></p><p>Density and β palettes use Fabio Crameri's <a href="https://www.fabiocrameri.ch/colourmaps/">Scientific colour maps</a> (lipari and reversed managua).</p><p><a href="manifest.json">Data provenance</a> · <a href="style.json">Color and opacity scales</a></p></details>
 </aside>
 <section id="stage" aria-label="Interactive scientific volume">
  <canvas id="volume" tabindex="0" role="img" aria-label="Rotatable volume rendering; use arrow keys to rotate and plus or minus to zoom"></canvas>

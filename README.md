@@ -10,7 +10,7 @@ the repository root as-is.
 
 | File | Purpose |
 |---|---|
-| `index.html` | About: portrait, bio, research interests, news feed |
+| `index.html` | Portrait, current research, Hα/X-ray comparison, bio and news |
 | `research.html` | Compact overview with equal space for all four projects |
 | `research/*.html` | Individual project write-ups, figures and visualizations |
 | `publications.html` | Papers, talks, code/data releases, translation |
@@ -20,7 +20,10 @@ the repository root as-is.
 ## Where things live
 
 ```
-css/main.css          all styling; design tokens are the :root variables at the top
+css/main.css          shared layout and the light/dark color palettes
+css/type.css          self-hosted Spectral headings and Lato body text for English
+css/zh.css            Source Han type and Simplified Chinese line breaking
+assets/fonts/         self-hosted typefaces and their licenses
 js/site.js            theme toggle, mobile menu, news expander, husky interactions
 js/research.js        native-map zoom/comparison and on-demand 3D viewer
 img/logo.png          full-resolution ink-wash artwork shown on the Research page
@@ -29,13 +32,17 @@ img/favicon.png       close crop of the mountain and cosmic-ray paths for the se
 img/favicon.svg       same mark at the previous favicon address
 favicon.ico           browser fallback, also served at the previous img/logo.ico address
 img/profile_pic.jpg   portrait
-img/research/         research figures and movie poster
+img/research/         research figures, movie poster and homepage map previews
 img/pubs/             publication thumbnails and figures
 img/symbols/          geometric marks, one per research project (use currentColor)
 img/vanilla/          vanilla-logo.svg — source of the husky mark, plus her photos
 img/outreach/         photos of the translated book
 assets/multiphase/    evolution movie, native maps/renders and the 3D overview
 ```
+
+The homepage preview joins the left half of the Hα surface-brightness map to the
+right half of the soft X-ray map from `assets/multiphase/2048/native/emission/`.
+Both views show the same sky coordinates. Each band keeps its own contrast scale.
 
 The husky and the project symbols are inlined into the HTML rather than loaded as
 `<img>`, so CSS can colour and animate them. The husky appears in every page's nav and

@@ -32,8 +32,8 @@
 <link rel="me" href="https://github.com/Mingxuan-Liu">
 <link rel="icon" href="/img/favicon.png" type="image/png" sizes="96x96">
 <link rel="alternate icon" href="/img/logo.ico">
-<link rel="stylesheet" href="/css/main.css?v=bilingual-1">
-<link rel="stylesheet" href="/css/zh.css">
+<link rel="stylesheet" href="/css/main.css?v=ink-1">
+<link rel="stylesheet" href="/css/zh.css?v=ink-1">
 <script>
   // Set the theme before first paint so there is no flash of the wrong colors.
   (function () {
@@ -288,35 +288,120 @@
 </nav>
 <main id="main">
 
-  <section class="wrap section hero">
+  <section class="wrap section hero" aria-labelledby="home-name">
     <div class="hero-grid">
-
-      <div class="portrait-card">
-        <img class="portrait" src="/img/profile-464.jpg" width="232" height="232"
-             srcset="/img/profile-464.jpg 464w, /img/profile_pic.jpg 853w"
-             sizes="(max-width: 820px) 180px, 232px" fetchpriority="high" alt="刘明轩的照片">
-        <p class="portrait-focus">计算天体物理<br>等离子体与流体动力学</p>
-        <p class="portrait-meta">密歇根大学天文学系<br><a href="mailto:mgxnliu@umich.edu">mgxnliu@umich.edu</a></p>
-        <div class="link-row">
-          <a class="link-chip" href="https://scholar.google.com/citations?user=96OAFQ8AAAAJ" target="_blank" rel="noopener">谷歌学术</a>
-          <a class="link-chip" href="./publications.html">论文与成果</a>
-          <a class="link-chip" href="https://orcid.org/0009-0009-1522-9581" target="_blank" rel="noopener">ORCID</a>
-          <a class="link-chip" href="https://github.com/Mingxuan-Liu" target="_blank" rel="noopener">GitHub</a>
+      <div class="hero-text">
+        <div class="hero-identity">
+          <img class="portrait" src="/img/profile-464.jpg" width="88" height="88" alt="刘明轩的照片">
+          <div>
+            <h1 class="hero-name" id="home-name">刘明轩 <span class="hero-han" lang="en">Mingxuan Liu</span></h1>
+            <p class="hero-role"><a href="https://umich.edu/">密歇根大学</a><a href="https://lsa.umich.edu/astro">天文学系</a><span class="title-phrase">三年级博士候选人</span></p>
+          </div>
+        </div>
+        <p class="hero-question"><span class="title-phrase">等离子体湍流中的</span><span class="title-phrase">能量去了哪里？</span></p>
+        <p class="hero-intro">我和导师 <a href="https://lsa.umich.edu/astro/people/core-faculty/mateuszr.html">Mateusz Ruszkowski</a> 用数值模拟研究星系与星系团中的等离子体，追踪湍流如何加热气体、加速粒子。</p>
+      </div>
+      <figure class="hero-feature">
+        <div class="hero-map">
+          <img src="/img/research/filament-emission-480.webp"
+               srcset="/img/research/filament-emission-480.webp 480w, /img/research/filament-emission-960.webp 960w"
+               sizes="(max-width: 740px) min(100vw, 32rem), min(46vw, 30rem)" width="960" height="960"
+               fetchpriority="high" alt="左半幅为 Hα 表面亮度图，细丝呈粉红色；右半幅为同一区域的软 X 射线图，亮区呈蓝色。">
+          <span aria-hidden="true">Hα</span><span aria-hidden="true">软 X 射线</span>
+        </div>
+        <figcaption>
+          <p>两幅模拟图分别显示星系团核心同一区域在 Hα 和<span class="quantity">软 X 射线</span>波段的表面亮度。</p>
+          <a href="./research/multiphase.html#native-detail">对比 Hα 与<span class="quantity">软 X 射线</span><span aria-hidden="true"> →</span></a>
+        </figcaption>
+      </figure>
+      <div class="hero-contact" role="group" aria-label="个人链接与联系方式">
+        <a href="mailto:mgxnliu@umich.edu">mgxnliu@umich.edu</a>
+        <div>
+          <a href="./publications.html">论文与成果</a>
+          <a href="https://scholar.google.com/citations?user=96OAFQ8AAAAJ" target="_blank" rel="noopener">谷歌学术</a>
+          <a href="https://orcid.org/0009-0009-1522-9581" target="_blank" rel="noopener">ORCID</a>
+          <a href="https://github.com/Mingxuan-Liu" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="hero-text">
-        <h1 class="hero-name">刘明轩 <span class="hero-han" lang="en">Mingxuan Liu</span></h1>
-        <p class="hero-role">密歇根大学天文学系 · 博士候选人</p>
+  <section class="wrap section">
+    <div class="section-head">
+      <h2 class="section-title">研究方向</h2>
+    </div>
 
-        <div class="prose hero-intro">
-          <p>我在<a href="https://umich.edu/" target="_blank" rel="noopener">密歇根大学</a><a href="https://lsa.umich.edu/astro" target="_blank" rel="noopener">天文学系</a>读博，目前是三年级博士候选人，导师是 <a href="https://lsa.umich.edu/astro/people/core-faculty/mateuszr.html" target="_blank" rel="noopener">Mateusz Ruszkowski</a>。我研究等离子体天体物理，关注湍流、磁场和宇宙线如何在星系与星系团中传递能量，以及这些过程如何影响其中的气体。</p>
-          <p>我的研究主要依靠数值模拟。一项工作研究剪切流驱动的湍流如何加速粒子，成果于 2026 年发表在<a href="https://doi.org/10.3847/1538-4357/aea409" target="_blank" rel="noopener">《天体物理学杂志》（<em>ApJ</em>）</a>。在最近完成的<a href="./research/multiphase.html">多相湍流</a>研究中，我们发现欧姆耗散和黏性耗散将热量集中沉积在冷气体细丝中，有助于星系团核心的这部分气体维持在 10<sup>4</sup> K 附近。我刚开始的另一项研究关注宇宙线输运。宇宙线与气体的耦合强度取决于散射率。现有的反馈模型通常需要预设这个量，我希望通过模拟直接测量它。</p>
-          <p>本科期间，我在<a href="https://physics.emory.edu/" target="_blank" rel="noopener">埃默里大学</a>跟随 <a href="https://epsilondeltalabs.org/hicks.html" target="_blank" rel="noopener">Elizabeth P. Hicks</a> 研究瑞利–泰勒不稳定性对火焰的影响。大一时，我翻译了珍娜·莱文的《黑洞旅行指南》，中译本于 2022 年出版，<a href="https://book.douban.com/subject/35932693/" target="_blank" rel="noopener">豆瓣</a>评分为 8.6。我也在密歇根大学担任天文学入门课的助教，家里还有一只叫<a href="./vanilla.html">香草</a>的哈士奇。</p>
+    <ul class="dir-list">
+      <li class="dir">
+        <span class="dir-mark" aria-hidden="true">
+          <svg class="dir-symbol" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" role="presentation">
+            <circle cx="16" cy="22" r="9" fill="currentColor" stroke="none" opacity=".22"/>
+            <circle cx="46" cy="18" r="7.2" fill="currentColor" stroke="none" opacity=".22"/>
+            <circle cx="29" cy="47" r="9.5" fill="currentColor" stroke="none" opacity=".22"/>
+            <path d="M4 43 16 22 46 18 29 47 60 33" stroke-width="2.4"/>
+            <circle cx="60" cy="33" r="3.2" fill="currentColor" stroke="none"/>
+          </svg>
+        </span>
+        <div>
+          <h3><a href="./research/cosmic-rays.html"><span class="title-phrase">宇宙线输运</span><span class="title-phrase">与反馈</span></a></h3>
+          <p>我刚开始用模拟直接测量宇宙线的散射率。它决定了宇宙线能传播多远，以及它们能在多大程度上推动气体。</p>
         </div>
+      </li>
+      <li class="dir">
+        <span class="dir-mark" aria-hidden="true">
+          <svg class="dir-symbol" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" role="presentation">
+            <circle cx="32" cy="32" r="25" opacity=".4" stroke-dasharray="3.5 4.5"/>
+            <circle cx="24" cy="26" r="7" fill="currentColor" stroke="none"/>
+            <circle cx="40" cy="38" r="5" fill="currentColor" stroke="none"/>
+            <circle cx="38" cy="22" r="2.8" fill="currentColor" stroke="none"/>
+            <circle cx="23" cy="42" r="3.4" fill="currentColor" stroke="none"/>
+          </svg>
+        </span>
+        <div>
+          <h3><a href="./research/multiphase.html"><span class="title-phrase">多相湍流中</span><span class="title-phrase">丝状结构的加热</span></a></h3>
+          <p>我们在最近完成的研究中发现，欧姆耗散和黏性耗散产生的热量有助于冷气体细丝维持在 10<sup>4</sup>&nbsp;K 左右。</p>
+        </div>
+      </li>
+      <li class="dir">
+        <span class="dir-mark" aria-hidden="true">
+          <svg class="dir-symbol" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" role="presentation">
+            <path d="M16 11h26"/>
+            <path d="M37 6.5 43.5 11 37 15.5"/>
+            <path d="M48 53H22"/>
+            <path d="M27 48.5 20.5 53l6.5 4.5"/>
+            <path d="M30.6 31.6Q30.6 31.7 30.5 31.9Q30.5 32.1 30.5 32.2Q30.5 32.4 30.5 32.6Q30.6 32.8 30.6 33.0Q30.7 33.2 30.8 33.3Q31.0 33.5 31.1 33.6Q31.3 33.7 31.5 33.9Q31.7 33.9 32.0 34.0Q32.2 34.0 32.4 34.0Q32.7 34.0 32.9 34.0Q33.2 33.9 33.4 33.8Q33.7 33.6 33.9 33.5Q34.1 33.3 34.3 33.0Q34.4 32.8 34.5 32.5Q34.6 32.2 34.7 31.9Q34.7 31.6 34.7 31.3Q34.7 30.9 34.6 30.6Q34.5 30.3 34.3 29.9Q34.1 29.6 33.8 29.4Q33.5 29.1 33.2 28.9Q32.9 28.7 32.5 28.5Q32.1 28.4 31.7 28.4Q31.2 28.3 30.8 28.4Q30.3 28.5 29.9 28.6Q29.5 28.8 29.0 29.1Q28.6 29.4 28.3 29.7Q28.0 30.1 27.7 30.6Q27.5 31.1 27.3 31.6Q27.2 32.2 27.1 32.7Q27.1 33.3 27.2 33.9Q27.4 34.5 27.6 35.1Q27.9 35.7 28.3 36.2Q28.7 36.7 29.2 37.2Q29.8 37.6 30.4 37.9Q31.1 38.2 31.9 38.4Q32.6 38.5 33.4 38.5Q34.2 38.5 35.0 38.3Q35.8 38.0 36.6 37.7Q37.3 37.2 38.0 36.7Q38.6 36.0 39.2 35.3Q39.7 34.5 40.1 33.6Q40.4 32.7 40.7 31.7Q40.7 30.7 40.7 29.6Q40.6 28.5 40.3 27.5Q39.9 26.4 39.3 25.4Q38.6 24.4 37.8 23.5Q36.9 22.7 35.9 22.0Q34.8 21.4 33.6 20.9Q32.3 20.5 30.9 20.3Q29.5 20.3 28.1 20.4Q26.6 20.7 25.2 21.2Q23.8 21.8 22.5 22.6Q21.3 23.6 20.1 24.8Q19.1 26.1 18.2 27.5Q17.4 29.1 16.9 30.8"/>
+          </svg>
+        </span>
+        <div>
+          <h3><a href="./research/shear.html"><span class="title-phrase">剪切驱动湍流中的</span><span class="title-phrase">粒子加速</span></a></h3>
+          <p>用磁流体力学与粒子网格法相结合的模拟（MHD-PIC）研究开尔文–亥姆霍兹剪切层，跟踪粒子如何从湍流中获得能量。论文发表于 <a href="https://doi.org/10.3847/1538-4357/aea409" target="_blank" rel="noopener"><em>ApJ</em> <b>1009</b>, 247（2026）</a>。</p>
+        </div>
+      </li>
+      <li class="dir">
+        <span class="dir-mark" aria-hidden="true">
+          <svg class="dir-symbol" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" role="presentation">
+            <path d="M5 33h54" opacity=".35"/>
+            <path d="M14 33a9 10 0 0 1 18 0"/>
+            <path d="M37 33a11 12.5 0 0 1 22 0"/>
+            <path d="M32 33c0 8 2.2 13 3.2 17 1.1-4 2.8-9 2.8-17"/>
+            <path d="M8 33c0 6.5 1.8 11 2.8 14.5 1.1-3.5 2.6-8 2.6-14.5"/>
+          </svg>
+        </span>
+        <div>
+          <h3><a href="./research/flames.html"><span class="title-phrase">火焰中的</span><span class="title-phrase">瑞利–泰勒不稳定性</span></a></h3>
+          <p>本科研究：在模型火焰前沿叠加两个扰动模，火焰会呈现五种不同的增长形态，具体形态取决于两个波数 <em>k</em><sub>1</sub> 和 <em>k</em><sub>2</sub> 的最大公约数。</p>
+        </div>
+      </li>
+    </ul>
+  </section>
 
-        <p class="interests">研究兴趣包括等离子体天体物理、磁流体力学、宇宙线加速与输运、湍流、多相气体、流体动力学不稳定性、数值方法、高性能计算和物理信息神经网络。</p>
 
+  <div class="wrap section home-background">
+    <section class="prose" aria-labelledby="background-title">
+        <h2 class="section-title" id="background-title">关于我</h2>
+        <p>本科期间，我在<a href="https://physics.emory.edu/" target="_blank" rel="noopener">埃默里大学</a>跟随 <a href="https://epsilondeltalabs.org/hicks.html" target="_blank" rel="noopener">Elizabeth P. Hicks</a> 研究瑞利–泰勒不稳定性对火焰的影响。大一时，我还翻译了珍娜·莱文的<a href="./teaching.html#book">《黑洞旅行指南》</a>。中译本于 2022 年出版，<a href="https://book.douban.com/subject/35932693/" target="_blank" rel="noopener">豆瓣</a>评分为 8.6。</p>
+        <p>现在我担任<a href="./teaching.html">天文学入门课的助教</a>，和一只叫<a href="./vanilla.html">香草</a>的哈士奇一起住在安娜堡。</p>
+    </section>
         <section class="news" aria-labelledby="news-title">
           <div class="news-head">
             <h2 class="news-title" id="news-title">近况</h2>
@@ -357,80 +442,7 @@
           </div>
           </div>
         </section>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="wrap section">
-    <div class="section-head">
-      <h2 class="section-title">研究方向</h2>
-      <p class="section-lede">这些课题都围绕同一个问题：流体或等离子体原本有序的运动如何变得紊乱？它的能量最终去了哪里？</p>
-    </div>
-
-    <ul class="dir-list">
-      <li class="dir">
-        <span class="dir-mark" aria-hidden="true">
-          <svg class="dir-symbol" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" role="presentation">
-            <circle cx="16" cy="22" r="9" fill="currentColor" stroke="none" opacity=".22"/>
-            <circle cx="46" cy="18" r="7.2" fill="currentColor" stroke="none" opacity=".22"/>
-            <circle cx="29" cy="47" r="9.5" fill="currentColor" stroke="none" opacity=".22"/>
-            <path d="M4 43 16 22 46 18 29 47 60 33" stroke-width="2.4"/>
-            <circle cx="60" cy="33" r="3.2" fill="currentColor" stroke="none"/>
-          </svg>
-        </span>
-        <div>
-          <h3><a href="./research/cosmic-rays.html">宇宙线输运与反馈</a></h3>
-          <p>通过模拟直接测量宇宙线的散射率。它决定了宇宙线能传播多远，以及它们能在多大程度上推动气体。</p>
-        </div>
-      </li>
-      <li class="dir">
-        <span class="dir-mark" aria-hidden="true">
-          <svg class="dir-symbol" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" role="presentation">
-            <circle cx="32" cy="32" r="25" opacity=".4" stroke-dasharray="3.5 4.5"/>
-            <circle cx="24" cy="26" r="7" fill="currentColor" stroke="none"/>
-            <circle cx="40" cy="38" r="5" fill="currentColor" stroke="none"/>
-            <circle cx="38" cy="22" r="2.8" fill="currentColor" stroke="none"/>
-            <circle cx="23" cy="42" r="3.4" fill="currentColor" stroke="none"/>
-          </svg>
-        </span>
-        <div>
-          <h3><a href="./research/multiphase.html">多相湍流中丝状结构的加热</a></h3>
-          <p>欧姆耗散与黏性耗散如何将湍流能量转化为热量，并集中加热发出 Hα 辐射的冷丝状气体？项目页介绍了这项研究，还可以在这里观看演化动画、探索三维模拟。</p>
-        </div>
-      </li>
-      <li class="dir">
-        <span class="dir-mark" aria-hidden="true">
-          <svg class="dir-symbol" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" role="presentation">
-            <path d="M16 11h26"/>
-            <path d="M37 6.5 43.5 11 37 15.5"/>
-            <path d="M48 53H22"/>
-            <path d="M27 48.5 20.5 53l6.5 4.5"/>
-            <path d="M30.6 31.6Q30.6 31.7 30.5 31.9Q30.5 32.1 30.5 32.2Q30.5 32.4 30.5 32.6Q30.6 32.8 30.6 33.0Q30.7 33.2 30.8 33.3Q31.0 33.5 31.1 33.6Q31.3 33.7 31.5 33.9Q31.7 33.9 32.0 34.0Q32.2 34.0 32.4 34.0Q32.7 34.0 32.9 34.0Q33.2 33.9 33.4 33.8Q33.7 33.6 33.9 33.5Q34.1 33.3 34.3 33.0Q34.4 32.8 34.5 32.5Q34.6 32.2 34.7 31.9Q34.7 31.6 34.7 31.3Q34.7 30.9 34.6 30.6Q34.5 30.3 34.3 29.9Q34.1 29.6 33.8 29.4Q33.5 29.1 33.2 28.9Q32.9 28.7 32.5 28.5Q32.1 28.4 31.7 28.4Q31.2 28.3 30.8 28.4Q30.3 28.5 29.9 28.6Q29.5 28.8 29.0 29.1Q28.6 29.4 28.3 29.7Q28.0 30.1 27.7 30.6Q27.5 31.1 27.3 31.6Q27.2 32.2 27.1 32.7Q27.1 33.3 27.2 33.9Q27.4 34.5 27.6 35.1Q27.9 35.7 28.3 36.2Q28.7 36.7 29.2 37.2Q29.8 37.6 30.4 37.9Q31.1 38.2 31.9 38.4Q32.6 38.5 33.4 38.5Q34.2 38.5 35.0 38.3Q35.8 38.0 36.6 37.7Q37.3 37.2 38.0 36.7Q38.6 36.0 39.2 35.3Q39.7 34.5 40.1 33.6Q40.4 32.7 40.7 31.7Q40.7 30.7 40.7 29.6Q40.6 28.5 40.3 27.5Q39.9 26.4 39.3 25.4Q38.6 24.4 37.8 23.5Q36.9 22.7 35.9 22.0Q34.8 21.4 33.6 20.9Q32.3 20.5 30.9 20.3Q29.5 20.3 28.1 20.4Q26.6 20.7 25.2 21.2Q23.8 21.8 22.5 22.6Q21.3 23.6 20.1 24.8Q19.1 26.1 18.2 27.5Q17.4 29.1 16.9 30.8"/>
-          </svg>
-        </span>
-        <div>
-          <h3><a href="./research/shear.html">剪切驱动湍流中的粒子加速</a></h3>
-          <p>用磁流体力学与粒子网格法相结合的模拟（MHD-PIC）研究开尔文–亥姆霍兹剪切层，跟踪粒子如何从湍流中获得能量。论文发表于 <a href="https://doi.org/10.3847/1538-4357/aea409" target="_blank" rel="noopener"><em>ApJ</em> <b>1009</b>, 247（2026）</a>。</p>
-        </div>
-      </li>
-      <li class="dir">
-        <span class="dir-mark" aria-hidden="true">
-          <svg class="dir-symbol" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" role="presentation">
-            <path d="M5 33h54" opacity=".35"/>
-            <path d="M14 33a9 10 0 0 1 18 0"/>
-            <path d="M37 33a11 12.5 0 0 1 22 0"/>
-            <path d="M32 33c0 8 2.2 13 3.2 17 1.1-4 2.8-9 2.8-17"/>
-            <path d="M8 33c0 6.5 1.8 11 2.8 14.5 1.1-3.5 2.6-8 2.6-14.5"/>
-          </svg>
-        </span>
-        <div>
-          <h3><a href="./research/flames.html">火焰中的瑞利–泰勒不稳定性</a></h3>
-          <p>本科研究：在模型火焰前沿叠加两个扰动模，火焰会呈现五种不同的增长形态，具体形态取决于两个波数 <em>k</em><sub>1</sub> 和 <em>k</em><sub>2</sub> 的最大公约数。</p>
-        </div>
-      </li>
-    </ul>
-  </section>
+  </div>
 
 </main>
 <footer class="site-footer">

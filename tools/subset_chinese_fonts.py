@@ -41,22 +41,23 @@ def build(source, family, text, output):
     font.save(FONT_DIR / output)
 
 
-class Titles(HTMLParser):
+class EditorialHeadings(HTMLParser):
     def __init__(self):
         super().__init__()
-        self.inside = False
+        self.element = None
         self.text = ""
 
     def handle_starttag(self, tag, attrs):
-        if tag == "h1":
-            self.inside = True
+        classes = (dict(attrs).get("class") or "").split()
+        if tag in {"h1", "h2"} or "hero-question" in classes:
+            self.element = tag
 
     def handle_endtag(self, tag):
-        if tag == "h1":
-            self.inside = False
+        if tag == self.element:
+            self.element = None
 
     def handle_data(self, data):
-        if self.inside:
+        if self.element:
             self.text += data
 
 
@@ -74,7 +75,7 @@ if __name__ == "__main__":
     content = "".join(p.read_text() for p in pages + scripts + subtitles)
     content += "，。！？：；、“”‘’（）《》〈〉【】…—＋−×αβρΔη"
     build(args.sans, "Mingxuan Site Sans", content, "site-sans-sc.woff2")
-    titles = Titles()
+    headings = EditorialHeadings()
     for page in pages:
-        titles.feed(page.read_text())
-    build(args.serif, "Mingxuan Site Serif", titles.text, "site-serif-sc.woff2")
+        headings.feed(page.read_text())
+    build(args.serif, "Mingxuan Site Serif", headings.text, "site-serif-sc.woff2")

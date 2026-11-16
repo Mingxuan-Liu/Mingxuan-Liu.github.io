@@ -6,7 +6,7 @@ export const locale = choose('en-US', 'zh-CN');
 const chineseFields = {
   number_density: ['粒子数密度', 'log₁₀ n [cm⁻³]'],
   temperature: ['温度', 'log₁₀ T [K]'],
-  plasma_beta: ['等离子体比压 β', 'log₁₀ β = log₁₀ (气体热压 / 磁压)'],
+  plasma_beta: ['等离子体 β', 'log₁₀ β = log₁₀ (气体热压 / 磁压)'],
   halpha: ['Hα 体积发射率', 'log₁₀ ε(Hα) [erg cm⁻³ s⁻¹]'],
   ohmic_heating: ['欧姆加热率', 'log₁₀ Q [erg cm⁻³ s⁻¹]'],
   viscous_heating: ['黏性加热率', 'log₁₀ Q [erg cm⁻³ s⁻¹]'],
