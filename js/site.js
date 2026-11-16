@@ -69,27 +69,27 @@
     });
   }
 
-  /* --------------------------------------------------- news show-all -- */
+  /* ----------------------------------------------------- news scroll -- */
 
-  var newsBtn = document.querySelector('[data-news-toggle]');
   var newsList = document.querySelector('.news-list');
 
-  if (newsBtn && newsList && newsList.children.length > 3) {
-    var showAllLabel = newsBtn.textContent;
-    var olderNews = Array.prototype.slice.call(newsList.children, 3);
-
-    // All entries stay available when JavaScript is disabled.
-    olderNews.forEach(function (item) { item.hidden = true; });
-    newsBtn.hidden = false;
-    newsBtn.addEventListener('click', function () {
-      var expanded = newsBtn.getAttribute('aria-expanded') === 'false';
-      olderNews.forEach(function (item) { item.hidden = !expanded; });
-      newsBtn.textContent = expanded
-        ? (chinese ? '收起动态' : 'Show less')
-        : showAllLabel;
-      newsBtn.setAttribute('aria-expanded', String(expanded));
-      newsList.scrollTop = expanded ? olderNews[0].offsetTop : 0;
-    });
+  if (newsList) {
+    var newsPanel = newsList.parentElement;
+    var updateNewsScroll = function () {
+      var travel = newsList.scrollHeight - newsList.clientHeight;
+      newsPanel.classList.toggle('has-more-below', travel - newsList.scrollTop > 1);
+      var overlay = travel > 1 && newsList.clientWidth === newsList.offsetWidth;
+      newsPanel.classList.toggle('has-overlay-scrollbar', overlay);
+      if (overlay) {
+        newsPanel.style.setProperty('--news-thumb-size', newsList.clientHeight / newsList.scrollHeight * 100 + '%');
+        newsPanel.style.setProperty('--news-scroll-progress', newsList.scrollTop / travel * 100 + '%');
+      }
+    };
+    updateNewsScroll();
+    newsList.addEventListener('scroll', updateNewsScroll, { passive: true });
+    if (window.ResizeObserver) new ResizeObserver(updateNewsScroll).observe(newsList);
+    else window.addEventListener('resize', updateNewsScroll);
+    if (document.fonts) document.fonts.ready.then(updateNewsScroll);
   }
 
   /* ------------------------------------------------ year in the footer -- */

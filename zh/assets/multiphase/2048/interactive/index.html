@@ -2,8 +2,8 @@
 <html lang="zh-Hans">
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
-<title>冷气体丝状结构的三维模拟｜刘明轩</title>
-<meta name="description" content="在三维视图中探索刘明轩的磁化湍流模拟，从热压与磁压之比出发，对照六个物理量所呈现的丝状结构。">
+<title>冷气体的纤维状结构（三维模拟）｜刘明轩</title>
+<meta name="description" content="在三维视图中探索刘明轩的磁化湍流模拟，从热压与磁压之比出发，对照六个物理量所呈现的纤维状结构。">
 <link rel="canonical" href="https://mingxuan-liu.github.io/zh/assets/multiphase/2048/interactive/index.html">
 <link rel="alternate" hreflang="en" href="https://mingxuan-liu.github.io/assets/multiphase/2048/interactive/index.html">
 <link rel="alternate" hreflang="zh-Hans" href="https://mingxuan-liu.github.io/zh/assets/multiphase/2048/interactive/index.html">
@@ -11,14 +11,14 @@
 <script async src="/js/language.js"></script>
 <link rel="icon" href="/img/favicon.png" type="image/png" sizes="96x96">
 <link rel="stylesheet" href="/assets/multiphase/2048/interactive/viewer.css">
-<link rel="stylesheet" href="/css/zh.css?v=ink-1">
+<link rel="stylesheet" href="/css/zh.css?v=han-4">
 <main>
 <aside>
  <div class="viewer-heading">
    <div class="eyebrow">冷却 · 磁场 · 辐射</div>
    <a href="/assets/multiphase/2048/interactive/index.html" hreflang="en" lang="en" data-language-switch aria-label="Switch to English" title="Switch to English">English</a>
  </div>
- <h1><span class="title-phrase">冷气体细丝的</span><span class="title-phrase">三维结构</span></h1>
+ <h1><span class="title-phrase">从三维视角看</span><span class="title-phrase">冷气体的</span><span class="title-phrase">纤维状结构</span></h1>
  <p>旋转同一片模拟区域，对照六个物理量，看看它们分别勾勒出哪些结构。</p>
  <p id="transfer"></p>
  <div class="layers" id="layers"></div>
@@ -30,7 +30,7 @@
  <details><summary>如何解读这幅图？</summary><p id="description"></p><p>颜色按各物理量的固定对数色标显示。不透明度只调节图层的可见程度，不代表气体吸收辐射的强弱。叠加图层可对照各物理量的空间分布，但颜色重叠本身不能给出定量的相关性。剖切面会遮去 x₁ 坐标大于所选位置的气体，保留区域的数值不变。拖动剖切面时，模拟时间也保持不变。</p><p>Hα 图层给出气体的本征体积发射率，即单位体积气体在 Hα 谱线上的辐射功率。温度低于 10⁴&nbsp;K 时，<code>schure_fi</code> 模型的系数固定为 10⁴&nbsp;K 时的值。图中未计入消光、辐射转移或望远镜响应。</p><p>密度图层显示总粒子数密度。等离子体&nbsp;β 是气体热压与磁压之比，β&nbsp;=&nbsp;1 表示两者相等。温度和 β 均按体积加权平均到用于显示的粗网格上。</p><p>欧姆加热率和黏性加热率分别给出单位体积内由电阻耗散和黏性耗散产生的热功率，单位为 erg&nbsp;cm⁻³&nbsp;s⁻¹。两者均由求解器在模拟中直接记录，共用同一套色标和不透明度标度，不包括外加温控项或可逆的压缩功。加热率为零的区域完全透明。</p><p id="sampling"></p><p>密度和 β 图层的配色取自 Fabio Crameri 的 <a href="https://www.fabiocrameri.ch/colourmaps/">Scientific colour maps</a>，分别使用 lipari 和反向的 managua。</p><p><a href="/assets/multiphase/2048/interactive/manifest.json">数据来源</a> · <a href="/assets/multiphase/2048/interactive/style.json">色标与不透明度设置</a></p></details>
 </aside>
 <section id="stage" aria-label="交互式三维模拟视图">
- <canvas id="volume" tabindex="0" role="img" aria-label="可旋转的气体丝状结构三维图。用方向键旋转，用加号或减号键缩放。"></canvas>
+ <canvas id="volume" tabindex="0" role="img" aria-label="图中展示冷气体的三维纤维状结构。用方向键旋转，用加号或减号键缩放。"></canvas>
  <div id="hud"></div>
  <div id="viewer-status">
   <div id="load-panel">

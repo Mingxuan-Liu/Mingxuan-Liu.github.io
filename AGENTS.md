@@ -25,7 +25,7 @@ and share the original scientific images, videos and datasets across editions.
 
 Translate navigation, page titles, social descriptions, figure keys, subtitles,
 alternative text, accessible names, empty/loading/error states, and text that
-JavaScript changes after a click. Exercise the news toggle, pet counter, map,
+JavaScript changes after a click. Exercise the scrollable news archive, pet counter, map,
 and viewer in both editions when editing those features.
 
 Use `lang="zh-Hans"` for Chinese. Give each edition its own canonical URL and
@@ -58,7 +58,8 @@ Chinese spelling. Retain the original spelling when the Chinese name is unknown.
 | cosmic ray; cosmic-ray transport | 宇宙射线；宇宙射线输运 |
 | particle acceleration; scattering rate | 粒子加速；散射率 |
 | magnetohydrodynamics (MHD); multiphase turbulence | 磁流体力学（MHD）；多相湍流 |
-| filament in the intracluster medium | 丝状结构；指冷气体时也可用“冷气体细丝” |
+| intracluster gas | 星系团内气体 |
+| filament in the intracluster medium | 纤维状结构；强调冷气体时用“冷气体的纤维状结构” |
 | dissipative heating; Ohmic heating; viscous dissipation | 耗散加热；欧姆加热；黏性耗散 |
 | kinematic viscosity; magnetic diffusivity | 运动黏度；磁扩散率 |
 | intrinsic volume emissivity; projected surface brightness | 本征体积发射率；投影图上的表面亮度 |
