@@ -32,7 +32,7 @@
 <link rel="me" href="https://github.com/Mingxuan-Liu">
 <link rel="icon" href="/img/favicon.png" type="image/png" sizes="96x96">
 <link rel="alternate icon" href="/img/logo.ico">
-<link rel="stylesheet" href="/css/main.css?v=cosmic-rays-1">
+<link rel="stylesheet" href="/css/main.css?v=home-20261115">
 <link rel="stylesheet" href="/css/zh.css?v=cosmic-rays-1">
 <script>
   // Set the theme before first paint so there is no flash of the wrong colors.
@@ -311,17 +311,14 @@
                srcset="/img/research/midplane-ohmic-heating-480.webp 480w, /img/research/midplane-ohmic-heating-960.webp 960w"
                sizes="(max-width: 740px) min(calc(100vw - 2.5rem), 32rem), min(45vw, 30rem)"
                width="960" height="960" alt="模拟星系团气体的切片，局部欧姆加热率较高的区域呈明亮的细丝状。">
-          <span class="hero-map-label hero-heat-label" aria-hidden="true">欧姆加热率</span>
-          <span class="hero-map-label hero-beta-label" aria-hidden="true">等离子体 β</span>
           <input class="hero-map-control" type="range" min="0" max="100" value="50" hidden
                  aria-label="欧姆加热率与等离子体 β 图的分界线" aria-describedby="hero-map-instruction"
                  data-value-text="欧姆加热率图占 {heat}%，等离子体 β 图占 {beta}%">
           <span class="hero-map-divider" aria-hidden="true"></span>
-          <span class="hero-map-grip" aria-hidden="true"></span>
         </div>
         <figcaption>
           <p id="hero-map-instruction" hidden>拖动分界线或用左右方向键对比两幅图。</p>
-          <p>在这张模拟星系团气体的切片上，明亮的细丝勾勒出局部欧姆加热较强的区域。等离子体 β 是气体热压与磁压之比。蓝色区域以磁压为主，金色区域以热压为主。</p>
+          <p>两幅图展示的是模拟星系团气体的同一切面。左图中，明亮的细丝是局部欧姆加热率较高的区域。右图显示等离子体 β，即气体热压与磁压之比。蓝色区域以磁压为主，金色区域以热压为主。</p>
           <a href="./research/multiphase.html">星系团中的冷气体细丝如何受热？<span aria-hidden="true"> →</span></a>
         </figcaption>
       </figure>
@@ -416,9 +413,9 @@
         <section class="news" aria-labelledby="news-title">
           <div class="news-head">
             <h2 class="news-title" id="news-title">近况</h2>
-            <button class="text-btn" type="button" data-news-toggle hidden aria-expanded="false">展开全部动态</button>
+            <button class="text-btn" type="button" data-news-toggle hidden aria-controls="news-list" aria-expanded="false">查看全部动态</button>
           </div>
-          <div class="news-list">
+          <div class="news-list" id="news-list" role="group" aria-labelledby="news-title" tabindex="0">
           <div class="news-item">
             <time class="news-date" datetime="2026-09-30">2026 年 9 月</time>
             <div class="news-body">我们关于<a href="https://doi.org/10.3847/1538-4357/aea409" target="_blank" rel="noopener">剪切驱动的磁化湍流中粒子加速</a>的论文发表于《天体物理学杂志》。</div>
@@ -469,7 +466,7 @@
   </div>
 </footer>
 
-<script src="/js/home-comparison.js"></script>
-<script src="/js/site.js?v=bilingual-1"></script>
+<script src="/js/home-comparison.js?v=home-20261115"></script>
+<script src="/js/site.js?v=home-20261115"></script>
 </body>
 </html>

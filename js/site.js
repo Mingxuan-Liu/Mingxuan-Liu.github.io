@@ -74,15 +74,21 @@
   var newsBtn = document.querySelector('[data-news-toggle]');
   var newsList = document.querySelector('.news-list');
 
-  if (newsBtn && newsList) {
-    // Hidden by default so no-JS visitors just get the scrollable list.
+  if (newsBtn && newsList && newsList.children.length > 3) {
+    var showAllLabel = newsBtn.textContent;
+    var olderNews = Array.prototype.slice.call(newsList.children, 3);
+
+    // All entries stay available when JavaScript is disabled.
+    olderNews.forEach(function (item) { item.hidden = true; });
     newsBtn.hidden = false;
     newsBtn.addEventListener('click', function () {
-      var expanded = newsList.classList.toggle('is-expanded');
+      var expanded = newsBtn.getAttribute('aria-expanded') === 'false';
+      olderNews.forEach(function (item) { item.hidden = !expanded; });
       newsBtn.textContent = expanded
-        ? (chinese ? '收起动态' : 'show less')
-        : (chinese ? '查看全部动态' : 'show all news');
+        ? (chinese ? '收起动态' : 'Show less')
+        : showAllLabel;
       newsBtn.setAttribute('aria-expanded', String(expanded));
+      newsList.scrollTop = expanded ? olderNews[0].offsetTop : 0;
     });
   }
 

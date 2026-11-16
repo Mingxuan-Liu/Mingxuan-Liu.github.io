@@ -33,7 +33,7 @@
 <link rel="icon" href="./img/favicon.png" type="image/png" sizes="96x96">
 <link rel="alternate icon" href="./img/logo.ico">
 <link rel="stylesheet" href="css/type.css">
-<link rel="stylesheet" href="./css/main.css?v=cosmic-rays-1">
+<link rel="stylesheet" href="./css/main.css?v=home-20261115">
 <script>
   // Set the theme before first paint so there is no flash of the wrong colors.
   (function () {
@@ -304,17 +304,14 @@
                srcset="./img/research/midplane-ohmic-heating-480.webp 480w, ./img/research/midplane-ohmic-heating-960.webp 960w"
                sizes="(max-width: 740px) min(calc(100vw - 2.5rem), 32rem), min(45vw, 30rem)"
                width="960" height="960" alt="Narrow, bright strands of enhanced local Ohmic heating in a slice through simulated galaxy-cluster gas.">
-          <span class="hero-map-label hero-heat-label" aria-hidden="true">Ohmic heating rate</span>
-          <span class="hero-map-label hero-beta-label" aria-hidden="true">Plasma β</span>
           <input class="hero-map-control" type="range" min="0" max="100" value="50" hidden
                  aria-label="Divider between Ohmic heating and plasma beta maps" aria-describedby="hero-map-instruction"
                  data-value-text="{heat}% Ohmic heating, {beta}% plasma beta">
           <span class="hero-map-divider" aria-hidden="true"></span>
-          <span class="hero-map-grip" aria-hidden="true"></span>
         </div>
         <figcaption>
           <p id="hero-map-instruction" hidden>Drag the divider or use the arrow keys to compare.</p>
-          <p>Bright strands trace strong local Ohmic heating in this slice of simulated cluster gas. Plasma β is the ratio of thermal to magnetic pressure. Blue marks magnetically dominated gas, and gold marks gas dominated by thermal pressure.</p>
+          <p>Two views of the same slice of simulated cluster gas. On the left, bright strands trace a high local Ohmic heating rate. On the right, plasma β gives the ratio of thermal to magnetic pressure. Magnetic pressure dominates in blue regions and thermal pressure in gold.</p>
           <a href="./research/multiphase.html">How are cluster filaments heated?<span aria-hidden="true"> →</span></a>
         </figcaption>
       </figure>
@@ -409,9 +406,9 @@
         <section class="news" aria-labelledby="news-title">
           <div class="news-head">
             <h2 class="news-title" id="news-title">News</h2>
-            <button class="text-btn" type="button" data-news-toggle hidden aria-expanded="false">show all news</button>
+            <button class="text-btn" type="button" data-news-toggle hidden aria-controls="news-list" aria-expanded="false">Show all news</button>
           </div>
-          <div class="news-list">
+          <div class="news-list" id="news-list" role="group" aria-labelledby="news-title" tabindex="0">
           <div class="news-item">
             <time class="news-date" datetime="2026-09-30">Sep 2026</time>
             <div class="news-body">Our paper <a href="https://doi.org/10.3847/1538-4357/aea409" target="_blank" rel="noopener"><em>Particle Acceleration in Magnetized Shear-driven Turbulence</em></a> is now published in <em>The Astrophysical Journal</em>.</div>
@@ -462,7 +459,7 @@
   </div>
 </footer>
 
-<script src="./js/home-comparison.js"></script>
-<script src="./js/site.js?v=bilingual-1"></script>
+<script src="./js/home-comparison.js?v=home-20261115"></script>
+<script src="./js/site.js?v=home-20261115"></script>
 </body>
 </html>
