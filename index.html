@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mingxuan Liu | Plasma Astrophysics at Michigan</title>
-<meta name="description" content="Mingxuan Liu (刘明轩) is an astronomy PhD candidate at the University of Michigan studying cosmic-ray acceleration and the heating of cold filaments in magnetized gas.">
+<meta name="description" content="Mingxuan Liu is an astronomy PhD candidate at the University of Michigan studying how cosmic rays gain energy and travel through magnetized gas.">
 <meta name="author" content="Mingxuan Liu, Yijun Liu">
 <link rel="canonical" href="https://mingxuan-liu.github.io/">
 <link rel="alternate" hreflang="en" href="https://mingxuan-liu.github.io/">
@@ -17,14 +17,14 @@
 <meta property="og:locale:alternate" content="zh_CN">
 <meta property="og:url" content="https://mingxuan-liu.github.io/">
 <meta property="og:title" content="Mingxuan Liu | Plasma Astrophysics at Michigan">
-<meta property="og:description" content="Mingxuan Liu (刘明轩) is an astronomy PhD candidate at the University of Michigan studying cosmic-ray acceleration and the heating of cold filaments in magnetized gas.">
+<meta property="og:description" content="Mingxuan Liu is an astronomy PhD candidate at the University of Michigan studying how cosmic rays gain energy and travel through magnetized gas.">
 <meta property="og:image" content="https://mingxuan-liu.github.io/img/profile_pic.jpg">
 <meta property="og:image:width" content="853">
 <meta property="og:image:height" content="853">
 <meta property="og:image:alt" content="Portrait of Mingxuan Liu">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mingxuan Liu | Plasma Astrophysics at Michigan">
-<meta name="twitter:description" content="Mingxuan Liu (刘明轩) is an astronomy PhD candidate at the University of Michigan studying cosmic-ray acceleration and the heating of cold filaments in magnetized gas.">
+<meta name="twitter:description" content="Mingxuan Liu is an astronomy PhD candidate at the University of Michigan studying how cosmic rays gain energy and travel through magnetized gas.">
 <meta name="twitter:image" content="https://mingxuan-liu.github.io/img/profile_pic.jpg">
 <meta name="twitter:image:alt" content="Portrait of Mingxuan Liu">
 <link rel="me" href="https://orcid.org/0009-0009-1522-9581">
@@ -33,7 +33,7 @@
 <link rel="icon" href="./img/favicon.png" type="image/png" sizes="96x96">
 <link rel="alternate icon" href="./img/logo.ico">
 <link rel="stylesheet" href="css/type.css">
-<link rel="stylesheet" href="./css/main.css?v=ink-1">
+<link rel="stylesheet" href="./css/main.css?v=cosmic-rays-1">
 <script>
   // Set the theme before first paint so there is no flash of the wrong colors.
   (function () {
@@ -96,7 +96,7 @@
         "Liu Mingxuan"
       ],
       "jobTitle": "PhD Candidate in Astronomy",
-      "description": "Astronomy PhD candidate at the University of Michigan working on plasma astrophysics: magnetized turbulence, cosmic-ray transport and particle acceleration.",
+      "description": "Mingxuan Liu is an astronomy PhD candidate at the University of Michigan studying how cosmic rays gain energy and travel through magnetized gas.",
       "url": "https://mingxuan-liu.github.io/",
       "image": "https://mingxuan-liu.github.io/img/profile_pic.jpg",
       "email": "mailto:mgxnliu@umich.edu",
@@ -291,20 +291,31 @@
             <p class="hero-role">Third-year PhD candidate in <a href="https://lsa.umich.edu/astro">Astronomy</a> at the <a href="https://umich.edu/">University of Michigan</a></p>
           </div>
         </div>
-        <p class="hero-question">Where does the energy in a <span>turbulent plasma go?</span></p>
-        <p class="hero-intro">I study plasma in galaxies and galaxy clusters with <a href="https://lsa.umich.edu/astro/people/core-faculty/mateuszr.html">Mateusz Ruszkowski</a>. In our simulations, we can follow the energy of turbulent motions as it heats gas or accelerates particles.</p>
+        <p class="hero-question">What accelerates <span>cosmic rays</span> and shapes <span>their paths?</span></p>
+        <p class="hero-intro">Cosmic rays are nonthermal particles with far more energy than most particles in the gas around them. For my thesis with <a href="https://lsa.umich.edu/astro/people/core-faculty/mateuszr.html">Mateusz Ruszkowski</a>, I simulate how particles gain energy in magnetized turbulence and how magnetic fluctuations scatter them as they travel away from their sources. I’m also interested in using physics-informed machine learning to infer how quickly cosmic rays diffuse through interstellar gas.</p>
       </div>
       <figure class="hero-feature">
         <div class="hero-map">
-          <img src="./img/research/filament-emission-480.webp"
-               srcset="./img/research/filament-emission-480.webp 480w, ./img/research/filament-emission-960.webp 960w"
-               sizes="(max-width: 740px) min(100vw, 32rem), min(46vw, 30rem)" width="960" height="960"
-               fetchpriority="high" alt="Pink Hα filaments on the left and blue soft X-ray emission on the right, each showing its half of the same projected region.">
-          <span aria-hidden="true">Hα</span><span aria-hidden="true">Soft X-rays</span>
+          <img class="hero-map-beta" src="./img/research/midplane-plasma-beta-480.webp"
+               srcset="./img/research/midplane-plasma-beta-480.webp 480w, ./img/research/midplane-plasma-beta-960.webp 960w"
+               sizes="(max-width: 740px) min(calc(100vw - 2.5rem), 32rem), min(45vw, 30rem)"
+               width="960" height="960" alt="Plasma β in a slice of simulated cluster gas. Blue marks low thermal pressure relative to magnetic pressure, and gold marks high thermal pressure relative to magnetic pressure.">
+          <img class="hero-map-heat" src="./img/research/midplane-ohmic-heating-480.webp"
+               srcset="./img/research/midplane-ohmic-heating-480.webp 480w, ./img/research/midplane-ohmic-heating-960.webp 960w"
+               sizes="(max-width: 740px) min(calc(100vw - 2.5rem), 32rem), min(45vw, 30rem)"
+               width="960" height="960" alt="Narrow, bright strands of enhanced local Ohmic heating in a slice through simulated galaxy-cluster gas.">
+          <span class="hero-map-label hero-heat-label" aria-hidden="true">Ohmic heating rate</span>
+          <span class="hero-map-label hero-beta-label" aria-hidden="true">Plasma β</span>
+          <input class="hero-map-control" type="range" min="0" max="100" value="50" hidden
+                 aria-label="Divider between Ohmic heating and plasma beta maps" aria-describedby="hero-map-instruction"
+                 data-value-text="{heat}% Ohmic heating, {beta}% plasma beta">
+          <span class="hero-map-divider" aria-hidden="true"></span>
+          <span class="hero-map-grip" aria-hidden="true"></span>
         </div>
         <figcaption>
-          <p>Hα and soft X-ray surface brightness across the same patch of simulated gas in a galaxy cluster core.</p>
-          <a href="./research/multiphase.html#native-detail">Compare Hα and X-rays<span aria-hidden="true"> →</span></a>
+          <p id="hero-map-instruction" hidden>Drag the divider or use the arrow keys to compare.</p>
+          <p>Bright strands trace strong local Ohmic heating in this slice of simulated cluster gas. Plasma β is the ratio of thermal to magnetic pressure. Blue marks magnetically dominated gas, and gold marks gas dominated by thermal pressure.</p>
+          <a href="./research/multiphase.html">How are cluster filaments heated?<span aria-hidden="true"> →</span></a>
         </figcaption>
       </figure>
       <div class="hero-contact" role="group" aria-label="Profiles and contact">
@@ -343,21 +354,6 @@
       <li class="dir">
         <span class="dir-mark" aria-hidden="true">
           <svg class="dir-symbol" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" role="presentation">
-            <circle cx="32" cy="32" r="25" opacity=".4" stroke-dasharray="3.5 4.5"/>
-            <circle cx="24" cy="26" r="7" fill="currentColor" stroke="none"/>
-            <circle cx="40" cy="38" r="5" fill="currentColor" stroke="none"/>
-            <circle cx="38" cy="22" r="2.8" fill="currentColor" stroke="none"/>
-            <circle cx="23" cy="42" r="3.4" fill="currentColor" stroke="none"/>
-          </svg>
-        </span>
-        <div>
-          <h3><a href="./research/multiphase.html">Heating filaments in multiphase turbulence</a></h3>
-          <p>In our new manuscript, Ohmic and viscous dissipation help keep the cold filaments near 10<sup>4</sup>&nbsp;K.</p>
-        </div>
-      </li>
-      <li class="dir">
-        <span class="dir-mark" aria-hidden="true">
-          <svg class="dir-symbol" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" role="presentation">
             <path d="M16 11h26"/>
             <path d="M37 6.5 43.5 11 37 15.5"/>
             <path d="M48 53H22"/>
@@ -368,6 +364,21 @@
         <div>
           <h3><a href="./research/shear.html">Particle acceleration in shear-driven turbulence</a></h3>
           <p>MHD particle-in-cell simulations of a Kelvin&ndash;Helmholtz layer, following the particles the turbulence energizes. Published in <a href="https://doi.org/10.3847/1538-4357/aea409" target="_blank" rel="noopener"><em>ApJ</em> <b>1009</b>, 247 (2026)</a>.</p>
+        </div>
+      </li>
+      <li class="dir">
+        <span class="dir-mark" aria-hidden="true">
+          <svg class="dir-symbol" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" role="presentation">
+            <circle cx="32" cy="32" r="25" opacity=".4" stroke-dasharray="3.5 4.5"/>
+            <circle cx="24" cy="26" r="7" fill="currentColor" stroke="none"/>
+            <circle cx="40" cy="38" r="5" fill="currentColor" stroke="none"/>
+            <circle cx="38" cy="22" r="2.8" fill="currentColor" stroke="none"/>
+            <circle cx="23" cy="42" r="3.4" fill="currentColor" stroke="none"/>
+          </svg>
+        </span>
+        <div>
+          <h3><a href="./research/multiphase.html">Heating filaments in multiphase turbulence</a></h3>
+          <p>In our simulations, Ohmic and viscous dissipation help keep cold filaments near 10<sup>4</sup>&nbsp;K.</p>
         </div>
       </li>
       <li class="dir">
@@ -392,8 +403,8 @@
   <div class="wrap section home-background">
     <section class="prose" aria-labelledby="background-title">
         <h2 class="section-title" id="background-title">A little about me</h2>
-        <p>As an undergraduate at <a href="https://physics.emory.edu/" target="_blank" rel="noopener">Emory University</a>, I worked with <a href="https://epsilondeltalabs.org/hicks.html" target="_blank" rel="noopener">Elizabeth P. Hicks</a> on Rayleigh–Taylor unstable flames. In my first year I also translated Janna Levin’s <a href="./teaching.html#book"><em>Black Hole Survival Guide</em></a> into Chinese. It was published in 2022 and is rated 8.6 on <a href="https://book.douban.com/subject/35932693/" target="_blank" rel="noopener">Douban</a>.</p>
-        <p>These days I <a href="./teaching.html">teach introductory astronomy</a> and share my home in Ann Arbor with a husky named <a href="./vanilla.html">Vanilla</a>.</p>
+        <p>I earned my B.S. at Emory University in May 2024, with majors in <a href="https://physics.emory.edu/undergrad/astronomy/index.html">Physics and Astronomy</a> and <a href="https://datascience.emory.edu/documents/checklists-archival/fillable-QSS_major_checklist_informatics_2020-04-29.pdf">Quantitative Sciences (Informatics track)</a>. At Emory I worked with <a href="https://epsilondeltalabs.org/hicks.html" target="_blank" rel="noopener">Elizabeth P. Hicks</a> on Rayleigh–Taylor unstable flames. In my first year I also translated Janna Levin’s <a href="./teaching.html#book"><em>Black Hole Survival Guide</em></a> into Chinese. It was published in 2022 and is rated 8.6 on <a href="https://book.douban.com/subject/35932693/" target="_blank" rel="noopener">Douban</a>.</p>
+        <p>I earned my M.S. in Astronomy at the University of Michigan in May 2026. These days I <a href="./teaching.html">teach introductory astronomy</a> and share my home in Ann Arbor with a husky named <a href="./vanilla.html">Vanilla</a>.</p>
     </section>
         <section class="news" aria-labelledby="news-title">
           <div class="news-head">
@@ -423,7 +434,7 @@
           </div>
           <div class="news-item">
             <time class="news-date" datetime="2024-05">May 2024</time>
-            <div class="news-body">Graduated from Emory University with a B.S. in Physics (Astronomy concentration) and a B.S. in Informatics.</div>
+            <div class="news-body">Graduated from Emory University with majors in Physics and Astronomy and Quantitative Sciences (Informatics track).</div>
           </div>
           <div class="news-item">
             <span class="news-date">Nov 2023</span>
@@ -451,6 +462,7 @@
   </div>
 </footer>
 
+<script src="./js/home-comparison.js"></script>
 <script src="./js/site.js?v=bilingual-1"></script>
 </body>
 </html>

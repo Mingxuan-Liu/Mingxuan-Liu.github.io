@@ -55,7 +55,7 @@ Chinese spelling. Retain the original spelling when the Chinese name is unknown.
 
 | English | Preferred Simplified Chinese in this site’s context |
 | --- | --- |
-| cosmic ray; cosmic-ray transport | 宇宙线；宇宙线输运 |
+| cosmic ray; cosmic-ray transport | 宇宙射线；宇宙射线输运 |
 | particle acceleration; scattering rate | 粒子加速；散射率 |
 | magnetohydrodynamics (MHD); multiphase turbulence | 磁流体力学（MHD）；多相湍流 |
 | filament in the intracluster medium | 丝状结构；指冷气体时也可用“冷气体细丝” |

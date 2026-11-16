@@ -10,7 +10,7 @@ the repository root as-is.
 
 | File | Purpose |
 |---|---|
-| `index.html` | Portrait, current research, Hα/X-ray comparison, bio and news |
+| `index.html` | Portrait, cosmic-ray research, Ohmic heating/plasma β comparison, bio and news |
 | `research.html` | Compact overview with equal space for all four projects |
 | `research/*.html` | Individual project write-ups, figures and visualizations |
 | `publications.html` | Papers, talks, code/data releases, translation |
@@ -40,9 +40,12 @@ img/outreach/         photos of the translated book
 assets/multiphase/    evolution movie, native maps/renders and the 3D overview
 ```
 
-The homepage preview joins the left half of the Hα surface-brightness map to the
-right half of the soft X-ray map from `assets/multiphase/2048/native/emission/`.
-Both views show the same sky coordinates. Each band keeps its own contrast scale.
+The homepage compares local Ohmic heating per unit volume with plasma β in the
+same central slice of the `2048_eta3e-4` run (snapshot 00056). Both 2048 × 2048
+source images have the same orientation and extent. The previews use the source
+logarithmic color scales: magma for heating (10⁻²⁷–10⁻²² erg cm⁻³ s⁻¹) and
+reversed managua for β (10⁻²–10²). The filament project page separately compares
+Hα and soft X-ray surface brightness integrated along the line of sight.
 
 The husky and the project symbols are inlined into the HTML rather than loaded as
 `<img>`, so CSS can colour and animate them. The husky appears in every page's nav and
